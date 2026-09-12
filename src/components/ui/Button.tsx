@@ -29,20 +29,23 @@ interface CommonProps {
   className?: string
 }
 
-interface ButtonAsButton extends CommonProps, ButtonHTMLAttributes<HTMLButtonElement> {
-  to?: undefined
-  href?: undefined
-}
+type ButtonAsButton = CommonProps &
+  ButtonHTMLAttributes<HTMLButtonElement> & {
+    to?: undefined
+    href?: undefined
+  }
 
-interface ButtonAsLink extends CommonProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {
-  to: string
-  href?: undefined
-}
+type ButtonAsLink = CommonProps &
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> & {
+    to: string
+    href?: undefined
+  }
 
-interface ButtonAsAnchor extends CommonProps, AnchorHTMLAttributes<HTMLAnchorElement> {
-  to?: undefined
-  href: string
-}
+type ButtonAsAnchor = CommonProps &
+  AnchorHTMLAttributes<HTMLAnchorElement> & {
+    to?: undefined
+    href: string
+  }
 
 type ButtonProps = ButtonAsButton | ButtonAsLink | ButtonAsAnchor
 
