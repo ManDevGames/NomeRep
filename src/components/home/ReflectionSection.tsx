@@ -1,21 +1,27 @@
 import { useState } from 'react'
 import { Check, PenLine } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { reflectionPrompts } from '@/data/guides'
 import { useReflection } from '@/hooks/useReflection'
+import { useContent } from '@/hooks/useContent'
+import { useLanguage } from '@/context/language'
 
 export function ReflectionSection() {
   const { notes, updateNote, save, saved } = useReflection()
+  const { reflectionPrompts } = useContent()
+  const { t } = useLanguage()
   const [activePrompt, setActivePrompt] = useState(reflectionPrompts[0].id)
 
   return (
     <section className="section-space bg-cream-100" id="reflection">
       <div className="container-app">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="eyebrow">Reflection</span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold">Reflection</h2>
+          <span className="eyebrow">{t('Reflection', 'आत्म-चिंतन')}</span>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold">{t('Reflection', 'आत्म-चिंतन')}</h2>
           <p className="mt-4 text-base sm:text-lg text-charcoal-500 leading-relaxed">
-            Understanding your pattern is the first step. Reflection helps you decide what you want to change.
+            {t(
+              'Understanding your pattern is the first step. Reflection helps you decide what you want to change.',
+              'अपना पैटर्न समझना पहला क़दम है। आत्म-चिंतन से आप तय कर पाते हैं कि आप क्या बदलना चाहते हैं।',
+            )}
           </p>
         </div>
 
@@ -46,18 +52,23 @@ export function ReflectionSection() {
               value={notes[activePrompt] ?? ''}
               onChange={(e) => updateNote(activePrompt, e.target.value)}
               rows={6}
-              placeholder="Write freely — there’s no right answer here."
+              placeholder={t(
+                'Write freely — there’s no right answer here.',
+                'खुलकर लिखें — यहाँ कोई सही या ग़लत जवाब नहीं है।',
+              )}
               className="mt-4 w-full resize-none rounded-2xl border border-charcoal-200 bg-cream-50 p-4 text-sm leading-relaxed text-charcoal-800 placeholder:text-charcoal-400 focus:border-rose-300"
             />
             <div className="mt-4 flex items-center justify-between gap-4">
-              <p className="text-xs text-charcoal-400">Saved privately to this device.</p>
+              <p className="text-xs text-charcoal-400">
+                {t('Saved privately to this device.', 'सिर्फ़ इसी डिवाइस पर निजी तौर पर सेव होता है।')}
+              </p>
               <Button onClick={save} size="sm" variant={saved ? 'secondary' : 'primary'}>
                 {saved ? (
                   <>
-                    <Check size={16} /> Saved
+                    <Check size={16} /> {t('Saved', 'सेव हो गया')}
                   </>
                 ) : (
-                  'Save My Reflection'
+                  t('Save My Reflection', 'मेरा आत्म-चिंतन सेव करें')
                 )}
               </Button>
             </div>

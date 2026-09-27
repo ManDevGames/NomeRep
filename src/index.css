@@ -3,18 +3,110 @@
 @tailwind utilities;
 
 @layer base {
+  /* Palette channels (R G B). Light values double as the "keep-light-palette"
+     scope for surfaces designed to stay dark in both themes (e.g. the ERP band). */
+  :root,
+  .dark .keep-light-palette {
+    color-scheme: light;
+    --cream-50: 253 251 247;
+    --cream-100: 250 246 238;
+    --cream-200: 245 236 221;
+    --cream-300: 237 224 200;
+    --blush-50: 253 245 244;
+    --blush-100: 250 234 231;
+    --blush-200: 243 214 209;
+    --blush-300: 232 186 178;
+    --blush-400: 217 154 143;
+    --rose-50: 250 241 238;
+    --rose-100: 242 221 214;
+    --rose-200: 227 188 177;
+    --rose-300: 207 149 135;
+    --rose-400: 184 117 106;
+    --rose-500: 156 92 82;
+    --sage-50: 244 246 242;
+    --sage-100: 230 235 225;
+    --sage-200: 205 216 195;
+    --sage-300: 174 193 159;
+    --sage-400: 139 165 124;
+    --sage-500: 111 138 95;
+    --lavender-50: 246 244 248;
+    --lavender-100: 234 228 240;
+    --lavender-200: 213 201 227;
+    --lavender-300: 188 170 210;
+    --charcoal-50: 247 246 245;
+    --charcoal-100: 233 230 226;
+    --charcoal-300: 168 159 150;
+    --charcoal-500: 107 98 89;
+    --charcoal-700: 69 63 57;
+    --charcoal-800: 51 46 41;
+    --charcoal-900: 36 31 28;
+  }
+
+  /* Dark theme: surfaces (cream, pastel tints) go deep and warm, text shades go light. */
+  .dark {
+    color-scheme: dark;
+    --cream-50: 24 21 19;
+    --cream-100: 32 28 25;
+    --cream-200: 42 37 33;
+    --cream-300: 54 48 42;
+    --blush-50: 42 30 28;
+    --blush-100: 54 37 34;
+    --blush-200: 80 52 46;
+    --blush-300: 110 72 64;
+    --blush-400: 217 154 143;
+    --rose-50: 44 30 27;
+    --rose-100: 66 42 37;
+    --rose-200: 100 64 56;
+    --rose-300: 214 158 145;
+    --rose-400: 184 117 106;
+    --rose-500: 206 138 126;
+    --sage-50: 30 36 28;
+    --sage-100: 39 47 36;
+    --sage-200: 53 66 47;
+    --sage-300: 174 193 159;
+    --sage-400: 139 165 124;
+    --sage-500: 150 178 132;
+    --lavender-50: 34 30 40;
+    --lavender-100: 44 38 52;
+    --lavender-200: 64 55 76;
+    --lavender-300: 188 170 210;
+    --charcoal-50: 36 32 29;
+    --charcoal-100: 52 47 42;
+    --charcoal-300: 110 102 94;
+    --charcoal-500: 172 164 155;
+    --charcoal-700: 214 208 201;
+    --charcoal-800: 231 227 222;
+    --charcoal-900: 245 242 238;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-cream-50 text-charcoal-800 antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-cream-50 text-charcoal-800 antialiased transition-colors duration-300;
+    font-family: 'Inter', 'Noto Sans Devanagari', system-ui, sans-serif;
   }
 
   h1, h2, h3, h4 {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Fraunces', 'Noto Serif Devanagari', Georgia, serif;
     @apply text-charcoal-900;
+  }
+
+  /* Devanagari needs room for matras above and below the line, and letter-spacing
+     breaks conjunct shaping, so Hindi mode relaxes both. */
+  html:lang(hi) body * {
+    letter-spacing: normal !important;
+  }
+
+  html:lang(hi) h1,
+  html:lang(hi) h2,
+  html:lang(hi) h3 {
+    line-height: 1.4 !important;
+  }
+
+  html:lang(hi) body {
+    line-height: 1.7;
   }
 
   :focus-visible {

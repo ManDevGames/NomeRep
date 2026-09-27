@@ -1,3 +1,5 @@
+import { useLanguage } from '@/context/language'
+
 interface ProgressIndicatorProps {
   current: number
   total: number
@@ -6,11 +8,12 @@ interface ProgressIndicatorProps {
 
 export function ProgressIndicator({ current, total, label }: ProgressIndicatorProps) {
   const percent = Math.round((current / total) * 100)
+  const { t } = useLanguage()
 
   return (
     <div className="w-full">
       <div className="mb-2 flex items-center justify-between text-xs sm:text-sm text-charcoal-500">
-        <span>{label ?? `Question ${current} of ${total}`}</span>
+        <span>{label ?? t(`Question ${current} of ${total}`, `सवाल ${current} / ${total}`)}</span>
         <span>{percent}%</span>
       </div>
       <div

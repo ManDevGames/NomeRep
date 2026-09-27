@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { ProgressIndicator } from '@/components/ui/ProgressIndicator'
+import { useLanguage } from '@/context/language'
 import type { AssessmentQuestion } from '@/types'
 
 interface AssessmentCardProps {
@@ -24,13 +25,15 @@ export function AssessmentCard({
   onNext,
   isLastQuestion,
 }: AssessmentCardProps) {
+  const { t } = useLanguage()
+
   return (
     <div className="rounded-3xl border border-charcoal-100 bg-cream-50 p-6 sm:p-10 shadow-card">
       <ProgressIndicator current={currentIndex + 1} total={totalQuestions} />
 
       <div className="mt-8 sm:mt-10">
         <span className="eyebrow">
-          Question {currentIndex + 1} of {totalQuestions}
+          {t(`Question ${currentIndex + 1} of ${totalQuestions}`, `सवाल ${currentIndex + 1} / ${totalQuestions}`)}
         </span>
         <h2 className="mt-3 text-2xl sm:text-3xl font-semibold leading-snug text-charcoal-900">
           {question.prompt}
@@ -78,12 +81,12 @@ export function AssessmentCard({
           variant="ghost"
           onClick={onBack}
           disabled={currentIndex === 0}
-          aria-label="Go to previous question"
+          aria-label={t('Go to previous question', 'पिछले सवाल पर जाएँ')}
         >
-          <ArrowLeft size={18} /> Back
+          <ArrowLeft size={18} /> {t('Back', 'पीछे')}
         </Button>
         <Button onClick={onNext} disabled={!selectedOptionId}>
-          {isLastQuestion ? 'See My Relationship Pattern' : 'Continue'} <ArrowRight size={18} />
+          {isLastQuestion ? t('See My Relationship Pattern', 'मेरा रिलेशनशिप पैटर्न देखें') : t('Continue', 'आगे बढ़ें')} <ArrowRight size={18} />
         </Button>
       </div>
     </div>

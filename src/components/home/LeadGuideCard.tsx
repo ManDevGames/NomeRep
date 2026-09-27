@@ -1,5 +1,6 @@
 import { FileText, Download } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import { useLanguage } from '@/context/language'
 import type { Guide } from '@/types'
 
 interface LeadGuideCardProps {
@@ -8,6 +9,8 @@ interface LeadGuideCardProps {
 }
 
 export function LeadGuideCard({ guide, onDownload }: LeadGuideCardProps) {
+  const { t } = useLanguage()
+
   return (
     <div className="flex flex-col gap-6 rounded-3xl border border-charcoal-100 bg-cream-50 p-7 sm:p-8 shadow-soft transition-shadow hover:shadow-card">
       <div className="flex items-center gap-4">
@@ -19,7 +22,9 @@ export function LeadGuideCard({ guide, onDownload }: LeadGuideCardProps) {
       <div>
         <h3 className="text-xl font-semibold text-charcoal-900">{guide.title}</h3>
         <p className="mt-2 text-sm leading-relaxed text-charcoal-600">{guide.description}</p>
-        <p className="mt-3 text-xs uppercase tracking-wide text-charcoal-400">{guide.pages} pages &middot; PDF</p>
+        <p className="mt-3 text-xs uppercase tracking-wide text-charcoal-400">
+          {t(`${guide.pages} pages`, `${guide.pages} पेज`)} &middot; PDF
+        </p>
       </div>
       <Button onClick={() => onDownload(guide)} variant="outline" className="mt-auto">
         <Download size={16} /> {guide.ctaLabel}

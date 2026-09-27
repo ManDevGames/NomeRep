@@ -140,4 +140,7 @@ export interface VideoHighlight {
   /** Optional custom thumbnail. Falls back to YouTube's own thumbnail. */
   thumbnail?: string
   subtitle?: string
+  /** Optional Hindi title/subtitle, shown when the site is in Hindi. Falls back to English. */
+  titleHi?: string
+  subtitleHi?: string
 }

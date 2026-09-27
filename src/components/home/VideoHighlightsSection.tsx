@@ -2,7 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Play, X } from 'lucide-react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { videoHighlights } from '@/data/videos'
+import { useContent } from '@/hooks/useContent'
+import { useLanguage } from '@/context/language'
 import { getYouTubeEmbedUrl, getYouTubeId, getYouTubeThumbnail } from '@/utils/youtube'
 import type { VideoHighlight } from '@/types'
 
@@ -17,7 +18,9 @@ const SECONDS_PER_CARD = 6
 const MIN_CARDS_PER_LOOP = 6
 
 export function VideoHighlightsSection() {
-  const [activeVideo, setActiveVideo] = useState<ResolvedVideo | null>(null)
+  const { videos: videoHighlights } = useContent()
+  const { t } = useLanguage()
+  const [activeVideoId, setActiveVideoId] = useState<string | null>(null)
 
   const videos = useMemo<ResolvedVideo[]>(
     () =>
@@ -26,8 +29,10 @@ export function VideoHighlightsSection() {
         if (!youtubeId) return []
         return [{ ...v, youtubeId, thumbnailSrc: v.thumbnail ?? getYouTubeThumbnail(youtubeId) }]
       }),
-    [],
+    [videoHighlights],
   )
+  // Looked up by id so the player title follows a language switch while it's open.
+  const activeVideo = videos.find((v) => v.id === activeVideoId) ?? null
 
   if (videos.length === 0) return null
 
@@ -42,9 +47,12 @@ export function VideoHighlightsSection() {
     <section className="section-space overflow-hidden">
       <div className="container-app">
         <SectionHeading
-          eyebrow="Watch"
-          title="Video highlights"
-          subtitle="Short conversations on the patterns that shape how we love, argue and reconnect."
+          eyebrow={t('Watch', 'देखें')}
+          title={t('Our Work Highlights', 'हमारे काम की झलकियाँ')}
+          subtitle={t(
+            'Short conversations on the patterns that shape how we love, argue and reconnect.',
+            'उन पैटर्न पर छोटी-छोटी बातचीत, जो तय करते हैं कि हम कैसे प्यार करते हैं, कैसे झगड़ते हैं और फिर कैसे जुड़ते हैं।',
+          )}
         />
       </div>
 
@@ -57,7 +65,7 @@ export function VideoHighlightsSection() {
             <VideoCard
               key={`${video.id}-${i}`}
               video={video}
-              onPlay={() => setActiveVideo(video)}
+              onPlay={() => setActiveVideoId(video.id)}
               // Only the first copy is reachable by keyboard / screen readers.
               hidden={i >= videos.length}
             />
@@ -65,19 +73,21 @@ export function VideoHighlightsSection() {
         </div>
       </div>
 
-      <VideoLightbox video={activeVideo} onClose={() => setActiveVideo(null)} />
+      <VideoLightbox video={activeVideo} onClose={() => setActiveVideoId(null)} />
     </section>
   )
 }
 
 function VideoCard({ video, onPlay, hidden }: { video: ResolvedVideo; onPlay: () => void; hidden: boolean }) {
+  const { t } = useLanguage()
+
   return (
     <button
       type="button"
       onClick={onPlay}
       aria-hidden={hidden || undefined}
       tabIndex={hidden ? -1 : undefined}
-      aria-label={`Play video: ${video.title}`}
+      aria-label={`${t('Play video', 'वीडियो चलाएँ')}: ${video.title}`}
       className="group/card w-[280px] sm:w-[340px] shrink-0 text-left"
     >
       <div className="relative aspect-video overflow-hidden rounded-3xl bg-charcoal-100 shadow-soft transition-shadow duration-300 group-hover/card:shadow-lift">
@@ -87,7 +97,7 @@ function VideoCard({ video, onPlay, hidden }: { video: ResolvedVideo; onPlay: ()
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-500 group-hover/card:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/50 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/50 dark:from-black/50 via-transparent to-transparent" />
         <span className="absolute inset-0 flex items-center justify-center">
           <span className="flex h-14 w-14 items-center justify-center rounded-full bg-cream-50/90 text-rose-400 shadow-lift backdrop-blur-sm transition-transform duration-300 group-hover/card:scale-110">
             <Play size={22} className="ml-0.5 fill-current" />
@@ -106,6 +116,7 @@ function VideoCard({ video, onPlay, hidden }: { video: ResolvedVideo; onPlay: ()
 
 function VideoLightbox({ video, onClose }: { video: ResolvedVideo | null; onClose: () => void }) {
   const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     if (!video) return
@@ -126,7 +137,7 @@ function VideoLightbox({ video, onClose }: { video: ResolvedVideo | null; onClos
   if (!video) return null
 
   return createPortal(
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="keep-light-palette fixed inset-0 z-50 flex items-center justify-center p-4">
       <div
         className="absolute inset-0 bg-charcoal-900/80 backdrop-blur-sm animate-fade-in"
         onClick={onClose}
@@ -143,7 +154,7 @@ function VideoLightbox({ video, onClose }: { video: ResolvedVideo | null; onClos
           <button
             ref={closeButtonRef}
             onClick={onClose}
-            aria-label="Close video"
+            aria-label={t('Close video', 'वीडियो बंद करें')}
             className="rounded-full p-2 text-cream-100 hover:bg-cream-50/10 transition-colors"
           >
             <X size={22} />

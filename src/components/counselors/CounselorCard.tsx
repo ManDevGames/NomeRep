@@ -1,5 +1,7 @@
 import { Globe2, Star, Video } from 'lucide-react'
 import { formatInr } from '@/utils/format'
+import { useContent } from '@/hooks/useContent'
+import { useLanguage } from '@/context/language'
 import type { Counselor } from '@/types'
 
 const avatarBg: Record<Counselor['avatarHue'], string> = {
@@ -16,6 +18,9 @@ interface CounselorCardProps {
 }
 
 export function CounselorCard({ counselor, onViewProfile }: CounselorCardProps) {
+  const { languageLabel, sessionFormatLabel } = useContent()
+  const { t } = useLanguage()
+
   return (
     <div className="flex h-full flex-col gap-5 rounded-3xl border border-charcoal-100 bg-cream-50 p-6 sm:p-7 shadow-soft transition-shadow hover:shadow-card">
       <div className="flex items-center gap-4">
@@ -44,25 +49,31 @@ export function CounselorCard({ counselor, onViewProfile }: CounselorCardProps) 
       </div>
 
       <div className="flex flex-col gap-2 text-sm text-charcoal-600">
-        <p>{counselor.experienceYears}+ years of experience</p>
-        <p className="flex items-center gap-1.5">
-          <Globe2 size={15} className="shrink-0 text-charcoal-400" /> {counselor.languages.join(', ')}
+        <p>
+          {t(
+            `${counselor.experienceYears}+ years of experience`,
+            `${counselor.experienceYears}+ साल का अनुभव`,
+          )}
         </p>
         <p className="flex items-center gap-1.5">
-          <Video size={15} className="shrink-0 text-charcoal-400" /> {counselor.sessionFormats.join(', ')}
+          <Globe2 size={15} className="shrink-0 text-charcoal-400" /> {counselor.languages.map(languageLabel).join(', ')}
+        </p>
+        <p className="flex items-center gap-1.5">
+          <Video size={15} className="shrink-0 text-charcoal-400" />{' '}
+          {counselor.sessionFormats.map(sessionFormatLabel).join(', ')}
         </p>
       </div>
 
       <div className="mt-auto flex items-center justify-between border-t border-charcoal-100 pt-4">
         <div>
-          <p className="text-xs text-charcoal-400">Per session</p>
+          <p className="text-xs text-charcoal-400">{t('Per session', 'प्रति सेशन')}</p>
           <p className="text-base font-semibold text-charcoal-900">{formatInr(counselor.pricePerSessionInr)}</p>
         </div>
         <button
           onClick={() => onViewProfile(counselor)}
           className="rounded-full border border-charcoal-300/50 px-5 py-2.5 text-sm font-medium text-charcoal-800 transition-colors hover:border-rose-300 hover:bg-blush-50"
         >
-          View Profile
+          {t('View Profile', 'प्रोफ़ाइल देखें')}
         </button>
       </div>
     </div>

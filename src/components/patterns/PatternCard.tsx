@@ -1,3 +1,4 @@
+import { useLanguage } from '@/context/language'
 import type { RelationshipPattern } from '@/types'
 
 const accentStyles: Record<RelationshipPattern['accent'], string> = {
@@ -19,6 +20,8 @@ interface PatternCardProps {
 }
 
 export function PatternCard({ pattern }: PatternCardProps) {
+  const { t } = useLanguage()
+
   return (
     <div
       className={`flex h-full flex-col gap-5 rounded-3xl border p-7 shadow-soft transition-shadow hover:shadow-card ${accentStyles[pattern.accent]}`}
@@ -31,11 +34,11 @@ export function PatternCard({ pattern }: PatternCardProps) {
 
       <div className="mt-auto space-y-3 pt-2">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-charcoal-500">Strengths</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-charcoal-500">{t('Strengths', 'ख़ूबियाँ')}</p>
           <p className="mt-1 text-sm text-charcoal-700">{pattern.strengths.join(', ')}</p>
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-charcoal-500">Growth areas</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-charcoal-500">{t('Growth areas', 'जिन पर काम करना है')}</p>
           <p className="mt-1 text-sm text-charcoal-700">{pattern.growthAreas.join(', ')}</p>
         </div>
       </div>

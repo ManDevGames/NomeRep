@@ -1,7 +1,10 @@
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import { useLanguage } from '@/context/language'
 
 export function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section className="relative overflow-hidden bg-cream-50">
       <div
@@ -10,21 +13,25 @@ export function Hero() {
       />
       <div className="container-app relative grid grid-cols-1 items-center gap-12 py-16 sm:py-20 lg:grid-cols-2 lg:py-28">
         <div className="flex flex-col items-start gap-6 animate-fade-in-up">
-          <span className="eyebrow">Free &middot; 5 minutes &middot; Private &middot; Personalized</span>
+          <span className="eyebrow">
+            {t('Free · 5 minutes · Private · Personalized', 'मुफ़्त · 5 मिनट · पूरी तरह निजी · सिर्फ़ आपके लिए')}
+          </span>
           <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-semibold leading-[1.1] text-charcoal-900">
-            Discover Your Relationship Pattern
-            <span className="block text-rose-400">Free 5-Minute Assessment</span>
+            {t('Discover Your Relationship Pattern', 'अपना रिलेशनशिप पैटर्न जानें')}
+            <span className="block text-rose-400">{t('Free 5-Minute Assessment', 'मुफ़्त 5 मिनट का असेसमेंट')}</span>
           </h1>
           <p className="max-w-xl text-base sm:text-lg leading-relaxed text-charcoal-600">
-            Understand the patterns shaping your relationships, discover what may be holding you back, and get
-            practical guidance to start creating healthier connections.
+            {t(
+              'Understand the patterns shaping your relationships, discover what may be holding you back, and get practical guidance to start creating healthier connections.',
+              'समझें कि कौन-से पैटर्न आपके रिश्तों को आकार दे रहे हैं, जानें कि आपको क्या रोक रहा है, और बेहतर रिश्तों की शुरुआत के लिए काम की सलाह पाएँ।',
+            )}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
             <Button to="/assessment" size="lg">
-              Take the Free Assessment <ArrowRight size={18} />
+              {t('Take the Free Assessment', 'मुफ़्त असेसमेंट शुरू करें')} <ArrowRight size={18} />
             </Button>
             <Button to="/programs" variant="outline" size="lg">
-              Explore Relationship Programs
+              {t('Explore Relationship Programs', 'रिलेशनशिप प्रोग्राम देखें')}
             </Button>
           </div>
         </div>
@@ -38,12 +45,17 @@ export function Hero() {
 }
 
 function HeroIllustration() {
+  const { t } = useLanguage()
+
   return (
     <svg
       viewBox="0 0 480 480"
-      className="w-full max-w-md lg:max-w-lg"
+      className="w-full max-w-md lg:max-w-lg dark:opacity-80"
       role="img"
-      aria-label="Two soft interconnected organic shapes, representing two people and the pattern between them"
+      aria-label={t(
+        'Two soft interconnected organic shapes, representing two people and the pattern between them',
+        'आपस में जुड़ी दो मुलायम आकृतियाँ, जो दो लोगों और उनके बीच के पैटर्न को दर्शाती हैं',
+      )}
     >
       <defs>
         <radialGradient id="blushGrad" cx="35%" cy="35%" r="70%">
@@ -55,7 +67,7 @@ function HeroIllustration() {
           <stop offset="100%" stopColor="#aec19f" />
         </radialGradient>
       </defs>
-      <circle cx="240" cy="240" r="220" fill="#faf6ee" />
+      <circle cx="240" cy="240" r="220" className="fill-cream-100" />
       <path
         d="M170 120c60-30 130 5 140 70 8 50-25 70-15 120 8 42-30 80-85 78-70-3-110-60-100-125 8-55 5-115 60-143z"
         fill="url(#blushGrad)"

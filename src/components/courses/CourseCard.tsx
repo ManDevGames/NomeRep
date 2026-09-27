@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { BookOpen, Clock, Star } from 'lucide-react'
-import { getCounselorById } from '@/data/counselors'
+import { useContent } from '@/hooks/useContent'
+import { useLanguage } from '@/context/language'
 import { formatInr } from '@/utils/format'
 import type { Course } from '@/types'
 
@@ -17,7 +18,9 @@ interface CourseCardProps {
 }
 
 export function CourseCard({ course }: CourseCardProps) {
-  const counselor = getCounselorById(course.counselorId)
+  const { getCounselor, categoryLabel, difficultyLabel } = useContent()
+  const { t } = useLanguage()
+  const counselor = getCounselor(course.counselorId)
 
   return (
     <Link
@@ -29,7 +32,7 @@ export function CourseCard({ course }: CourseCardProps) {
           <BookOpen size={48} strokeWidth={1.2} className="text-charcoal-600" />
         </div>
         <span className="absolute left-4 top-4 rounded-full bg-cream-50/90 px-3 py-1 text-xs font-medium text-charcoal-700">
-          {course.category}
+          {categoryLabel(course.category)}
         </span>
       </div>
 
@@ -41,15 +44,15 @@ export function CourseCard({ course }: CourseCardProps) {
 
         <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-charcoal-500">
           <span className="flex items-center gap-1">
-            <BookOpen size={14} /> {course.lessons} lessons
+            <BookOpen size={14} /> {t(`${course.lessons} lessons`, `${course.lessons} लेसन`)}
           </span>
           <span className="flex items-center gap-1">
-            <Clock size={14} /> {course.durationWeeks} weeks
+            <Clock size={14} /> {t(`${course.durationWeeks} weeks`, `${course.durationWeeks} हफ़्ते`)}
           </span>
-          <span>{course.difficulty}</span>
+          <span>{difficultyLabel(course.difficulty)}</span>
         </div>
 
-        {counselor && <p className="text-xs text-charcoal-400">By {counselor.name}</p>}
+        {counselor && <p className="text-xs text-charcoal-400">{t(`By ${counselor.name}`, `${counselor.name} द्वारा`)}</p>}
 
         <div className="mt-auto flex items-center justify-between pt-3">
           <span className="flex items-center gap-1 text-sm font-medium text-charcoal-700">

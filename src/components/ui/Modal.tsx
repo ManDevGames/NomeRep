@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import type { ReactNode } from 'react'
 import { X } from 'lucide-react'
 import { createPortal } from 'react-dom'
+import { useLanguage } from '@/context/language'
 
 interface ModalProps {
   isOpen: boolean
@@ -12,6 +13,7 @@ interface ModalProps {
 
 export function Modal({ isOpen, onClose, title, children }: ModalProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     if (!isOpen) return
@@ -34,7 +36,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div
-        className="absolute inset-0 bg-charcoal-900/40 backdrop-blur-sm animate-fade-in"
+        className="absolute inset-0 bg-charcoal-900/40 dark:bg-black/60 backdrop-blur-sm animate-fade-in"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -51,7 +53,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
           <button
             ref={closeButtonRef}
             onClick={onClose}
-            aria-label="Close dialog"
+            aria-label={t('Close dialog', 'बंद करें')}
             className="rounded-full p-2 text-charcoal-500 hover:bg-charcoal-100 hover:text-charcoal-800 transition-colors"
           >
             <X size={20} />

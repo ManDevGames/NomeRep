@@ -1,57 +1,29 @@
 /** @type {import('tailwindcss').Config} */
+
+// Palette colors are backed by CSS variables (see src/index.css) so light and
+// dark themes can swap values at runtime without touching component classes.
+const palette = (name, shades) =>
+  Object.fromEntries(shades.map((shade) => [shade, `rgb(var(--${name}-${shade}) / <alpha-value>)`]))
+
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        cream: {
-          50: '#fdfbf7',
-          100: '#faf6ee',
-          200: '#f5ecdd',
-          300: '#ede0c8',
-        },
-        blush: {
-          50: '#fdf5f4',
-          100: '#faeae7',
-          200: '#f3d6d1',
-          300: '#e8bab2',
-          400: '#d99a8f',
-        },
-        rose: {
-          50: '#faf1ee',
-          100: '#f2ddd6',
-          200: '#e3bcb1',
-          300: '#cf9587',
-          400: '#b8756a',
-          500: '#9c5c52',
-        },
-        sage: {
-          50: '#f4f6f2',
-          100: '#e6ebe1',
-          200: '#cdd8c3',
-          300: '#aec19f',
-          400: '#8ba57c',
-          500: '#6f8a5f',
-        },
-        lavender: {
-          50: '#f6f4f8',
-          100: '#eae4f0',
-          200: '#d5c9e3',
-          300: '#bcaad2',
-        },
-        charcoal: {
-          50: '#f7f6f5',
-          100: '#e9e6e2',
-          300: '#a89f96',
-          500: '#6b6259',
-          700: '#453f39',
-          800: '#332e29',
-          900: '#241f1c',
-        },
+        cream: palette('cream', [50, 100, 200, 300]),
+        blush: palette('blush', [50, 100, 200, 300, 400]),
+        rose: palette('rose', [50, 100, 200, 300, 400, 500]),
+        sage: palette('sage', [50, 100, 200, 300, 400, 500]),
+        lavender: palette('lavender', [50, 100, 200, 300]),
+        charcoal: palette('charcoal', [50, 100, 300, 500, 700, 800, 900]),
+      },
+      borderColor: {
+        DEFAULT: 'rgb(var(--charcoal-100) / <alpha-value>)',
       },
       fontFamily: {
-        serif: ['"Fraunces"', 'Georgia', 'serif'],
-        sans: ['"Inter"', 'system-ui', 'sans-serif'],
+        serif: ['"Fraunces"', '"Noto Serif Devanagari"', 'Georgia', 'serif'],
+        sans: ['"Inter"', '"Noto Sans Devanagari"', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         soft: '0 2px 20px -4px rgba(69, 63, 57, 0.08)',

@@ -1,12 +1,19 @@
 import { ChevronDown } from 'lucide-react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { faqs } from '@/data/faqs'
+import { useContent } from '@/hooks/useContent'
+import { useLanguage } from '@/context/language'
 
 export function FAQSection() {
+  const { faqs } = useContent()
+  const { t } = useLanguage()
+
   return (
     <section className="section-space bg-cream-50" id="faq">
       <div className="container-app">
-        <SectionHeading eyebrow="Questions" title="Frequently asked questions" />
+        <SectionHeading
+          eyebrow={t('Questions', 'सवाल')}
+          title={t('Frequently asked questions', 'अक्सर पूछे जाने वाले सवाल')}
+        />
 
         <div className="mx-auto mt-12 flex max-w-3xl flex-col gap-3">
           {faqs.map((faq) => (
