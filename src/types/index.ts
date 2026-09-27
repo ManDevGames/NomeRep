@@ -131,3 +131,13 @@ export interface AssessmentAnswer {
   questionId: string
   optionId: string
 }
+
+export interface VideoHighlight {
+  id: string
+  title: string
+  /** Any YouTube link: watch?v=, youtu.be/, shorts/ or embed/ URLs all work. */
+  url: string
+  /** Optional custom thumbnail. Falls back to YouTube's own thumbnail. */
+  thumbnail?: string
+  subtitle?: string
+}

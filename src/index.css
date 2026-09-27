@@ -42,3 +42,29 @@
     background-size: 22px 22px;
   }
 }
+
+/* Infinite horizontal scroll for the video highlights row. */
+@layer components {
+  .video-marquee {
+    mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  }
+
+  .video-marquee-track {
+    animation: video-marquee linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .video-marquee {
+      @apply overflow-x-auto;
+    }
+    .video-marquee-track {
+      animation: none;
+    }
+  }
+}
+
+@keyframes video-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
