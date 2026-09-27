@@ -7,7 +7,6 @@ import { counselors } from '@/data/counselors'
 import { faqs } from '@/data/faqs'
 import { guides, reflectionPrompts } from '@/data/guides'
 import { testimonials } from '@/data/testimonials'
-import { videoHighlights } from '@/data/videos'
 import { patternsHi } from '@/data/hi/patterns'
 import { questionsHi } from '@/data/hi/questions'
 import {
@@ -22,7 +21,7 @@ import {
   sessionFormatLabelsHi,
   testimonialsHi,
 } from '@/data/hi/content'
-import type { Counselor, CourseCategory, CourseDifficulty, IndianLanguage, VideoHighlight } from '@/types'
+import type { Counselor, CourseCategory, CourseDifficulty, IndianLanguage } from '@/types'
 
 /** Merges Hindi text (keyed by id) over the English records; missing entries fall back to English. */
 function overlay<T extends { id: string }>(items: T[], hi: Record<string, Partial<T>>): T[] {
@@ -47,7 +46,6 @@ const hindiContent = {
   guides: overlay(guides, guidesHi),
   reflectionPrompts: overlay(reflectionPrompts, reflectionPromptsHi),
   testimonials: overlay(testimonials, testimonialsHi),
-  videos: videoHighlights.map((v): VideoHighlight => ({ ...v, title: v.titleHi ?? v.title, subtitle: v.subtitleHi ?? v.subtitle })),
 }
 
 const englishContent: typeof hindiContent = {
@@ -59,7 +57,6 @@ const englishContent: typeof hindiContent = {
   guides,
   reflectionPrompts,
   testimonials,
-  videos: videoHighlights,
 }
 
 /** Site data in the active language, plus labels for enum-like values. */

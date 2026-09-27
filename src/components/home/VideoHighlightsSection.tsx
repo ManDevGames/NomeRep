@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Play, X } from 'lucide-react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { useContent } from '@/hooks/useContent'
+import { useVideoHighlights } from '@/hooks/useVideoHighlights'
 import { useLanguage } from '@/context/language'
 import { getYouTubeEmbedUrl, getYouTubeId, getYouTubeThumbnail } from '@/utils/youtube'
 import type { VideoHighlight } from '@/types'
@@ -18,7 +18,7 @@ const SECONDS_PER_CARD = 6
 const MIN_CARDS_PER_LOOP = 6
 
 export function VideoHighlightsSection() {
-  const { videos: videoHighlights } = useContent()
+  const videoHighlights = useVideoHighlights()
   const { t } = useLanguage()
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null)
 
