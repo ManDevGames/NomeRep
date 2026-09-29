@@ -4,7 +4,10 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import { LanguageProvider } from '@/context/LanguageProvider'
 import { ThemeProvider } from '@/context/ThemeProvider'
+import { captureUtm } from '@/lib/utm'
 import './index.css'
+
+captureUtm()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

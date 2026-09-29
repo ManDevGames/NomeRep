@@ -1,6 +1,7 @@
 {
   "redirects": [
     { "source": "/assessment", "destination": "/quiz", "permanent": true },
+    { "source": "/assessment/:path*", "destination": "/quiz", "permanent": true },
     { "source": "/patterns", "destination": "/quiz", "permanent": true },
     { "source": "/reprogramming", "destination": "/coaching", "permanent": true },
     { "source": "/programs", "destination": "/workshop", "permanent": true },

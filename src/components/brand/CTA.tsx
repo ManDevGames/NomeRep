@@ -38,15 +38,17 @@ interface PrimaryCTAProps {
   search?: string
   fullWidth?: boolean
   className?: string
+  onClick?: () => void
 }
 
-export function PrimaryCTA({ short, label, search = '', fullWidth, className = '' }: PrimaryCTAProps) {
+export function PrimaryCTA({ short, label, search = '', fullWidth, className = '', onClick }: PrimaryCTAProps) {
   const { t } = useLanguage()
   const size = short ? 'px-3.5 text-sm sm:px-5' : 'px-6 py-3 text-base'
 
   return (
     <Link
       to={`/clarity-call${search}`}
+      onClick={onClick}
       className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-rose-400 text-center font-semibold text-white shadow-soft transition-all duration-200 hover:bg-rose-500 hover:shadow-card ${size} ${
         fullWidth ? 'w-full' : ''
       } ${className}`}

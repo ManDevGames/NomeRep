@@ -11,9 +11,11 @@ interface PhotoPlaceholderProps {
   alt?: string
   /** Pass true for the above-the-fold hero photo so it isn't lazy-loaded. */
   priority?: boolean
+  /** Small spots like avatars: icon only, label kept for screen readers. */
+  compact?: boolean
 }
 
-export function PhotoPlaceholder({ label, aspectRatio = '4/5', className = '', src, alt, priority }: PhotoPlaceholderProps) {
+export function PhotoPlaceholder({ label, aspectRatio = '4/5', className = '', src, alt, priority, compact }: PhotoPlaceholderProps) {
   if (src) {
     return (
       <img
@@ -22,7 +24,7 @@ export function PhotoPlaceholder({ label, aspectRatio = '4/5', className = '', s
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
         style={{ aspectRatio }}
-        className={`w-full rounded-3xl object-cover ${className}`}
+        className={`object-cover ${compact ? '' : 'w-full rounded-3xl'} ${className}`}
       />
     )
   }
@@ -32,12 +34,20 @@ export function PhotoPlaceholder({ label, aspectRatio = '4/5', className = '', s
       role="img"
       aria-label={label}
       style={{ aspectRatio }}
-      className={`flex w-full flex-col items-center justify-center gap-3 rounded-3xl border border-dashed border-rose-200 bg-blush-50 p-6 text-center ${className}`}
+      className={`flex flex-col items-center justify-center border border-dashed border-rose-200 bg-blush-50 text-center ${
+        compact ? '' : 'w-full gap-3 rounded-3xl p-6'
+      } ${className}`}
     >
-      <span className="flex h-11 w-11 items-center justify-center rounded-full bg-rose-100 text-rose-400">
-        <Camera size={20} aria-hidden="true" />
-      </span>
-      <span className="max-w-[16rem] text-xs leading-relaxed text-charcoal-500">{label}</span>
+      {compact ? (
+        <Camera size={18} className="text-rose-400" aria-hidden="true" />
+      ) : (
+        <>
+          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-rose-100 text-rose-400">
+            <Camera size={20} aria-hidden="true" />
+          </span>
+          <span className="max-w-[16rem] text-xs leading-relaxed text-charcoal-500">{label}</span>
+        </>
+      )}
     </div>
   )
 }
