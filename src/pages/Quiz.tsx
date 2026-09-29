@@ -443,6 +443,7 @@ function Result({ headingRef, result, onRetake }: { headingRef: HeadingRef; resu
       <div className="flex flex-col items-center gap-3">
         <PrimaryCTA
           fullWidth
+          placement="quiz-result"
           label={{ en: 'Book a Free Clarity Call to discuss your result', hi: 'अपने result पर बात करने के लिए फ़्री Clarity Call बुक करें' }}
           search={`?score=${result.score}&stage=${stage.id}`}
           onClick={() => track('result_cta_click', { target: 'clarity_call', score: result.score, stage: stage.id })}

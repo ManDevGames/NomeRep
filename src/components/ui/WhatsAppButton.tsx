@@ -1,5 +1,6 @@
 import { site, whatsappLink } from '@/config/site'
 import { useLanguage } from '@/context/language'
+import { track } from '@/lib/analytics'
 
 export function WhatsAppButton() {
   const { t } = useLanguage()
@@ -11,6 +12,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noreferrer"
       aria-label={label}
+      onClick={() => track('whatsapp_click', { location: 'floating' })}
       className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lift transition-transform duration-200 hover:scale-105 sm:bottom-6 sm:right-6"
     >
       <WhatsAppIcon />

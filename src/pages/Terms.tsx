@@ -1,55 +1,69 @@
-import { useLanguage } from '@/context/language'
+import { LegalPage } from '@/components/brand/LegalPage'
+import type { LegalSection } from '@/components/brand/LegalPage'
+import { site } from '@/config/site'
 
-const sections = [
+// TODO: review with a professional before launch.
+const sections: LegalSection[] = [
   {
-    title: { en: 'Educational purpose', hi: 'शैक्षिक उद्देश्य' },
-    body: {
-      en: 'Shalinee Sen provides educational and self-reflection content, including a free assessment, guided programs, and access to independent counselors. It is not a medical or mental health diagnostic service.',
-      hi: 'Shalinee Sen शिक्षा और आत्म-चिंतन से जुड़ी सामग्री देता है, जिसमें एक मुफ़्त असेसमेंट, गाइडेड प्रोग्राम और स्वतंत्र काउंसलर तक पहुँच शामिल है। यह कोई मेडिकल या मानसिक स्वास्थ्य डायग्नोसिस सेवा नहीं है।',
-    },
-  },
-  {
-    title: { en: 'Not a crisis service', hi: 'संकट के समय की सेवा नहीं' },
-    body: {
-      en: 'If you are in crisis or need immediate support, please contact a licensed mental health professional or local emergency services. Shalinee Sen is not equipped for emergency intervention.',
-      hi: 'अगर आप किसी संकट में हैं या आपको तुरंत मदद चाहिए, तो कृपया किसी लाइसेंसधारी मानसिक स्वास्थ्य विशेषज्ञ या स्थानीय इमरजेंसी सेवाओं से संपर्क करें। Shalinee Sen इमरजेंसी में मदद देने के लिए नहीं बना है।',
-    },
-  },
-  {
-    title: { en: 'Programs and sessions', hi: 'प्रोग्राम और सेशन' },
-    body: {
-      en: 'Programs are self-paced and delivered as described on each program page. 1:1 sessions are conducted by independent counselors; scheduling and fees are shown at the time of booking.',
-      hi: 'प्रोग्राम आप अपनी रफ़्तार से कर सकते हैं, और ये हर प्रोग्राम के पेज पर बताए गए तरीके से दिए जाते हैं। 1:1 सेशन स्वतंत्र काउंसलर लेते हैं; समय और फ़ीस बुकिंग के वक़्त दिखाई जाती है।',
-    },
+    title: { en: 'Coaching services', hi: 'Coaching सेवाएँ' },
+    paragraphs: [
+      {
+        en: `${site.coachName} offers relationship coaching: a free Clarity Call, the ${site.programName}, and live workshops. Coaching is not therapy, counselling for mental illness, or medical care, and it does not diagnose or treat any condition.`,
+        hi: `${site.coachName} relationship coaching देती हैं: फ़्री Clarity Call, ${site.programName}, और live workshops। Coaching थेरेपी, मानसिक बीमारी की counselling या मेडिकल देखभाल नहीं है, और यह किसी स्थिति का diagnosis या इलाज नहीं करती।`,
+      },
+      {
+        en: 'Results depend on many things, including your own effort and circumstances, so no specific outcome can be guaranteed.',
+        hi: 'नतीजे कई बातों पर निर्भर करते हैं, जिनमें आपकी अपनी मेहनत और परिस्थितियाँ शामिल हैं, इसलिए किसी ख़ास नतीजे की गारंटी नहीं दी जा सकती।',
+      },
+    ],
   },
   {
     title: { en: 'Payments', hi: 'पेमेंट' },
-    body: {
-      en: 'All prices are listed in Indian Rupees (₹). This prototype does not process real payments; a production version would integrate secure payment gateways including UPI.',
-      hi: 'सभी क़ीमतें भारतीय रुपये (₹) में दी गई हैं। यह प्रोटोटाइप असली पेमेंट नहीं लेता; असली वर्ज़न में UPI समेत सुरक्षित पेमेंट गेटवे जोड़े जाएँगे।',
-    },
+    paragraphs: [
+      {
+        en: 'Prices are in Indian Rupees and shown on the relevant page or shared after your Clarity Call. Payments are processed securely by [payment provider, e.g. Razorpay / Instamojo]. Where instalments are offered, the schedule is agreed before you start.',
+        hi: 'क़ीमतें भारतीय रुपये में हैं और संबंधित पेज पर दी गई हैं या Clarity Call के बाद बताई जाती हैं। पेमेंट [payment provider, जैसे Razorpay / Instamojo] से सुरक्षित रूप से होते हैं। जहाँ किस्तों का विकल्प है, वहाँ शुरू करने से पहले उनका समय तय होता है।',
+      },
+    ],
+  },
+  {
+    title: { en: 'Rescheduling', hi: 'समय बदलना' },
+    paragraphs: [
+      {
+        en: 'Please give at least 24 hours’ notice to reschedule a session. Sessions missed without notice may not be rescheduled.',
+        hi: 'Session का समय बदलने के लिए कृपया कम से कम 24 घंटे पहले बताएँ। बिना बताए छूटे sessions दोबारा तय न हो पाएँ, ऐसा हो सकता है।',
+      },
+    ],
+  },
+  {
+    title: { en: 'Refunds', hi: 'Refund' },
+    paragraphs: [
+      {
+        en: '[Refund policy for the 1:1 program and for workshops, to be confirmed.]',
+        hi: '[1:1 program और workshops की refund policy, तय होनी बाकी है।]',
+      },
+    ],
+  },
+  {
+    title: { en: 'Your materials', hi: 'आपकी सामग्री' },
+    paragraphs: [
+      {
+        en: 'Reprogramming audios, the workbook and other materials are for your personal use only and may not be shared or resold.',
+        hi: 'Reprogramming audios, workbook और बाकी सामग्री सिर्फ़ आपके निजी उपयोग के लिए है; इन्हें साझा करना या बेचना मना है।',
+      },
+    ],
+  },
+  {
+    title: { en: 'Contact', hi: 'संपर्क' },
+    paragraphs: [
+      {
+        en: `Questions about these terms? Email ${site.contact.email}.`,
+        hi: `इन शर्तों के बारे में सवाल? ${site.contact.email} पर email करें।`,
+      },
+    ],
   },
 ]
 
 export function Terms() {
-  const { t } = useLanguage()
-
-  return (
-    <section className="section-space bg-cream-50">
-      <div className="container-app max-w-3xl">
-        <span className="eyebrow">{t('Legal', 'क़ानूनी जानकारी')}</span>
-        <h1 className="mt-3 text-3xl sm:text-4xl font-semibold">{t('Terms of Service', 'सेवा की शर्तें')}</h1>
-        <p className="mt-4 text-sm text-charcoal-500">{t('Last updated September 2026', 'आख़िरी अपडेट: सितंबर 2026')}</p>
-
-        <div className="mt-10 flex flex-col gap-8">
-          {sections.map((s) => (
-            <div key={s.title.en}>
-              <h2 className="text-xl font-semibold text-charcoal-900">{t(s.title)}</h2>
-              <p className="mt-2 text-base leading-relaxed text-charcoal-600">{t(s.body)}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+  return <LegalPage title={{ en: 'Terms of Service', hi: 'सेवा की शर्तें' }} sections={sections} />
 }

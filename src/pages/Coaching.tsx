@@ -119,7 +119,7 @@ export function Coaching() {
                 '8 हफ़्तों की निजी, आपके हिसाब से बनी coaching, ताकि रिश्तों का तनाव जड़ से ठीक हो और आप फिर से सुकून, सुरक्षा और प्यार महसूस करें।',
               )}
             </p>
-            <PrimaryCTA className="w-full sm:w-auto sm:px-8" />
+            <PrimaryCTA placement="hero" className="w-full sm:w-auto sm:px-8" />
           </div>
           <PhotoPlaceholder
             label="Shalinee on a video session, laptop, warm setting, 4:5"
@@ -280,7 +280,7 @@ export function Coaching() {
                 'हम यह program तभी सुझाएँगे जब यह सच में आपके लिए सही हो। शुरुआत एक फ़्री Clarity Call से होती है।',
               )}
             </p>
-            <PrimaryCTA fullWidth />
+            <PrimaryCTA fullWidth placement="pricing" />
           </div>
         </div>
       </section>

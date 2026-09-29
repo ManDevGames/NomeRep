@@ -67,7 +67,7 @@ export function PainSection() {
           )}
         </p>
         <div className="mt-8 flex justify-center">
-          <PrimaryCTA />
+          <PrimaryCTA placement="pain" />
         </div>
       </div>
     </section>

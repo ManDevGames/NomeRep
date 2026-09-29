@@ -34,7 +34,7 @@ export function Hero() {
             )}
           </p>
           <div className="flex w-full flex-col items-start gap-2 pt-1">
-            <PrimaryCTA className="w-full sm:w-auto sm:px-8" />
+            <PrimaryCTA placement="hero" className="w-full sm:w-auto sm:px-8" />
             <SecondaryCTA
               label={{
                 en: 'Not ready yet? Take the 2-min Relationship Stress Quiz',

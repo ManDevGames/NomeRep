@@ -47,7 +47,7 @@ export function OffersSection() {
               t('See whether coaching is right for you', 'जानें कि coaching आपके लिए सही है या नहीं'),
               t('Private, no pressure', 'पूरी तरह निजी, कोई दबाव नहीं'),
             ]}
-            action={<PrimaryCTA fullWidth />}
+            action={<PrimaryCTA fullWidth placement="offers" />}
           />
           <OfferCard
             highlighted

@@ -52,7 +52,7 @@ export function Navbar() {
             <LanguageToggle />
             <ThemeToggle />
           </div>
-          <PrimaryCTA short />
+          <PrimaryCTA short placement="header" />
           <button
             className="flex h-11 w-11 items-center justify-center rounded-full text-charcoal-700 hover:bg-charcoal-100 xl:hidden"
             onClick={() => setIsOpen((v) => !v)}

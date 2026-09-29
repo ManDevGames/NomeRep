@@ -3,6 +3,7 @@ import { Instagram, MessageCircle, Youtube } from 'lucide-react'
 import { Logo } from '@/components/brand/Logo'
 import { site, whatsappLink } from '@/config/site'
 import { useLanguage } from '@/context/language'
+import { track } from '@/lib/analytics'
 
 const columns = [
   {
@@ -63,6 +64,7 @@ export function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp"
+                onClick={() => track('whatsapp_click', { location: 'footer' })}
                 className={iconClass}
               >
                 <MessageCircle size={18} />

@@ -5,6 +5,7 @@ import { FinalCTA } from '@/components/brand/FinalCTA'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { site, whatsappLink } from '@/config/site'
 import { useLanguage } from '@/context/language'
+import { track } from '@/lib/analytics'
 
 // TODO: replace with Shalinee's own words
 const story = [
@@ -174,6 +175,7 @@ export function About() {
               href={whatsappLink(t(site.contact.whatsappMessage))}
               target="_blank"
               rel="noreferrer"
+              onClick={() => track('whatsapp_click', { location: 'about-contact' })}
               className="inline-flex min-h-12 items-center gap-2 rounded-full border border-charcoal-300/50 px-6 text-base font-medium text-charcoal-800 hover:border-rose-300 hover:bg-blush-50"
             >
               <MessageCircle size={18} aria-hidden="true" /> WhatsApp

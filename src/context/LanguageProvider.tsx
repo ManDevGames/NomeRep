@@ -5,11 +5,6 @@ import type { Bilingual, Language } from '@/context/language'
 
 const STORAGE_KEY = 'shalinee-sen:language'
 
-const documentTitle: Bilingual = {
-  en: 'Shalinee Sen | Relationship Coach – Heal Relationship Stress at the Root',
-  hi: 'Shalinee Sen | रिलेशनशिप कोच – रिश्तों का तनाव जड़ से ठीक करें',
-}
-
 function loadLanguage(): Language {
   try {
     return localStorage.getItem(STORAGE_KEY) === 'hi' ? 'hi' : 'en'
@@ -23,7 +18,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = lang
-    document.title = documentTitle[lang]
     try {
       localStorage.setItem(STORAGE_KEY, lang)
     } catch {

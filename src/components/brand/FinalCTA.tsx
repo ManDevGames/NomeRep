@@ -30,7 +30,7 @@ export function FinalCTA({ title, subtitle }: FinalCTAProps) {
           )}
         </p>
         <div className="mt-2 flex flex-col items-center gap-2">
-          <PrimaryCTA />
+          <PrimaryCTA placement="final" />
           <SecondaryCTA />
         </div>
       </div>

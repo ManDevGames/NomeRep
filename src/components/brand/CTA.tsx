@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { useLanguage } from '@/context/language'
 import type { Bilingual } from '@/context/language'
+import { track } from '@/lib/analytics'
 
 /*
  * The site has exactly one primary action (the free Clarity Call) and one
@@ -39,16 +40,22 @@ interface PrimaryCTAProps {
   fullWidth?: boolean
   className?: string
   onClick?: () => void
+  /** Where on the page this button sits, for analytics (e.g. "hero", "header"). */
+  placement?: string
 }
 
-export function PrimaryCTA({ short, label, search = '', fullWidth, className = '', onClick }: PrimaryCTAProps) {
+export function PrimaryCTA({ short, label, search = '', fullWidth, className = '', onClick, placement }: PrimaryCTAProps) {
   const { t } = useLanguage()
+  const { pathname } = useLocation()
   const size = short ? 'px-3.5 text-sm sm:px-5' : 'px-6 py-3 text-base'
 
   return (
     <Link
       to={`/clarity-call${search}`}
-      onClick={onClick}
+      onClick={() => {
+        track('cta_primary_click', { location: placement ? `${pathname}#${placement}` : pathname })
+        onClick?.()
+      }}
       className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-rose-400 text-center font-semibold text-white shadow-soft transition-all duration-200 hover:bg-rose-500 hover:shadow-card ${size} ${
         fullWidth ? 'w-full' : ''
       } ${className}`}

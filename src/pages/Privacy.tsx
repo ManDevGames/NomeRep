@@ -1,55 +1,73 @@
-import { useLanguage } from '@/context/language'
+import { LegalPage } from '@/components/brand/LegalPage'
+import type { LegalSection } from '@/components/brand/LegalPage'
+import { site } from '@/config/site'
 
-const sections = [
+// TODO: review with a professional before launch.
+const sections: LegalSection[] = [
   {
     title: { en: 'What we collect', hi: 'हम कौन-सी जानकारी लेते हैं' },
-    body: {
-      en: 'Assessment responses, reflection notes, and contact details you provide (such as when downloading a guide or booking a session) are stored to personalize your experience on Shalinee Sen.',
-      hi: 'असेसमेंट के जवाब, आत्म-चिंतन के नोट्स, और आपके दिए संपर्क विवरण (जैसे गाइड डाउनलोड करते या सेशन बुक करते समय) सेव किए जाते हैं, ताकि Shalinee Sen पर आपका अनुभव आपके हिसाब से ढल सके।',
-    },
+    paragraphs: [
+      {
+        en: 'When you take the Relationship Stress Quiz: your first name, WhatsApp number, email (if you give it), your current situation, your answers, and your score and stage.',
+        hi: 'जब आप Relationship Stress Quiz लेती हैं: आपका पहला नाम, WhatsApp नंबर, email (अगर आप दें), आपकी अभी की स्थिति, आपके जवाब, और आपका score व stage।',
+      },
+      {
+        en: 'When you apply for a Clarity Call: your name, WhatsApp number, email (optional), age range, city, situation, what you want to change, preferred language and time, and how you found us.',
+        hi: 'जब आप Clarity Call के लिए आवेदन करती हैं: आपका नाम, WhatsApp नंबर, email (अगर दें), उम्र, शहर, स्थिति, आप क्या बदलना चाहती हैं, पसंदीदा भाषा और समय, और आपको हमारे बारे में कहाँ से पता चला।',
+      },
+      {
+        en: 'We also note which link or campaign brought you here (UTM parameters). If you accept cookies, Google Analytics and the Meta Pixel record how the site is used.',
+        hi: 'हम यह भी देखते हैं कि आप किस link या campaign से यहाँ आईं (UTM parameters)। अगर आप cookies स्वीकार करती हैं, तो Google Analytics और Meta Pixel यह दर्ज करते हैं कि साइट का उपयोग कैसे होता है।',
+      },
+    ],
   },
   {
     title: { en: 'How we use it', hi: 'हम इसका इस्तेमाल कैसे करते हैं' },
-    body: {
-      en: 'Your data is used only to run and improve Shalinee Sen — to generate your personalized pattern, save your reflections, and manage bookings. We do not sell your personal data.',
-      hi: 'आपका डेटा सिर्फ़ Shalinee Sen को चलाने और बेहतर बनाने के लिए इस्तेमाल होता है — आपका पैटर्न तैयार करने, आपका आत्म-चिंतन सेव करने और बुकिंग सँभालने के लिए। हम आपका निजी डेटा नहीं बेचते।',
-    },
+    paragraphs: [
+      {
+        en: 'To send your quiz result, arrange and prepare for your Clarity Call, reply to your messages, share helpful tips you agreed to receive, and understand which pages and campaigns help people find us. We never sell your personal data.',
+        hi: 'आपका quiz result भेजने, आपकी Clarity Call तय करने और उसकी तैयारी करने, आपके मैसेज का जवाब देने, आपकी सहमति से काम की tips भेजने, और यह समझने के लिए कि कौन-से पेज और campaigns लोगों को हम तक पहुँचाते हैं। हम आपका निजी डेटा कभी नहीं बेचते।',
+      },
+    ],
   },
   {
-    title: { en: 'Where it’s stored', hi: 'यह कहाँ सेव होता है' },
-    body: {
-      en: 'In this prototype, assessment and reflection data is stored locally on your device. A production version would use encrypted, access-controlled storage.',
-      hi: 'इस प्रोटोटाइप में असेसमेंट और आत्म-चिंतन का डेटा सिर्फ़ आपके डिवाइस पर सेव होता है। असली वर्ज़न में एन्क्रिप्टेड और सुरक्षित एक्सेस वाली स्टोरेज इस्तेमाल होगी।',
-    },
+    title: { en: 'WhatsApp messages and opting out', hi: 'WhatsApp मैसेज और मना करना' },
+    paragraphs: [
+      {
+        en: 'We only message you on WhatsApp if you tick the consent box. You can opt out at any time by replying STOP, or by writing to us at the email below.',
+        hi: 'हम आपको WhatsApp पर तभी मैसेज करते हैं जब आप सहमति वाले box पर tick करती हैं। आप कभी भी STOP लिखकर जवाब देकर, या नीचे दिए email पर लिखकर मना कर सकती हैं।',
+      },
+    ],
   },
   {
-    title: { en: 'Your choices', hi: 'आपके अधिकार' },
-    body: {
-      en: 'You can clear your assessment and reflection data at any time by clearing your browser’s local storage for this site, or by contacting us directly.',
-      hi: 'आप कभी भी इस साइट के लिए अपने ब्राउज़र की लोकल स्टोरेज साफ़ करके, या सीधे हमसे संपर्क करके, अपना असेसमेंट और आत्म-चिंतन का डेटा मिटा सकते हैं।',
-    },
+    title: { en: 'Where it is stored and who can see it', hi: 'यह कहाँ रखी जाती है और कौन देख सकता है' },
+    paragraphs: [
+      {
+        en: 'Your details are sent securely to [service provider, e.g. Google Sheets / WhatsApp messaging tool] and are seen only by Shalinee and the people who help her run her practice. They are kept for [retention period] and then deleted.',
+        hi: 'आपकी जानकारी सुरक्षित रूप से [service provider, जैसे Google Sheets / WhatsApp messaging tool] को भेजी जाती है, और सिर्फ़ Shalinee और उनकी practice चलाने में मदद करने वाले लोग इसे देखते हैं। इसे [अवधि] तक रखा जाता है और फिर मिटा दिया जाता है।',
+      },
+    ],
+  },
+  {
+    title: { en: 'Your rights', hi: 'आपके अधिकार' },
+    paragraphs: [
+      {
+        en: 'You can ask to see, correct or delete your data, or withdraw your consent, at any time, in line with applicable Indian law including the Digital Personal Data Protection Act, 2023.',
+        hi: 'आप कभी भी अपना डेटा देखने, सुधारने या मिटाने, या अपनी सहमति वापस लेने के लिए कह सकती हैं, लागू भारतीय क़ानून (Digital Personal Data Protection Act, 2023 सहित) के अनुसार।',
+      },
+    ],
+  },
+  {
+    title: { en: 'Contact', hi: 'संपर्क' },
+    paragraphs: [
+      {
+        en: `For any privacy question or request, email ${site.contact.email}.`,
+        hi: `प्राइवेसी से जुड़े किसी भी सवाल या अनुरोध के लिए ${site.contact.email} पर email करें।`,
+      },
+    ],
   },
 ]
 
 export function Privacy() {
-  const { t } = useLanguage()
-
-  return (
-    <section className="section-space bg-cream-50">
-      <div className="container-app max-w-3xl">
-        <span className="eyebrow">{t('Legal', 'क़ानूनी जानकारी')}</span>
-        <h1 className="mt-3 text-3xl sm:text-4xl font-semibold">{t('Privacy Policy', 'प्राइवेसी पॉलिसी')}</h1>
-        <p className="mt-4 text-sm text-charcoal-500">{t('Last updated September 2026', 'आख़िरी अपडेट: सितंबर 2026')}</p>
-
-        <div className="mt-10 flex flex-col gap-8">
-          {sections.map((s) => (
-            <div key={s.title.en}>
-              <h2 className="text-xl font-semibold text-charcoal-900">{t(s.title)}</h2>
-              <p className="mt-2 text-base leading-relaxed text-charcoal-600">{t(s.body)}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+  return <LegalPage title={{ en: 'Privacy Policy', hi: 'प्राइवेसी पॉलिसी' }} sections={sections} />
 }
