@@ -44,61 +44,6 @@ export interface AssessmentQuestion {
   options: AssessmentOption[]
 }
 
-export type CourseCategory =
-  | 'Communication'
-  | 'Boundaries'
-  | 'Self-Worth'
-  | 'Conflict'
-  | 'Emotional Patterns'
-  | 'Couples'
-  | 'Personal Growth'
-
-export type CourseDifficulty = 'Beginner' | 'Intermediate' | 'All levels'
-
-export interface CourseModule {
-  title: string
-  lessons: string[]
-}
-
-export interface Course {
-  id: string
-  title: string
-  category: CourseCategory
-  shortDescription: string
-  description: string
-  lessons: number
-  durationWeeks: number
-  difficulty: CourseDifficulty
-  counselorId: string
-  rating: number
-  reviewCount: number
-  priceInr: number
-  originalPriceInr?: number
-  accent: 'blush' | 'sage' | 'lavender' | 'rose' | 'peach'
-  whatYouWillLearn: string[]
-  curriculum: CourseModule[]
-  whoThisIsFor: string[]
-  whatYouGet: string[]
-  faqs: { question: string; answer: string }[]
-}
-
-export type IndianLanguage = 'English' | 'Hindi' | 'Gujarati' | 'Marathi' | 'Bengali' | 'Tamil'
-
-export interface Counselor {
-  id: string
-  name: string
-  credentials: string
-  specializations: string[]
-  experienceYears: number
-  languages: IndianLanguage[]
-  sessionFormats: ('Video' | 'Audio' | 'Chat' | 'In-person')[]
-  rating: number
-  reviewCount: number
-  pricePerSessionInr: number
-  bio: string
-  avatarHue: 'blush' | 'sage' | 'lavender' | 'rose' | 'peach'
-}
-
 export interface Testimonial {
   id: string
   name: string

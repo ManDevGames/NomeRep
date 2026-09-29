@@ -4,15 +4,15 @@ const sections = [
   {
     title: { en: 'What we collect', hi: 'हम कौन-सी जानकारी लेते हैं' },
     body: {
-      en: 'Assessment responses, reflection notes, and contact details you provide (such as when downloading a guide or booking a session) are stored to personalize your experience on Relationship Guide.',
-      hi: 'असेसमेंट के जवाब, आत्म-चिंतन के नोट्स, और आपके दिए संपर्क विवरण (जैसे गाइड डाउनलोड करते या सेशन बुक करते समय) सेव किए जाते हैं, ताकि Relationship Guide पर आपका अनुभव आपके हिसाब से ढल सके।',
+      en: 'Assessment responses, reflection notes, and contact details you provide (such as when downloading a guide or booking a session) are stored to personalize your experience on Shalinee Sen.',
+      hi: 'असेसमेंट के जवाब, आत्म-चिंतन के नोट्स, और आपके दिए संपर्क विवरण (जैसे गाइड डाउनलोड करते या सेशन बुक करते समय) सेव किए जाते हैं, ताकि Shalinee Sen पर आपका अनुभव आपके हिसाब से ढल सके।',
     },
   },
   {
     title: { en: 'How we use it', hi: 'हम इसका इस्तेमाल कैसे करते हैं' },
     body: {
-      en: 'Your data is used only to run and improve Relationship Guide — to generate your personalized pattern, save your reflections, and manage bookings. We do not sell your personal data.',
-      hi: 'आपका डेटा सिर्फ़ Relationship Guide को चलाने और बेहतर बनाने के लिए इस्तेमाल होता है — आपका पैटर्न तैयार करने, आपका आत्म-चिंतन सेव करने और बुकिंग सँभालने के लिए। हम आपका निजी डेटा नहीं बेचते।',
+      en: 'Your data is used only to run and improve Shalinee Sen — to generate your personalized pattern, save your reflections, and manage bookings. We do not sell your personal data.',
+      hi: 'आपका डेटा सिर्फ़ Shalinee Sen को चलाने और बेहतर बनाने के लिए इस्तेमाल होता है — आपका पैटर्न तैयार करने, आपका आत्म-चिंतन सेव करने और बुकिंग सँभालने के लिए। हम आपका निजी डेटा नहीं बेचते।',
     },
   },
   {

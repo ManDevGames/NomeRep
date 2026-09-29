@@ -11,7 +11,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noreferrer"
       aria-label={label}
-      className="fixed bottom-24 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lift transition-transform duration-200 hover:scale-105 sm:right-6 lg:bottom-6"
+      className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lift transition-transform duration-200 hover:scale-105 sm:bottom-6 sm:right-6"
     >
       <WhatsAppIcon />
       <span className="sr-only">{label}</span>

@@ -11,17 +11,17 @@ export const faqs: FAQItem[] = [
     id: 'f2',
     question: 'Is my information private?',
     answer:
-      'Yes. Your assessment responses and reflections are kept private and are used only to personalize your experience on Relationship Guide.',
+      'Yes. Your assessment responses and reflections are kept private and are used only to personalize your experience on Shalinee Sen.',
   },
   {
     id: 'f3',
     question: 'How is this different from therapy?',
     answer:
-      'Relationship Guide offers educational self-reflection tools, guided programs, and optional 1:1 sessions with counselors. It can complement therapy, but it is not a replacement for mental health treatment or crisis support.',
+      'Shalinee Sen offers educational self-reflection tools, guided programs, and optional 1:1 sessions with counselors. It can complement therapy, but it is not a replacement for mental health treatment or crisis support.',
   },
   {
     id: 'f4',
-    question: 'Can I use Relationship Guide if I’m not currently in a relationship?',
+    question: 'Can I use Shalinee Sen if I’m not currently in a relationship?',
     answer:
       'Absolutely. Many people use the assessment and programs to understand patterns from past relationships or to build a stronger foundation before their next one.',
   },

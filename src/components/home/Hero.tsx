@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import { PhotoPlaceholder } from '@/components/brand/PhotoPlaceholder'
 import { useLanguage } from '@/context/language'
 
 export function Hero() {
@@ -37,57 +38,14 @@ export function Hero() {
         </div>
 
         <div className="relative flex items-center justify-center animate-fade-in">
-          <HeroIllustration />
+          <PhotoPlaceholder
+            label="Shalinee – hero portrait, warm genuine smile, soft natural light, 4:5"
+            aspectRatio="4/5"
+            className="max-w-md"
+            priority
+          />
         </div>
       </div>
     </section>
-  )
-}
-
-function HeroIllustration() {
-  const { t } = useLanguage()
-
-  return (
-    <svg
-      viewBox="0 0 480 480"
-      className="w-full max-w-md lg:max-w-lg dark:opacity-80"
-      role="img"
-      aria-label={t(
-        'Two soft interconnected organic shapes, representing two people and the pattern between them',
-        'आपस में जुड़ी दो मुलायम आकृतियाँ, जो दो लोगों और उनके बीच के पैटर्न को दर्शाती हैं',
-      )}
-    >
-      <defs>
-        <radialGradient id="blushGrad" cx="35%" cy="35%" r="70%">
-          <stop offset="0%" stopColor="#f3d6d1" />
-          <stop offset="100%" stopColor="#e8bab2" />
-        </radialGradient>
-        <radialGradient id="sageGrad" cx="60%" cy="40%" r="70%">
-          <stop offset="0%" stopColor="#cdd8c3" />
-          <stop offset="100%" stopColor="#aec19f" />
-        </radialGradient>
-      </defs>
-      <circle cx="240" cy="240" r="220" className="fill-cream-100" />
-      <path
-        d="M170 120c60-30 130 5 140 70 8 50-25 70-15 120 8 42-30 80-85 78-70-3-110-60-100-125 8-55 5-115 60-143z"
-        fill="url(#blushGrad)"
-        opacity="0.9"
-      />
-      <path
-        d="M300 150c50-15 100 25 95 80-4 45 30 60 25 105-6 55-65 85-115 65-55-22-70-80-55-130 12-42-2-100 50-120z"
-        fill="url(#sageGrad)"
-        opacity="0.85"
-      />
-      <circle cx="240" cy="240" r="6" fill="#9c5c52" opacity="0.6" />
-      <path
-        d="M180 240c30-10 90-10 120 0"
-        stroke="#9c5c52"
-        strokeWidth="1.5"
-        strokeDasharray="2 8"
-        fill="none"
-        opacity="0.5"
-        strokeLinecap="round"
-      />
-    </svg>
   )
 }

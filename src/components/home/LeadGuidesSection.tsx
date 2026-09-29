@@ -73,8 +73,8 @@ export function LeadGuidesSection() {
             <CheckCircle2 size={40} className="text-sage-500" />
             <p className="text-base text-charcoal-700">
               {t(
-                `You’re all set. In a live version of Relationship Guide, this guide would now be on its way to ${email || 'your inbox'}.`,
-                `सब तैयार है। Relationship Guide के असली वर्ज़न में यह गाइड अब तक ${email || 'आपके इनबॉक्स'} की ओर भेजी जा चुकी होती।`,
+                `You’re all set. In a live version of Shalinee Sen, this guide would now be on its way to ${email || 'your inbox'}.`,
+                `सब तैयार है। Shalinee Sen के असली वर्ज़न में यह गाइड अब तक ${email || 'आपके इनबॉक्स'} की ओर भेजी जा चुकी होती।`,
               )}
             </p>
             <Button onClick={closeModal} variant="secondary">

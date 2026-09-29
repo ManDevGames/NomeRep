@@ -16,7 +16,7 @@ export function AssessmentResult() {
 
   useEffect(() => {
     if (!result) {
-      navigate('/assessment', { replace: true })
+      navigate('/quiz', { replace: true })
     }
   }, [result, navigate])
 

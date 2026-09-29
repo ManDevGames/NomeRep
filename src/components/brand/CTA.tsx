@@ -14,10 +14,14 @@ const PRIMARY_CTA_LABEL: Bilingual = {
   hi: 'अपनी फ़्री Clarity Call बुक करें',
 }
 
-/** Short form, used only in the header where space is tight. */
+/** Short forms, used only in the header where space is tight (the tiny one below 640px). */
 const PRIMARY_CTA_SHORT: Bilingual = {
   en: 'Book Free Clarity Call',
   hi: 'फ़्री Clarity Call बुक करें',
+}
+const PRIMARY_CTA_TINY: Bilingual = {
+  en: 'Book Free Call',
+  hi: 'फ़्री Call बुक करें',
 }
 
 const SECONDARY_CTA_LABEL: Bilingual = {
@@ -26,7 +30,7 @@ const SECONDARY_CTA_LABEL: Bilingual = {
 }
 
 interface PrimaryCTAProps {
-  /** Header-only short wording. */
+  /** Header-only: short wording and a compact size. */
   short?: boolean
   /** Rare context-specific wording (e.g. on the quiz result). Defaults to the standard label. */
   label?: Bilingual
@@ -38,16 +42,23 @@ interface PrimaryCTAProps {
 
 export function PrimaryCTA({ short, label, search = '', fullWidth, className = '' }: PrimaryCTAProps) {
   const { t } = useLanguage()
-  const text = t(label ?? (short ? PRIMARY_CTA_SHORT : PRIMARY_CTA_LABEL))
+  const size = short ? 'px-3.5 text-sm sm:px-5' : 'px-6 py-3 text-base'
 
   return (
     <Link
       to={`/clarity-call${search}`}
-      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-rose-400 px-6 py-3 text-center text-base font-semibold text-white shadow-soft transition-all duration-200 hover:bg-rose-500 hover:shadow-card ${
+      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-rose-400 text-center font-semibold text-white shadow-soft transition-all duration-200 hover:bg-rose-500 hover:shadow-card ${size} ${
         fullWidth ? 'w-full' : ''
       } ${className}`}
     >
-      {text}
+      {short && !label ? (
+        <>
+          <span className="whitespace-nowrap sm:hidden">{t(PRIMARY_CTA_TINY)}</span>
+          <span className="hidden whitespace-nowrap sm:inline">{t(PRIMARY_CTA_SHORT)}</span>
+        </>
+      ) : (
+        t(label ?? PRIMARY_CTA_LABEL)
+      )}
     </Link>
   )
 }

@@ -4,15 +4,15 @@ const sections = [
   {
     title: { en: 'Educational purpose', hi: 'शैक्षिक उद्देश्य' },
     body: {
-      en: 'Relationship Guide provides educational and self-reflection content, including a free assessment, guided programs, and access to independent counselors. It is not a medical or mental health diagnostic service.',
-      hi: 'Relationship Guide शिक्षा और आत्म-चिंतन से जुड़ी सामग्री देता है, जिसमें एक मुफ़्त असेसमेंट, गाइडेड प्रोग्राम और स्वतंत्र काउंसलर तक पहुँच शामिल है। यह कोई मेडिकल या मानसिक स्वास्थ्य डायग्नोसिस सेवा नहीं है।',
+      en: 'Shalinee Sen provides educational and self-reflection content, including a free assessment, guided programs, and access to independent counselors. It is not a medical or mental health diagnostic service.',
+      hi: 'Shalinee Sen शिक्षा और आत्म-चिंतन से जुड़ी सामग्री देता है, जिसमें एक मुफ़्त असेसमेंट, गाइडेड प्रोग्राम और स्वतंत्र काउंसलर तक पहुँच शामिल है। यह कोई मेडिकल या मानसिक स्वास्थ्य डायग्नोसिस सेवा नहीं है।',
     },
   },
   {
     title: { en: 'Not a crisis service', hi: 'संकट के समय की सेवा नहीं' },
     body: {
-      en: 'If you are in crisis or need immediate support, please contact a licensed mental health professional or local emergency services. Relationship Guide is not equipped for emergency intervention.',
-      hi: 'अगर आप किसी संकट में हैं या आपको तुरंत मदद चाहिए, तो कृपया किसी लाइसेंसधारी मानसिक स्वास्थ्य विशेषज्ञ या स्थानीय इमरजेंसी सेवाओं से संपर्क करें। Relationship Guide इमरजेंसी में मदद देने के लिए नहीं बना है।',
+      en: 'If you are in crisis or need immediate support, please contact a licensed mental health professional or local emergency services. Shalinee Sen is not equipped for emergency intervention.',
+      hi: 'अगर आप किसी संकट में हैं या आपको तुरंत मदद चाहिए, तो कृपया किसी लाइसेंसधारी मानसिक स्वास्थ्य विशेषज्ञ या स्थानीय इमरजेंसी सेवाओं से संपर्क करें। Shalinee Sen इमरजेंसी में मदद देने के लिए नहीं बना है।',
     },
   },
   {

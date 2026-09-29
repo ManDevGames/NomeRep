@@ -42,7 +42,7 @@ export function About() {
       <section className="section-space bg-cream-50">
         <div className="container-app">
           <SectionHeading
-            eyebrow={t('About Relationship Guide', 'Relationship Guide के बारे में')}
+            eyebrow={t('About Shalinee Sen', 'Shalinee Sen के बारे में')}
             title={t(
               'A calm place to understand yourself and your relationships',
               'ख़ुद को और अपने रिश्तों को समझने की एक सुकून भरी जगह',
@@ -62,8 +62,8 @@ export function About() {
             </p>
             <p>
               {t(
-                'Relationship Guide started as a simple idea: give people a clear, compassionate mirror for their relationship patterns, and practical tools to work with what they find. No jargon, no judgment, and no promise of instant fixes — just honest reflection and steady practice.',
-                'Relationship Guide की शुरुआत एक सीधे-से ख़याल से हुई: लोगों को उनके रिश्तों के पैटर्न का एक साफ़ और हमदर्द आईना देना, और जो दिखे उस पर काम करने के व्यावहारिक तरीके देना। न भारी-भरकम शब्द, न कोई परख, न रातों-रात सब ठीक करने का वादा — बस ईमानदार आत्म-चिंतन और लगातार अभ्यास।',
+                'Shalinee Sen started as a simple idea: give people a clear, compassionate mirror for their relationship patterns, and practical tools to work with what they find. No jargon, no judgment, and no promise of instant fixes — just honest reflection and steady practice.',
+                'Shalinee Sen की शुरुआत एक सीधे-से ख़याल से हुई: लोगों को उनके रिश्तों के पैटर्न का एक साफ़ और हमदर्द आईना देना, और जो दिखे उस पर काम करने के व्यावहारिक तरीके देना। न भारी-भरकम शब्द, न कोई परख, न रातों-रात सब ठीक करने का वादा — बस ईमानदार आत्म-चिंतन और लगातार अभ्यास।',
               )}
             </p>
           </div>

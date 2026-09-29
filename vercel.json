@@ -1,3 +1,11 @@
 {
+  "redirects": [
+    { "source": "/assessment", "destination": "/quiz", "permanent": true },
+    { "source": "/patterns", "destination": "/quiz", "permanent": true },
+    { "source": "/reprogramming", "destination": "/coaching", "permanent": true },
+    { "source": "/programs", "destination": "/workshop", "permanent": true },
+    { "source": "/programs/:path*", "destination": "/workshop", "permanent": true },
+    { "source": "/resources", "destination": "/", "permanent": true }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }

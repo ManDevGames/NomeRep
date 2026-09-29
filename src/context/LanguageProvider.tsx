@@ -6,8 +6,8 @@ import type { Bilingual, Language } from '@/context/language'
 const STORAGE_KEY = 'shalinee-sen:language'
 
 const documentTitle: Bilingual = {
-  en: 'Relationship Guide — Understand Your Relationship Patterns',
-  hi: 'Relationship Guide — अपने रिश्तों के पैटर्न को समझें',
+  en: 'Shalinee Sen | Relationship Coach – Heal Relationship Stress at the Root',
+  hi: 'Shalinee Sen | रिलेशनशिप कोच – रिश्तों का तनाव जड़ से ठीक करें',
 }
 
 function loadLanguage(): Language {

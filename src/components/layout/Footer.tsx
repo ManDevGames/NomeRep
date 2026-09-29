@@ -1,70 +1,69 @@
 import { Link } from 'react-router-dom'
-import { Instagram, MessageCircle } from 'lucide-react'
+import { Instagram, MessageCircle, Youtube } from 'lucide-react'
+import { Logo } from '@/components/brand/Logo'
+import { site, whatsappLink } from '@/config/site'
 import { useLanguage } from '@/context/language'
 
 const columns = [
   {
-    heading: { en: 'Explore', hi: 'देखें' },
+    heading: { en: 'Work with me', hi: 'मेरे साथ काम करें' },
     links: [
-      { label: { en: 'Assessment', hi: 'असेसमेंट' }, to: '/assessment' },
-      { label: { en: 'Relationship Patterns', hi: 'रिश्तों के पैटर्न' }, to: '/patterns' },
-      { label: { en: 'Programs', hi: 'प्रोग्राम' }, to: '/programs' },
-      { label: { en: '1:1 Reprogramming', hi: '1:1 रीप्रोग्रामिंग' }, to: '/reprogramming' },
+      { label: { en: '1:1 Coaching', hi: '1:1 Coaching' }, to: '/coaching' },
+      { label: { en: 'Clarity Call', hi: 'Clarity Call' }, to: '/clarity-call' },
+      { label: { en: 'Workshop', hi: 'Workshop' }, to: '/workshop' },
+      { label: { en: 'Free Quiz', hi: 'फ़्री Quiz' }, to: '/quiz' },
     ],
   },
   {
-    heading: { en: 'Resources', hi: 'संसाधन' },
+    heading: { en: 'About', hi: 'परिचय' },
     links: [
-      { label: { en: 'Free Guides', hi: 'मुफ़्त गाइड' }, to: '/resources#guides' },
-      { label: { en: 'Reflection', hi: 'आत्म-चिंतन' }, to: '/resources#reflection' },
-      { label: { en: 'Blog', hi: 'ब्लॉग' }, to: '/resources#blog' },
-      { label: { en: 'FAQ', hi: 'आम सवाल' }, to: '/resources#faq' },
+      { label: { en: 'About Shalinee', hi: 'Shalinee के बारे में' }, to: '/about' },
+      { label: { en: 'Stories', hi: 'कहानियाँ' }, to: '/stories' },
+      { label: { en: 'FAQ', hi: 'आम सवाल' }, to: '/#faq' },
+      { label: { en: 'Contact', hi: 'संपर्क' }, to: '/about#contact' },
     ],
   },
   {
-    heading: { en: 'Company', hi: 'कंपनी' },
+    heading: { en: 'Legal', hi: 'क़ानूनी' },
     links: [
-      { label: { en: 'About', hi: 'हमारे बारे में' }, to: '/about' },
-      { label: { en: 'Contact', hi: 'संपर्क करें' }, to: '/about#contact' },
-      { label: { en: 'Privacy', hi: 'प्राइवेसी' }, to: '/privacy' },
+      { label: { en: 'Privacy Policy', hi: 'प्राइवेसी पॉलिसी' }, to: '/privacy' },
       { label: { en: 'Terms', hi: 'नियम व शर्तें' }, to: '/terms' },
+      { label: { en: 'Disclaimer', hi: 'डिस्क्लेमर' }, to: '/disclaimer' },
     ],
   },
 ]
+
+const iconClass =
+  'flex h-11 w-11 items-center justify-center rounded-full border border-charcoal-300/40 text-charcoal-600 transition-colors hover:border-rose-300 hover:text-rose-400'
 
 export function Footer() {
   const { t } = useLanguage()
 
   return (
     <footer className="border-t border-charcoal-100 bg-cream-100">
-      <div className="container-app py-14 sm:py-16">
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
-          <div className="col-span-2 sm:col-span-1">
-            <Link to="/" className="font-serif text-xl font-semibold text-charcoal-900">
-              Relationship Guide
-            </Link>
-            <p className="mt-3 text-sm leading-relaxed text-charcoal-500">
+      <div className="container-app pb-24 pt-14 sm:py-16">
+        <div className="grid grid-cols-2 gap-10 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
+          <div className="col-span-2 lg:col-span-1">
+            <Logo />
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-charcoal-500">
               {t(
-                'A calm place to understand your relationship patterns and build healthier connections.',
-                'अपने रिश्तों के पैटर्न को समझने और बेहतर रिश्ते बनाने की एक सुकून भरी जगह।',
+                'Scientist-turned-Relationship Coach helping women heal relationship stress at the root.',
+                'साइंटिस्ट से बनीं रिलेशनशिप कोच, जो महिलाओं को रिश्तों का तनाव जड़ से ठीक करने में मदद करती हैं।',
               )}
             </p>
             <div className="mt-5 flex items-center gap-3">
-              <a
-                href="https://instagram.com/relationshipguide"
-                target="_blank"
-                rel="noreferrer"
-                aria-label={t('Follow Relationship Guide on Instagram', 'Instagram पर Relationship Guide को फ़ॉलो करें')}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal-200 text-charcoal-600 transition-colors hover:border-rose-300 hover:text-rose-400"
-              >
+              <a href={site.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className={iconClass}>
                 <Instagram size={18} />
               </a>
+              <a href={site.social.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className={iconClass}>
+                <Youtube size={18} />
+              </a>
               <a
-                href="https://wa.me/919311088577"
+                href={whatsappLink(t(site.contact.whatsappMessage))}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={t('Message Relationship Guide on WhatsApp', 'WhatsApp पर Relationship Guide को मैसेज करें')}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-charcoal-200 text-charcoal-600 transition-colors hover:border-sage-300 hover:text-sage-500"
+                aria-label="WhatsApp"
+                className={iconClass}
               >
                 <MessageCircle size={18} />
               </a>
@@ -73,11 +72,11 @@ export function Footer() {
 
           {columns.map((col) => (
             <div key={col.heading.en}>
-              <h4 className="text-sm font-semibold text-charcoal-800">{t(col.heading)}</h4>
+              <h2 className="font-sans text-sm font-semibold text-charcoal-800">{t(col.heading)}</h2>
               <ul className="mt-4 space-y-3">
                 {col.links.map((link) => (
                   <li key={link.to}>
-                    <Link to={link.to} className="text-sm text-charcoal-500 hover:text-rose-400 transition-colors">
+                    <Link to={link.to} className="text-sm text-charcoal-500 transition-colors hover:text-rose-400">
                       {t(link.label)}
                     </Link>
                   </li>
@@ -87,15 +86,15 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 border-t border-charcoal-200/70 pt-8">
-          <p className="text-xs leading-relaxed text-charcoal-400 max-w-3xl">
+        <div className="mt-12 border-t border-charcoal-300/30 pt-8">
+          <p className="max-w-3xl text-xs leading-relaxed text-charcoal-500">
             {t(
-              'This platform provides educational and self-reflection resources and is not a substitute for emergency or medical care. If you are in crisis or need immediate support, please contact a licensed mental health professional or local emergency services.',
-              'यह प्लेटफ़ॉर्म शिक्षा और आत्म-चिंतन के लिए संसाधन देता है, और यह इमरजेंसी या मेडिकल देखभाल की जगह नहीं ले सकता। अगर आप किसी संकट में हैं या आपको तुरंत मदद चाहिए, तो कृपया किसी लाइसेंसधारी मानसिक स्वास्थ्य विशेषज्ञ या स्थानीय इमरजेंसी सेवाओं से संपर्क करें।',
+              'Coaching is not a substitute for therapy, medical care or emergency support. If you are in crisis, please contact local emergency services.',
+              'Coaching, थेरेपी, मेडिकल देखभाल या इमरजेंसी मदद की जगह नहीं है। अगर आप किसी संकट में हैं, तो कृपया स्थानीय इमरजेंसी सेवाओं से संपर्क करें।',
             )}
           </p>
-          <p className="mt-4 text-xs text-charcoal-400">
-            &copy; {new Date().getFullYear()} Relationship Guide. {t('All rights reserved.', 'सर्वाधिकार सुरक्षित।')}
+          <p className="mt-4 text-xs text-charcoal-500">
+            &copy; {new Date().getFullYear()} {site.coachName}. {t('All rights reserved.', 'सर्वाधिकार सुरक्षित।')}
           </p>
         </div>
       </div>
