@@ -1,4 +1,4 @@
-import type { FAQItem, Guide, ReflectionPrompt, Testimonial } from '@/types'
+import type { FAQItem, ReflectionPrompt } from '@/types'
 
 export const faqsHi: Record<string, Pick<FAQItem, 'question' | 'answer'>> = {
   f1: {
@@ -32,20 +32,6 @@ export const faqsHi: Record<string, Pick<FAQItem, 'question' | 'answer'>> = {
   },
 }
 
-export const guidesHi: Record<string, Pick<Guide, 'title' | 'description' | 'ctaLabel'>> = {
-  'guide-01': {
-    title: 'अपने रिलेशनशिप पैटर्न को समझें',
-    description:
-      'जानें कि बार-बार दोहराए जाने वाले भावनात्मक पैटर्न आपके जुड़ने, बात करने और प्रतिक्रिया देने के तरीके पर कैसे असर डालते हैं।',
-    ctaLabel: 'मुफ़्त गाइड डाउनलोड करें',
-  },
-  'guide-02': {
-    title: 'बेहतर रिश्तों की शुरुआती गाइड',
-    description: 'बेहतर बातचीत और सीमाएँ बनाने के लिए आसान आत्म-चिंतन अभ्यास और काम के टूल।',
-    ctaLabel: 'मुफ़्त गाइड पाएँ',
-  },
-}
-
 export const reflectionPromptsHi: Record<string, Pick<ReflectionPrompt, 'prompt'>> = {
   r1: { prompt: 'मैंने यह पैटर्न सबसे पहले कब नोटिस किया?' },
   r2: { prompt: 'किन हालात में यह सबसे ज़्यादा उभरता है?' },
@@ -53,35 +39,3 @@ export const reflectionPromptsHi: Record<string, Pick<ReflectionPrompt, 'prompt'
   r4: { prompt: 'मुझे अपने रिश्तों से असल में क्या चाहिए?' },
   r5: { prompt: 'एक बेहतर प्रतिक्रिया कैसी दिखेगी?' },
 }
-
-export const testimonialsHi: Record<string, Omit<Testimonial, 'id'>> = {
-  t1: {
-    name: 'मीरा एस.',
-    location: 'बेंगलुरु',
-    quote:
-      'असेसमेंट ने उस बात को नाम दिया जिसके लिए मेरे पास कभी शब्द ही नहीं थे — बस देते जाना, देते जाना, जब तक अंदर से पूरी थकान न हो जाए। उसे इतने साफ़ तौर पर लिखा देखकर ही रिश्तों में मेरा रवैया बदल गया।',
-    context: 'मुफ़्त असेसमेंट लिया, फिर Relationship Reprogramming शुरू किया',
-  },
-  t2: {
-    name: 'करन वी.',
-    location: 'पुणे',
-    quote:
-      'मुझे लगता था कि "रिश्ते निभाना बस मेरे बस की बात नहीं।" आत्म-चिंतन वाले सवालों ने मुझे दिखाया कि यह मेरी नाकामी नहीं, एक पैटर्न है — और तब लगा कि इस पर सच में काम किया जा सकता है।',
-    context: 'Relationship Reprogramming पूरा किया',
-  },
-  t3: {
-    name: 'रितु और अमन',
-    location: 'दिल्ली एनसीआर',
-    quote:
-      'पहले हम हर मुश्किल बातचीत से बचते थे, अब हम वह बातचीत करते हैं — और वह भी शांति से। अभ्यासों ने हमें एक साझा भाषा दी, जो पहले हमारे पास नहीं थी।',
-    context: 'साथ मिलकर Relationship Reprogramming पूरा किया',
-  },
-  t4: {
-    name: 'फ़ातिमा आर.',
-    location: 'हैदराबाद',
-    quote:
-      '1:1 काउंसलिंग ने मुझे समझाया कि झगड़े के वक़्त मेरे चुप हो जाने की असली वजह क्या है — और एक बार भी यह एहसास नहीं होने दिया कि मुझे जज किया जा रहा है। यह मेरे लिए उम्मीद से कहीं ज़्यादा मायने रखता था।',
-    context: '1:1 Relationship Reprogramming क्लाइंट',
-  },
-}
-

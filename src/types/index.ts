@@ -44,27 +44,10 @@ export interface AssessmentQuestion {
   options: AssessmentOption[]
 }
 
-export interface Testimonial {
-  id: string
-  name: string
-  location: string
-  quote: string
-  context: string
-}
-
 export interface FAQItem {
   id: string
   question: string
   answer: string
-}
-
-export interface Guide {
-  id: string
-  number: string
-  title: string
-  description: string
-  pages: number
-  ctaLabel: string
 }
 
 export interface ReflectionPrompt {

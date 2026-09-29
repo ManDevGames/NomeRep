@@ -3,11 +3,10 @@ import { useLanguage } from '@/context/language'
 import { patterns } from '@/data/patterns'
 import { questions } from '@/data/questions'
 import { faqs } from '@/data/faqs'
-import { guides, reflectionPrompts } from '@/data/guides'
-import { testimonials } from '@/data/testimonials'
+import { reflectionPrompts } from '@/data/guides'
 import { patternsHi } from '@/data/hi/patterns'
 import { questionsHi } from '@/data/hi/questions'
-import { faqsHi, guidesHi, reflectionPromptsHi, testimonialsHi } from '@/data/hi/content'
+import { faqsHi, reflectionPromptsHi } from '@/data/hi/content'
 
 /** Merges Hindi text (keyed by id) over the English records; missing entries fall back to English. */
 function overlay<T extends { id: string }>(items: T[], hi: Record<string, Partial<T>>): T[] {
@@ -27,18 +26,14 @@ const hindiContent = {
     }
   }),
   faqs: overlay(faqs, faqsHi),
-  guides: overlay(guides, guidesHi),
   reflectionPrompts: overlay(reflectionPrompts, reflectionPromptsHi),
-  testimonials: overlay(testimonials, testimonialsHi),
 }
 
 const englishContent: typeof hindiContent = {
   patterns,
   questions,
   faqs,
-  guides,
   reflectionPrompts,
-  testimonials,
 }
 
 /** Site data in the active language. */

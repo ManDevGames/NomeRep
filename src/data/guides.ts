@@ -1,25 +1,4 @@
-import type { Guide, ReflectionPrompt } from '@/types'
-
-export const guides: Guide[] = [
-  {
-    id: 'guide-01',
-    number: '01',
-    title: 'Understanding Your Relationship Patterns',
-    description:
-      'Learn how repeated emotional patterns can influence the way you connect, communicate, and respond.',
-    pages: 24,
-    ctaLabel: 'Download Free Guide',
-  },
-  {
-    id: 'guide-02',
-    number: '02',
-    title: 'The Healthier Relationship Starter Guide',
-    description:
-      'Simple reflection exercises and practical tools for building healthier communication and boundaries.',
-    pages: 19,
-    ctaLabel: 'Get the Free Guide',
-  },
-]
+import type { ReflectionPrompt } from '@/types'
 
 export const reflectionPrompts: ReflectionPrompt[] = [
   { id: 'r1', prompt: 'When did I first notice this pattern?' },
