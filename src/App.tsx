@@ -6,11 +6,12 @@ import { About } from '@/pages/About'
 import { Privacy } from '@/pages/Privacy'
 import { Terms } from '@/pages/Terms'
 import { Disclaimer } from '@/pages/Disclaimer'
-import { ComingSoon } from '@/pages/ComingSoon'
 import { Coaching } from '@/pages/Coaching'
 import { Quiz } from '@/pages/Quiz'
 import { ClarityCall } from '@/pages/ClarityCall'
 import { ThankYou } from '@/pages/ThankYou'
+import { Workshop } from '@/pages/Workshop'
+import { Stories } from '@/pages/Stories'
 import { NotFound } from '@/pages/NotFound'
 
 function ScrollToTop() {
@@ -42,8 +43,8 @@ export default function App() {
           <Route path="/coaching" element={<Coaching />} />
           <Route path="/clarity-call" element={<ClarityCall />} />
           <Route path="/thank-you" element={<ThankYou />} />
-          <Route path="/workshop" element={<ComingSoon title={{ en: 'Live Workshop', hi: 'Live Workshop' }} />} />
-          <Route path="/stories" element={<ComingSoon title={{ en: 'Stories of change', hi: 'बदलाव की कहानियाँ' }} />} />
+          <Route path="/workshop" element={<Workshop />} />
+          <Route path="/stories" element={<Stories />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
