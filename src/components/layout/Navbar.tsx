@@ -26,7 +26,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-charcoal-100 bg-cream-50/90 backdrop-blur-md">
-      <nav className="container-app flex h-16 items-center justify-between gap-2 sm:h-20 sm:gap-4" aria-label="Primary">
+      <nav className="container-app flex h-16 items-center justify-between gap-2 sm:h-20 sm:gap-4" aria-label={t('Main', 'मुख्य')}>
         <Logo />
 
         <ul className="hidden items-center xl:flex">

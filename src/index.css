@@ -109,6 +109,12 @@
     line-height: 1.7;
   }
 
+  /* Small uppercase labels rely on caps and tracking that Devanagari doesn't have,
+     so give them a size that stays readable. */
+  html:lang(hi) .eyebrow {
+    font-size: 0.9rem;
+  }
+
   :focus-visible {
     @apply outline-none ring-2 ring-rose-300 ring-offset-2 ring-offset-cream-50;
   }

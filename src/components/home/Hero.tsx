@@ -5,7 +5,7 @@ import { site } from '@/config/site'
 import { useLanguage } from '@/context/language'
 
 export function Hero() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
 
   const trust = [
     { icon: FlaskConical, label: t('Ex-DNA Scientist, Germany', 'पूर्व DNA साइंटिस्ट, जर्मनी') },
@@ -62,6 +62,7 @@ export function Hero() {
           <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-charcoal-100 bg-cream-50/95 p-4 shadow-card backdrop-blur sm:-left-6 sm:bottom-8 sm:right-auto sm:max-w-[16rem]">
             <p className="font-serif text-base font-semibold text-charcoal-900">{site.methodName}</p>
             <p className="mt-1 text-sm text-rose-400">Decode · Rewire · Rebuild</p>
+            {lang === 'hi' && <p className="mt-0.5 text-xs text-charcoal-500">समझना · नए सिरे से जोड़ना · फिर से बनाना</p>}
           </div>
         </div>
       </div>

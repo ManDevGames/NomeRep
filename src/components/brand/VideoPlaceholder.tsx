@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Play } from 'lucide-react'
+import { useLanguage } from '@/context/language'
 import { getYouTubeEmbedUrl, getYouTubeId, getYouTubeThumbnail } from '@/utils/youtube'
 
 interface VideoPlaceholderProps {
@@ -13,6 +14,7 @@ interface VideoPlaceholderProps {
 }
 
 export function VideoPlaceholder({ label, youtubeUrl, videoSrc, className = '' }: VideoPlaceholderProps) {
+  const { t } = useLanguage()
   const [playing, setPlaying] = useState(false)
   const youtubeId = youtubeUrl ? getYouTubeId(youtubeUrl) : null
   const frame = `relative aspect-video w-full overflow-hidden rounded-3xl ${className}`
@@ -29,7 +31,7 @@ export function VideoPlaceholder({ label, youtubeUrl, videoSrc, className = '' }
             className="absolute inset-0 h-full w-full"
           />
         ) : (
-          <button type="button" onClick={() => setPlaying(true)} aria-label={`Play: ${label}`} className="group absolute inset-0">
+          <button type="button" onClick={() => setPlaying(true)} aria-label={`${t('Play', 'चलाएँ')}: ${label}`} className="group absolute inset-0">
             <img src={getYouTubeThumbnail(youtubeId)} alt="" loading="lazy" className="h-full w-full object-cover" />
             <PlayCircle className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-cream-50/90 text-rose-400 group-hover:scale-105" />
           </button>

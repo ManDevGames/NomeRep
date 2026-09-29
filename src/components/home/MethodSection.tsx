@@ -5,6 +5,7 @@ import { useLanguage } from '@/context/language'
 const steps = [
   {
     title: 'Decode',
+    gloss: 'समझना',
     body: {
       en: 'Understand the hidden patterns, beliefs and past experiences shaping how you love and react today.',
       hi: 'उन छिपे patterns, मान्यताओं और पुराने अनुभवों को समझें जो आज आपके प्यार करने और react करने के तरीके को आकार दे रहे हैं।',
@@ -12,6 +13,7 @@ const steps = [
   },
   {
     title: 'Rewire',
+    gloss: 'नए सिरे से जोड़ना',
     body: {
       en: 'Calm old emotional triggers through subconscious reprogramming and guided sessions, so you respond instead of react.',
       hi: 'Subconscious reprogramming और guided sessions से पुराने emotional triggers को शांत करें, ताकि आप react करने के बजाय सोच-समझकर जवाब दें।',
@@ -19,6 +21,7 @@ const steps = [
   },
   {
     title: 'Rebuild',
+    gloss: 'फिर से बनाना',
     body: {
       en: 'Create a relationship, with your partner or with yourself, built on calm communication, healthy boundaries and trust.',
       hi: 'अपने partner के साथ या ख़ुद के साथ, एक ऐसा रिश्ता बनाएँ जिसकी नींव शांत बातचीत, सेहतमंद boundaries और भरोसे पर हो।',
@@ -27,17 +30,17 @@ const steps = [
 ]
 
 export function MethodSection() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
 
   return (
     <section className="section-space bg-cream-100" id="method">
       <div className="container-app">
         <SectionHeading
           eyebrow={t('My method', 'मेरा तरीका')}
-          title={`The ${site.methodName}`}
+          title={t(`The ${site.methodName}`, site.methodName)}
           subtitle={t(
             'A gentle, science-informed 3-step process that works at the root, not just the surface.',
-            'विज्ञान से प्रेरित, 3 क़दमों का एक सौम्य तरीका, जो सिर्फ़ ऊपर-ऊपर नहीं, जड़ पर काम करता है।',
+            'यानी दिल की पुरानी wiring को प्यार से नए सिरे से जोड़ना। विज्ञान से प्रेरित, 3 क़दमों का एक सौम्य तरीका, जो सिर्फ़ ऊपर-ऊपर नहीं, जड़ पर काम करता है।',
           )}
         />
 
@@ -50,7 +53,10 @@ export function MethodSection() {
                 0{i + 1}
               </span>
               <div className="flex-1 rounded-3xl bg-cream-50 p-6 shadow-soft md:mt-5">
-                <h3 className="text-2xl font-semibold">{step.title}</h3>
+                <h3 className="text-2xl font-semibold">
+                  {step.title}
+                  {lang === 'hi' && <span className="ml-2 font-sans text-base font-normal text-charcoal-500">({step.gloss})</span>}
+                </h3>
                 <p className="mt-2 text-base leading-relaxed text-charcoal-600">{t(step.body)}</p>
               </div>
             </li>
