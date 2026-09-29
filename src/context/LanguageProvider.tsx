@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 import { LanguageContext } from '@/context/language'
 import type { Bilingual, Language } from '@/context/language'
 
-const STORAGE_KEY = 'relationship-guide:language'
+const STORAGE_KEY = 'shalinee-sen:language'
 
 const documentTitle: Bilingual = {
   en: 'Relationship Guide — Understand Your Relationship Patterns',

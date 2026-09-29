@@ -12,11 +12,11 @@
     <script>
       // Apply saved theme and language before first paint to avoid a flash.
       try {
-        var theme = localStorage.getItem('relationship-guide:theme')
+        var theme = localStorage.getItem('shalinee-sen:theme')
         if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
           document.documentElement.classList.add('dark')
         }
-        if (localStorage.getItem('relationship-guide:language') === 'hi') {
+        if (localStorage.getItem('shalinee-sen:language') === 'hi') {
           document.documentElement.lang = 'hi'
         }
       } catch (e) {}

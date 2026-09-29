@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 import { ThemeContext } from '@/context/theme'
 import type { Theme } from '@/context/theme'
 
-const STORAGE_KEY = 'relationship-guide:theme'
+const STORAGE_KEY = 'shalinee-sen:theme'
 
 // index.html applies the saved (or system) theme before first paint, so the
 // <html> class is the source of truth on load.

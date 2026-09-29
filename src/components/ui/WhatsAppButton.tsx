@@ -1,25 +1,20 @@
+import { site, whatsappLink } from '@/config/site'
 import { useLanguage } from '@/context/language'
-
-const WHATSAPP_NUMBER = '919311088577'
 
 export function WhatsAppButton() {
   const { t } = useLanguage()
-  const message = t(
-    'Hi! I’d like to know more about Relationship Guide.',
-    'नमस्ते! मुझे Relationship Guide के बारे में और जानकारी चाहिए।',
-  )
-  const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+  const label = t('Chat with Shalinee on WhatsApp', 'WhatsApp पर Shalinee से बात करें')
 
   return (
     <a
-      href={href}
+      href={whatsappLink(t(site.contact.whatsappMessage))}
       target="_blank"
       rel="noreferrer"
-      aria-label={t('Chat with us on WhatsApp', 'WhatsApp पर हमसे बात करें')}
+      aria-label={label}
       className="fixed bottom-24 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lift transition-transform duration-200 hover:scale-105 sm:right-6 lg:bottom-6"
     >
       <WhatsAppIcon />
-      <span className="sr-only">{t('Chat with us on WhatsApp', 'WhatsApp पर हमसे बात करें')}</span>
+      <span className="sr-only">{label}</span>
     </a>
   )
 }
