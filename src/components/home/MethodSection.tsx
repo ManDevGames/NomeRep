@@ -49,7 +49,7 @@ export function MethodSection() {
           <span aria-hidden="true" className="absolute bottom-10 left-7 top-10 w-px bg-rose-200 md:hidden" />
           {steps.map((step, i) => (
             <li key={step.title} className="relative flex gap-5 md:flex-col md:items-center md:text-center">
-              <span className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-rose-200 bg-cream-50 font-serif text-lg font-semibold text-rose-400">
+              <span className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-rose-200 bg-cream-50 font-serif text-lg font-semibold text-rose-500">
                 0{i + 1}
               </span>
               <div className="flex-1 rounded-3xl bg-cream-50 p-6 shadow-soft md:mt-5">

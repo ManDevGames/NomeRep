@@ -15,12 +15,12 @@ export function TestimonialCard({ testimonial }: { testimonial: SiteTestimonial 
   return (
     <figure className="flex h-full flex-col gap-5 rounded-3xl border border-charcoal-100 bg-cream-50 p-7 shadow-soft">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-charcoal-400">{t('Before', 'पहले')}</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-charcoal-500">{t('Before', 'पहले')}</p>
         <p className="mt-2 leading-relaxed text-charcoal-600">&ldquo;{t(testimonial.before)}&rdquo;</p>
       </div>
       <ArrowDown size={18} className="text-rose-300" aria-hidden="true" />
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-sage-500">{t('After', 'अब')}</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-sage-600">{t('After', 'अब')}</p>
         <blockquote className="mt-2 font-serif text-lg leading-relaxed text-charcoal-900">
           &ldquo;{t(testimonial.after)}&rdquo;
         </blockquote>
@@ -52,7 +52,7 @@ export function ClientStories({ limit }: { limit?: number }) {
   if (!site.showTestimonials) {
     return (
       <div className="mx-auto flex max-w-xl flex-col items-center gap-3 rounded-3xl border border-dashed border-rose-200 bg-cream-50 px-6 py-10 text-center">
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-rose-100 text-rose-400">
+        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-rose-100 text-rose-500">
           <Heart size={20} aria-hidden="true" />
         </span>
         <p className="font-serif text-xl text-charcoal-900">{t('Client stories coming soon', 'Clients की कहानियाँ जल्द आ रही हैं')}</p>

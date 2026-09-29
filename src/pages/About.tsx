@@ -147,7 +147,7 @@ export function About() {
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {values.map(({ icon: Icon, title, body }) => (
               <div key={title.en} className="flex flex-col gap-3 rounded-3xl border border-charcoal-100 bg-cream-100 p-6">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-blush-100 text-rose-400">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-blush-100 text-rose-500">
                   <Icon size={20} aria-hidden="true" />
                 </span>
                 <h3 className="text-xl font-semibold">{t(title)}</h3>

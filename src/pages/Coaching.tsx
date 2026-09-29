@@ -151,7 +151,7 @@ export function Coaching() {
               <ul className="mt-5 flex flex-col gap-3.5">
                 {notForYou.map((item) => (
                   <li key={item.en} className="flex items-start gap-3 text-base leading-relaxed text-charcoal-700">
-                    <X size={18} className="mt-1 shrink-0 text-rose-400" aria-hidden="true" />
+                    <X size={18} className="mt-1 shrink-0 text-rose-500" aria-hidden="true" />
                     {t(item)}
                   </li>
                 ))}
@@ -175,7 +175,7 @@ export function Coaching() {
             <div className="grid grid-cols-[1fr_auto_1fr] bg-cream-100 text-xs font-semibold uppercase tracking-[0.14em]">
               <span className="px-4 py-3 text-charcoal-500 sm:px-6">{t('Before', 'पहले')}</span>
               <span />
-              <span className="px-4 py-3 text-sage-500 sm:px-6">{t('After', 'बाद में')}</span>
+              <span className="px-4 py-3 text-sage-600 sm:px-6">{t('After', 'बाद में')}</span>
             </div>
             {changes.map((row) => (
               <div key={row.before.en} className="grid grid-cols-[1fr_auto_1fr] items-center border-t border-charcoal-100 bg-cream-50">
@@ -196,7 +196,7 @@ export function Coaching() {
             <span aria-hidden="true" className="absolute bottom-6 left-7 top-6 w-px bg-rose-200" />
             {weeks.map((week, i) => (
               <li key={week.en} className="relative flex items-center gap-5 py-3">
-                <span className="relative z-10 flex h-14 w-14 shrink-0 flex-col items-center justify-center gap-1 rounded-full border border-rose-200 bg-cream-50 text-rose-400">
+                <span className="relative z-10 flex h-14 w-14 shrink-0 flex-col items-center justify-center gap-1 rounded-full border border-rose-200 bg-cream-50 text-rose-500">
                   <span className="text-[0.6rem] font-semibold uppercase leading-none tracking-wider">{t('Week', 'हफ़्ता')}</span>
                   <span className="font-serif text-lg font-semibold leading-none">{i + 1}</span>
                 </span>
@@ -214,7 +214,7 @@ export function Coaching() {
           <ul className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {includes.map(({ icon: Icon, label }) => (
               <li key={label.en} className="flex items-start gap-4 rounded-3xl border border-charcoal-100 bg-cream-100 p-6">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush-100 text-rose-400">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush-100 text-rose-500">
                   <Icon size={20} aria-hidden="true" />
                 </span>
                 <span className="text-base leading-relaxed text-charcoal-700">{t(label)}</span>

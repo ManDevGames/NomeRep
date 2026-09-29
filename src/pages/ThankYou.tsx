@@ -85,7 +85,7 @@ interface StepProps {
 function Step({ n, icon: Icon, title, children }: StepProps) {
   return (
     <li className="flex flex-col gap-2 rounded-3xl bg-cream-50 p-6 shadow-soft">
-      <span className="flex items-center gap-2 text-sm font-semibold text-rose-400">
+      <span className="flex items-center gap-2 text-sm font-semibold text-rose-500">
         <Icon size={18} aria-hidden="true" /> {n}
       </span>
       <span className="font-serif text-lg font-semibold text-charcoal-900">{title}</span>

@@ -185,7 +185,7 @@ function Intro({ headingRef, onStart }: { headingRef: HeadingRef; onStart: () =>
       <button
         type="button"
         onClick={onStart}
-        className="mt-2 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-rose-400 px-8 py-3 text-base font-semibold text-white shadow-soft transition-colors hover:bg-rose-500 sm:w-auto"
+        className="mt-2 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-cta px-8 py-3 text-base font-semibold text-white shadow-soft transition-colors hover:bg-cta-hover sm:w-auto"
       >
         {t('Start the quiz', 'Quiz शुरू करें')}
       </button>
@@ -394,7 +394,7 @@ function LeadForm({ headingRef, onBack, onSubmit }: LeadFormProps) {
           <button
             type="submit"
             disabled={submitting}
-            className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-rose-400 px-8 py-3 text-base font-semibold text-white shadow-soft transition-colors hover:bg-rose-500 disabled:opacity-60"
+            className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-cta px-8 py-3 text-base font-semibold text-white shadow-soft transition-colors hover:bg-cta-hover disabled:opacity-60"
           >
             {submitting ? t('Just a moment…', 'बस एक पल…') : t('Show my result', 'मेरा result दिखाएँ')}
           </button>

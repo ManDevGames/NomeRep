@@ -33,7 +33,7 @@ export function VideoPlaceholder({ label, youtubeUrl, videoSrc, className = '' }
         ) : (
           <button type="button" onClick={() => setPlaying(true)} aria-label={`${t('Play', 'चलाएँ')}: ${label}`} className="group absolute inset-0">
             <img src={getYouTubeThumbnail(youtubeId)} alt="" loading="lazy" className="h-full w-full object-cover" />
-            <PlayCircle className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-cream-50/90 text-rose-400 group-hover:scale-105" />
+            <PlayCircle className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-cream-50/90 text-rose-500 group-hover:scale-105" />
           </button>
         )}
       </div>
@@ -54,7 +54,7 @@ export function VideoPlaceholder({ label, youtubeUrl, videoSrc, className = '' }
       aria-label={label}
       className={`${frame} flex flex-col items-center justify-center gap-4 border border-dashed border-rose-200 bg-blush-50 p-6 text-center`}
     >
-      <PlayCircle className="bg-rose-100 text-rose-400" />
+      <PlayCircle className="bg-rose-100 text-rose-500" />
       <span className="max-w-xs text-xs leading-relaxed text-charcoal-500">{label}</span>
     </div>
   )

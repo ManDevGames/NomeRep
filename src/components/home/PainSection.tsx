@@ -52,7 +52,7 @@ export function PainSection() {
         <ul className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-2">
           {pains.map((pain) => (
             <li key={pain.en} className="flex items-start gap-3 rounded-2xl bg-cream-50 p-5 shadow-soft">
-              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-400">
+              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-500">
                 <Check size={14} strokeWidth={2.5} aria-hidden="true" />
               </span>
               <span className="text-base leading-relaxed text-charcoal-700">{t(pain)}</span>

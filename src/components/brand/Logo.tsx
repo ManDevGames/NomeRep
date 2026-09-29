@@ -11,7 +11,7 @@ export function Logo({ className = '' }: { className?: string }) {
       <span className="whitespace-nowrap font-serif text-lg font-semibold tracking-tight text-charcoal-900 sm:text-2xl">
         {site.coachName}
       </span>
-      <span className="mt-1 whitespace-nowrap text-[0.65rem] font-medium uppercase tracking-[0.18em] text-rose-400 sm:text-xs">
+      <span className="mt-1 whitespace-nowrap text-[0.65rem] font-medium uppercase tracking-[0.18em] text-rose-500 sm:text-xs">
         {t(site.tagline)}
       </span>
     </Link>

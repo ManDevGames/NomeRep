@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
@@ -11,7 +12,9 @@ export function MainLayout() {
       <RouteMeta />
       <Navbar />
       <main className="flex-1">
-        <Outlet />
+        <Suspense fallback={<div className="min-h-screen" aria-busy="true" />}>
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
       <WhatsAppButton />

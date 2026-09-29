@@ -14,9 +14,10 @@ export default {
         cream: palette('cream', [50, 100, 200, 300]),
         blush: palette('blush', [50, 100, 200, 300, 400]),
         rose: palette('rose', [50, 100, 200, 300, 400, 500]),
-        sage: palette('sage', [50, 100, 200, 300, 400, 500]),
+        sage: palette('sage', [50, 100, 200, 300, 400, 500, 600]),
         lavender: palette('lavender', [50, 100, 200, 300]),
-        charcoal: palette('charcoal', [50, 100, 300, 500, 700, 800, 900]),
+        charcoal: palette('charcoal', [50, 100, 300, 500, 600, 700, 800, 900]),
+        cta: { DEFAULT: 'rgb(var(--cta) / <alpha-value>)', hover: 'rgb(var(--cta-hover) / <alpha-value>)' },
       },
       borderColor: {
         DEFAULT: 'rgb(var(--charcoal-100) / <alpha-value>)',

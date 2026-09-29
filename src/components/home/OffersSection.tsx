@@ -62,7 +62,7 @@ export function OffersSection() {
             note={t('Starts after a free Clarity Call', 'फ़्री Clarity Call के बाद शुरू होता है')}
             action={
               <Link to="/coaching" className={cardLink}>
-                {t('Learn more', 'और जानें')} <ArrowRight size={17} aria-hidden="true" />
+                {t('See the full program', 'पूरा program देखें')} <ArrowRight size={17} aria-hidden="true" />
               </Link>
             }
           />
@@ -104,7 +104,7 @@ function OfferCard({ title, meta, points, action, note, badge, highlighted }: Of
       }`}
     >
       {badge && (
-        <span className="absolute -top-3.5 left-7 rounded-full bg-rose-400 px-3 py-1 text-xs font-semibold text-white">{badge}</span>
+        <span className="absolute -top-3.5 left-7 rounded-full bg-cta px-3 py-1 text-xs font-semibold text-white">{badge}</span>
       )}
       <div>
         <h3 className="text-2xl font-semibold leading-snug">{title}</h3>

@@ -29,6 +29,7 @@
     --sage-300: 174 193 159;
     --sage-400: 139 165 124;
     --sage-500: 111 138 95;
+    --sage-600: 86 110 72;
     --lavender-50: 246 244 248;
     --lavender-100: 234 228 240;
     --lavender-200: 213 201 227;
@@ -37,9 +38,13 @@
     --charcoal-100: 233 230 226;
     --charcoal-300: 168 159 150;
     --charcoal-500: 107 98 89;
+    --charcoal-600: 88 80 73;
     --charcoal-700: 69 63 57;
     --charcoal-800: 51 46 41;
     --charcoal-900: 36 31 28;
+    /* Filled primary buttons: the same in both themes, dark enough for white text (AA). */
+    --cta: 156 92 82;
+    --cta-hover: 128 74 66;
   }
 
   /* Dark theme: surfaces (cream, pastel tints) go deep and warm, text shades go light. */
@@ -66,6 +71,7 @@
     --sage-300: 174 193 159;
     --sage-400: 139 165 124;
     --sage-500: 150 178 132;
+    --sage-600: 174 193 159;
     --lavender-50: 34 30 40;
     --lavender-100: 44 38 52;
     --lavender-200: 64 55 76;
@@ -74,6 +80,7 @@
     --charcoal-100: 52 47 42;
     --charcoal-300: 110 102 94;
     --charcoal-500: 172 164 155;
+    --charcoal-600: 193 186 178;
     --charcoal-700: 214 208 201;
     --charcoal-800: 231 227 222;
     --charcoal-900: 245 242 238;
@@ -130,7 +137,7 @@
   }
 
   .eyebrow {
-    @apply inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] text-rose-400;
+    @apply inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] text-rose-500;
   }
 }
 

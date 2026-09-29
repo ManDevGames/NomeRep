@@ -170,7 +170,7 @@ function ReserveButton({ location }: { location: string }) {
       target="_blank"
       rel="noreferrer"
       onClick={() => track('workshop_checkout_click', { location })}
-      className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-rose-400 px-8 py-3 text-base font-semibold text-white shadow-soft transition-colors hover:bg-rose-500 sm:w-auto"
+      className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-cta px-8 py-3 text-base font-semibold text-white shadow-soft transition-colors hover:bg-cta-hover sm:w-auto"
     >
       {t('Reserve my seat', 'मेरी seat reserve करें')}
     </a>

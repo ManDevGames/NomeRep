@@ -56,7 +56,7 @@ export function PrimaryCTA({ short, label, search = '', fullWidth, className = '
         track('cta_primary_click', { location: placement ? `${pathname}#${placement}` : pathname })
         onClick?.()
       }}
-      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-rose-400 text-center font-semibold text-white shadow-soft transition-all duration-200 hover:bg-rose-500 hover:shadow-card ${size} ${
+      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-cta text-center font-semibold text-white shadow-soft transition-all duration-200 hover:bg-cta-hover hover:shadow-card ${size} ${
         fullWidth ? 'w-full' : ''
       } ${className}`}
     >

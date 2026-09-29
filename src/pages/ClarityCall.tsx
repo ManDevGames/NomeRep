@@ -274,7 +274,7 @@ function ApplicationForm({ quiz, onDone }: ApplicationFormProps) {
       <button
         type="submit"
         disabled={submitting}
-        className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-rose-400 px-8 py-3 text-base font-semibold text-white shadow-soft transition-colors hover:bg-rose-500 disabled:opacity-60"
+        className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-cta px-8 py-3 text-base font-semibold text-white shadow-soft transition-colors hover:bg-cta-hover disabled:opacity-60"
       >
         {submitting
           ? t('Sending…', 'भेजा जा रहा है…')

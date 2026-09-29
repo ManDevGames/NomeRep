@@ -39,10 +39,10 @@ export function PhotoPlaceholder({ label, aspectRatio = '4/5', className = '', s
       } ${className}`}
     >
       {compact ? (
-        <Camera size={18} className="text-rose-400" aria-hidden="true" />
+        <Camera size={18} className="text-rose-500" aria-hidden="true" />
       ) : (
         <>
-          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-rose-100 text-rose-400">
+          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-rose-100 text-rose-500">
             <Camera size={20} aria-hidden="true" />
           </span>
           <span className="max-w-[16rem] text-xs leading-relaxed text-charcoal-500">{label}</span>

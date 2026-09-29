@@ -1,18 +1,20 @@
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { lazy, useEffect } from 'react'
 import { MainLayout } from '@/layouts/MainLayout'
 import { Home } from '@/pages/Home'
-import { About } from '@/pages/About'
-import { Privacy } from '@/pages/Privacy'
-import { Terms } from '@/pages/Terms'
-import { Disclaimer } from '@/pages/Disclaimer'
-import { Coaching } from '@/pages/Coaching'
-import { Quiz } from '@/pages/Quiz'
-import { ClarityCall } from '@/pages/ClarityCall'
-import { ThankYou } from '@/pages/ThankYou'
-import { Workshop } from '@/pages/Workshop'
-import { Stories } from '@/pages/Stories'
-import { NotFound } from '@/pages/NotFound'
+
+// Home ships in the main bundle; every other page loads on first visit.
+const Coaching = lazy(() => import('@/pages/Coaching').then((m) => ({ default: m.Coaching })))
+const Quiz = lazy(() => import('@/pages/Quiz').then((m) => ({ default: m.Quiz })))
+const ClarityCall = lazy(() => import('@/pages/ClarityCall').then((m) => ({ default: m.ClarityCall })))
+const ThankYou = lazy(() => import('@/pages/ThankYou').then((m) => ({ default: m.ThankYou })))
+const Workshop = lazy(() => import('@/pages/Workshop').then((m) => ({ default: m.Workshop })))
+const Stories = lazy(() => import('@/pages/Stories').then((m) => ({ default: m.Stories })))
+const About = lazy(() => import('@/pages/About').then((m) => ({ default: m.About })))
+const Privacy = lazy(() => import('@/pages/Privacy').then((m) => ({ default: m.Privacy })))
+const Terms = lazy(() => import('@/pages/Terms').then((m) => ({ default: m.Terms })))
+const Disclaimer = lazy(() => import('@/pages/Disclaimer').then((m) => ({ default: m.Disclaimer })))
+const NotFound = lazy(() => import('@/pages/NotFound').then((m) => ({ default: m.NotFound })))
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
