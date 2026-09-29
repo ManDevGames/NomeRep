@@ -10,6 +10,7 @@ import { Privacy } from '@/pages/Privacy'
 import { Terms } from '@/pages/Terms'
 import { Disclaimer } from '@/pages/Disclaimer'
 import { ComingSoon } from '@/pages/ComingSoon'
+import { Coaching } from '@/pages/Coaching'
 import { NotFound } from '@/pages/NotFound'
 
 function ScrollToTop() {
@@ -41,7 +42,7 @@ export default function App() {
           <Route path="/quiz" element={<Assessment />} />
           <Route path="/assessment/result" element={<AssessmentResult />} />
           <Route path="/assessment/report" element={<AssessmentReport />} />
-          <Route path="/coaching" element={<ComingSoon title={{ en: '1:1 Coaching', hi: '1:1 Coaching' }} />} />
+          <Route path="/coaching" element={<Coaching />} />
           <Route path="/clarity-call" element={<ComingSoon title={{ en: 'Free Clarity Call', hi: 'फ़्री Clarity Call' }} />} />
           <Route path="/workshop" element={<ComingSoon title={{ en: 'Live Workshop', hi: 'Live Workshop' }} />} />
           <Route path="/stories" element={<ComingSoon title={{ en: 'Stories of change', hi: 'बदलाव की कहानियाँ' }} />} />
