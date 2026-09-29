@@ -312,10 +312,18 @@ function LeadForm({ headingRef, onBack, onSubmit }: LeadFormProps) {
 
         <form onSubmit={handleSubmit} noValidate className="mt-6 flex flex-col gap-5">
           <Field id="quiz-name" label={t('First name', 'पहला नाम')} error={errors.name}>
-            <input id="quiz-name" autoComplete="given-name" value={name} onChange={(e) => {
-                  setName(e.target.value)
-                  clearError('name')
-                }} className={inputClass('name')} aria-invalid={!!errors.name} aria-describedby={errors.name ? 'quiz-name-error' : undefined} />
+            <input
+              id="quiz-name"
+              autoComplete="given-name"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value)
+                clearError('name')
+              }}
+              className={inputClass('name')}
+              aria-invalid={!!errors.name}
+              aria-describedby={errors.name ? 'quiz-name-error' : undefined}
+            />
           </Field>
 
           <Field id="quiz-phone" label={t('WhatsApp number', 'WhatsApp नंबर')} error={errors.phone}>
@@ -347,10 +355,19 @@ function LeadForm({ headingRef, onBack, onSubmit }: LeadFormProps) {
           </Field>
 
           <Field id="quiz-email" label={t('Email (optional)', 'Email (ज़रूरी नहीं)')} error={errors.email}>
-            <input id="quiz-email" type="email" autoComplete="email" value={email} onChange={(e) => {
-                  setEmail(e.target.value)
-                  clearError('email')
-                }} className={inputClass('email')} aria-invalid={!!errors.email} aria-describedby={errors.email ? 'quiz-email-error' : undefined} />
+            <input
+              id="quiz-email"
+              type="email"
+              autoComplete="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value)
+                clearError('email')
+              }}
+              className={inputClass('email')}
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? 'quiz-email-error' : undefined}
+            />
           </Field>
 
           <div>
