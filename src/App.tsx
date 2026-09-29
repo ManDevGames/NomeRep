@@ -9,6 +9,8 @@ import { Disclaimer } from '@/pages/Disclaimer'
 import { ComingSoon } from '@/pages/ComingSoon'
 import { Coaching } from '@/pages/Coaching'
 import { Quiz } from '@/pages/Quiz'
+import { ClarityCall } from '@/pages/ClarityCall'
+import { ThankYou } from '@/pages/ThankYou'
 import { NotFound } from '@/pages/NotFound'
 
 function ScrollToTop() {
@@ -38,7 +40,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/coaching" element={<Coaching />} />
-          <Route path="/clarity-call" element={<ComingSoon title={{ en: 'Free Clarity Call', hi: 'फ़्री Clarity Call' }} />} />
+          <Route path="/clarity-call" element={<ClarityCall />} />
+          <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/workshop" element={<ComingSoon title={{ en: 'Live Workshop', hi: 'Live Workshop' }} />} />
           <Route path="/stories" element={<ComingSoon title={{ en: 'Stories of change', hi: 'बदलाव की कहानियाँ' }} />} />
           <Route path="/about" element={<About />} />

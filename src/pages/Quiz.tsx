@@ -295,6 +295,9 @@ function LeadForm({ headingRef, onBack, onSubmit }: LeadFormProps) {
   }
 
   const inputClass = (field: string) => fieldClass(!!errors[field])
+  const clearError = (field: string) => {
+    if (errors[field]) setErrors(({ [field]: _, ...rest }) => rest)
+  }
 
   return (
     <div className="flex flex-col gap-6">
@@ -309,7 +312,10 @@ function LeadForm({ headingRef, onBack, onSubmit }: LeadFormProps) {
 
         <form onSubmit={handleSubmit} noValidate className="mt-6 flex flex-col gap-5">
           <Field id="quiz-name" label={t('First name', 'पहला नाम')} error={errors.name}>
-            <input id="quiz-name" autoComplete="given-name" value={name} onChange={(e) => setName(e.target.value)} className={inputClass('name')} aria-invalid={!!errors.name} aria-describedby={errors.name ? 'quiz-name-error' : undefined} />
+            <input id="quiz-name" autoComplete="given-name" value={name} onChange={(e) => {
+                  setName(e.target.value)
+                  clearError('name')
+                }} className={inputClass('name')} aria-invalid={!!errors.name} aria-describedby={errors.name ? 'quiz-name-error' : undefined} />
           </Field>
 
           <Field id="quiz-phone" label={t('WhatsApp number', 'WhatsApp नंबर')} error={errors.phone}>
@@ -329,7 +335,10 @@ function LeadForm({ headingRef, onBack, onSubmit }: LeadFormProps) {
                 autoComplete="tel-national"
                 placeholder="98765 43210"
                 value={phone}
-                onChange={(e) => setPhone(e.target.value)}
+                onChange={(e) => {
+                  setPhone(e.target.value)
+                  clearError('phone')
+                }}
                 className={inputClass('phone')}
                 aria-invalid={!!errors.phone}
                 aria-describedby={errors.phone ? 'quiz-phone-error' : undefined}
@@ -338,7 +347,10 @@ function LeadForm({ headingRef, onBack, onSubmit }: LeadFormProps) {
           </Field>
 
           <Field id="quiz-email" label={t('Email (optional)', 'Email (ज़रूरी नहीं)')} error={errors.email}>
-            <input id="quiz-email" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass('email')} aria-invalid={!!errors.email} aria-describedby={errors.email ? 'quiz-email-error' : undefined} />
+            <input id="quiz-email" type="email" autoComplete="email" value={email} onChange={(e) => {
+                  setEmail(e.target.value)
+                  clearError('email')
+                }} className={inputClass('email')} aria-invalid={!!errors.email} aria-describedby={errors.email ? 'quiz-email-error' : undefined} />
           </Field>
 
           <div>
@@ -346,7 +358,10 @@ function LeadForm({ headingRef, onBack, onSubmit }: LeadFormProps) {
               <input
                 type="checkbox"
                 checked={consent}
-                onChange={(e) => setConsent(e.target.checked)}
+                onChange={(e) => {
+                  setConsent(e.target.checked)
+                  clearError('consent')
+                }}
                 className="mt-0.5 h-5 w-5 shrink-0 accent-rose-400"
                 aria-invalid={!!errors.consent}
                 aria-describedby={errors.consent ? 'quiz-consent-error' : undefined}
