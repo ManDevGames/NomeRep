@@ -11,7 +11,7 @@ export function SectionHeading({ eyebrow, title, subtitle, align = 'center' }: S
   return (
     <div className={`flex flex-col gap-4 max-w-2xl ${alignment}`}>
       {eyebrow && <span className="eyebrow">{eyebrow}</span>}
-      <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold leading-[1.15]">{title}</h2>
+      <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold leading-[1.2]">{title}</h2>
       {subtitle && <p className="text-base sm:text-lg text-charcoal-500 leading-relaxed">{subtitle}</p>}
     </div>
   )

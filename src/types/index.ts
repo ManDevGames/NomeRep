@@ -44,12 +44,6 @@ export interface AssessmentQuestion {
   options: AssessmentOption[]
 }
 
-export interface FAQItem {
-  id: string
-  question: string
-  answer: string
-}
-
 export interface ReflectionPrompt {
   id: string
   prompt: string

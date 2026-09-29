@@ -2,11 +2,10 @@ import { useMemo } from 'react'
 import { useLanguage } from '@/context/language'
 import { patterns } from '@/data/patterns'
 import { questions } from '@/data/questions'
-import { faqs } from '@/data/faqs'
 import { reflectionPrompts } from '@/data/guides'
 import { patternsHi } from '@/data/hi/patterns'
 import { questionsHi } from '@/data/hi/questions'
-import { faqsHi, reflectionPromptsHi } from '@/data/hi/content'
+import { reflectionPromptsHi } from '@/data/hi/content'
 
 /** Merges Hindi text (keyed by id) over the English records; missing entries fall back to English. */
 function overlay<T extends { id: string }>(items: T[], hi: Record<string, Partial<T>>): T[] {
@@ -25,14 +24,12 @@ const hindiContent = {
       options: q.options.map((o) => ({ ...o, label: hi.options[o.id] ?? o.label })),
     }
   }),
-  faqs: overlay(faqs, faqsHi),
   reflectionPrompts: overlay(reflectionPrompts, reflectionPromptsHi),
 }
 
 const englishContent: typeof hindiContent = {
   patterns,
   questions,
-  faqs,
   reflectionPrompts,
 }
 
