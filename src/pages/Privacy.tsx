@@ -12,8 +12,8 @@ const sections: LegalSection[] = [
         hi: 'जब आप Relationship Stress Quiz लेती हैं: आपका पहला नाम, WhatsApp नंबर, email (अगर आप दें), आपकी अभी की स्थिति, आपके जवाब, और आपका score व stage।',
       },
       {
-        en: 'When you apply for a Clarity Call: your name, WhatsApp number, email (optional), age range, city, situation, what you want to change, preferred language and time, and how you found us.',
-        hi: 'जब आप Clarity Call के लिए आवेदन करती हैं: आपका नाम, WhatsApp नंबर, email (अगर दें), उम्र, शहर, स्थिति, आप क्या बदलना चाहती हैं, पसंदीदा भाषा और समय, और आपको हमारे बारे में कहाँ से पता चला।',
+        en: 'When you book a Clarity Call: your full name, WhatsApp number and email. Submitting also opens WhatsApp with these details, so you can send them to Shalinee.',
+        hi: 'जब आप Clarity Call बुक करती हैं: आपका पूरा नाम, WhatsApp नंबर और email। Submit करने पर WhatsApp इन्हीं details के साथ खुलता है, ताकि आप इन्हें Shalinee को भेज सकें।',
       },
       {
         en: 'We also note which link or campaign brought you here (UTM parameters). If you accept cookies, Google Analytics and the Meta Pixel record how the site is used.',

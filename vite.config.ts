@@ -23,7 +23,7 @@ function seo(): Plugin {
     description: site.positioning.en,
     url: `${site.siteUrl}/about`,
     image: ogImage,
-    knowsLanguage: ['en', 'hi', 'bn'],
+    knowsLanguage: ['en', 'hi', 'mr'],
     sameAs: [site.social.instagram, site.social.youtube],
   }
   const service = {
@@ -35,7 +35,7 @@ function seo(): Plugin {
     image: ogImage,
     telephone: whatsapp,
     areaServed: 'IN',
-    availableLanguage: ['English', 'Hindi', 'Bengali'],
+    availableLanguage: ['English', 'Hindi', 'Marathi'],
     founder: { '@id': person['@id'] },
   }
   const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': [person, service] }).replace(/</g, '\\u003c')
@@ -80,7 +80,7 @@ function seo(): Plugin {
       this.emitFile({
         type: 'asset',
         fileName: 'robots.txt',
-        source: `User-agent: *\nAllow: /\nDisallow: /thank-you\n\nSitemap: ${site.siteUrl}/sitemap.xml\n`,
+        source: `User-agent: *\nAllow: /\n\nSitemap: ${site.siteUrl}/sitemap.xml\n`,
       })
     },
   }

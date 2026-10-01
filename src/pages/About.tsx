@@ -31,8 +31,8 @@ const story = [
     heading: { en: 'Why I do this now', hi: 'मैं आज यह क्यों करती हूँ' },
     body: [
       {
-        en: 'Today I bring together a scientist’s way of thinking with subconscious reprogramming and counselling-based coaching. I help women understand why they react the way they do, and gently change it at the root, so they can feel calm, secure and loved again.',
-        hi: 'आज मैं एक साइंटिस्ट की सोच को subconscious reprogramming और counselling-based coaching के साथ जोड़ती हूँ। मैं महिलाओं को यह समझने में मदद करती हूँ कि वे जैसे react करती हैं, वैसा क्यों करती हैं, और उसे जड़ से धीरे-धीरे बदलने में, ताकि वे फिर से सुकून, सुरक्षा और प्यार महसूस कर सकें।',
+        en: 'Today I bring together a scientist’s way of thinking with subconscious reprogramming and counselling-based coaching. I help people understand why they react the way they do, and gently change it at the root, so they can feel calm, secure and loved again.',
+        hi: 'आज मैं एक साइंटिस्ट की सोच को subconscious reprogramming और counselling-based coaching के साथ जोड़ती हूँ। मैं लोगों को यह समझने में मदद करती हूँ कि वे जैसे react करते हैं, वैसा क्यों करते हैं, और उसे जड़ से धीरे-धीरे बदलने में, ताकि वे फिर से सुकून, सुरक्षा और प्यार महसूस कर सकें।',
       },
     ],
   },
@@ -43,7 +43,7 @@ const credentials = [
   { icon: GraduationCap, label: { en: 'Education', hi: 'शिक्षा' }, value: { en: '[Degree, University]', hi: '[डिग्री, यूनिवर्सिटी]' } },
   { icon: Microscope, label: { en: 'Research', hi: 'Research' }, value: { en: '[DNA research role, Institute, Germany]', hi: '[DNA research भूमिका, संस्थान, जर्मनी]' } },
   { icon: HeartHandshake, label: { en: 'Coaching', hi: 'Coaching' }, value: { en: '[Coaching / reprogramming certifications]', hi: '[Coaching / reprogramming certifications]' } },
-  { icon: Languages, label: { en: 'Languages', hi: 'भाषाएँ' }, value: { en: 'English · हिंदी · বাংলা', hi: 'English · हिंदी · বাংলা' } },
+  { icon: Languages, label: { en: 'Languages', hi: 'भाषाएँ' }, value: { en: 'English · हिंदी · मराठी', hi: 'English · हिंदी · मराठी' } },
 ]
 
 const values = [
@@ -94,8 +94,8 @@ export function About() {
             <h1 className="text-5xl font-semibold leading-[1.1] sm:text-6xl">{t("Hi, I'm Shalinee.", 'नमस्ते, मैं Shalinee हूँ।')}</h1>
             <p className="max-w-lg text-lg leading-relaxed text-charcoal-600 sm:text-xl">
               {t(
-                'Former DNA scientist. Now a relationship coach helping women heal at the root.',
-                'पूर्व DNA साइंटिस्ट। अब एक relationship coach, जो महिलाओं को जड़ से healing में मदद करती हैं।',
+                'Former DNA scientist. Now a relationship coach helping people heal at the root.',
+                'पूर्व DNA साइंटिस्ट। अब एक relationship coach, जो लोगों को जड़ से healing में मदद करती हैं।',
               )}
             </p>
           </div>

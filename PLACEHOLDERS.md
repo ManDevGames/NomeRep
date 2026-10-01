@@ -7,24 +7,22 @@ Everything below is still placeholder content. Most business values live in one 
 
 | What | Key (line) | Now | Notes |
 |---|---|---|---|
-| Live domain | `siteUrl` (33) | `https://[your-domain].com` | Used for the sitemap, robots.txt, canonical links, social previews and JSON-LD. Lighthouse SEO goes from 83 to 100 once this is set. |
-| WhatsApp number | `contact.whatsappNumber` (38) | `919311088577` | **The old site's number, kept so the button works.** Replace with Shalinee's number (country code + digits). |
-| Email | `contact.email` (43) | `[hello@your-domain.com]` | Shown on About → Contact and in the legal pages. |
-| Instagram | `social.instagram` (47) | `https://instagram.com/[handle]` | |
-| YouTube | `social.youtube` (48) | `https://youtube.com/@[channel]` | |
-| Booking link | `bookingUrl` (52) | empty | Calendly / Cal.com link. Empty = the form goes straight to /thank-you and Shalinee follows up on WhatsApp. For Cal.com, set its "redirect on booking" to `/thank-you?status=booked`. |
-| Women helped | `stats.clientsHelped` (55) | `[X]+` | Hero trust strip, /coaching. |
-| Years of experience | `stats.yearsExperience` (56) | `[X]+` | /coaching. |
-| Program price | `prices.program` (60) | `₹[XX,XXX]` | /coaching pricing card. |
-| Workshop price | `prices.workshop` (61) | `₹[499]` | Homepage offer card, /workshop. |
-| EMI line | `programEmiAvailable` (64) | `true` | Set `false` to hide "EMI / 2 instalments available". |
-| Workshop date (countdown) | `workshop.dateISO` (69) | empty | e.g. `2026-11-15T19:00:00+05:30`. Empty hides the countdown. |
-| Workshop date (text) | `workshop.dateLabel` (70) | `[Date · Time IST]` | English and Hindi. |
-| Workshop payment link | `workshop.paymentUrl` (72) | empty | Razorpay / Instamojo. Empty = "Reserve my seat" opens WhatsApp instead. |
-| Lead webhook | `leadWebhookUrl` (76) | empty | **Until set, quiz and clarity-call leads are not saved anywhere.** Any JSON POST endpoint works; see [src/lib/leads.ts](src/lib/leads.ts). |
+| Live domain | `siteUrl` | `https://[your-domain].com` | Used for the sitemap, robots.txt, canonical links, social previews and JSON-LD. Lighthouse SEO goes from 83 to 100 once this is set. |
+| WhatsApp number | `contact.whatsappNumber` | `919311088577` | **The old site's number, kept so the button works.** Replace with Shalinee's number (country code + digits). |
+| Email | `contact.email` | `[hello@your-domain.com]` | Shown on About → Contact and in the legal pages. |
+| Instagram | `social.instagram` | `https://instagram.com/[handle]` | |
+| YouTube | `social.youtube` | `https://youtube.com/@[channel]` | |
+| People helped | `stats.clientsHelped` | `1000+` | Hero trust strip, /coaching. |
+| Years of experience | `stats.yearsExperience` | `7+` | /coaching. |
+| Program lengths | `programOptions` | 1, 3 and 8 weeks | Name and one-line focus for each; no prices are shown. |
+| Workshop price | `prices.workshop` | `₹[499]` | Homepage offer card, /workshop. |
+| Workshop date (countdown) | `workshop.dateISO` | empty | e.g. `2026-11-15T19:00:00+05:30`. Empty hides the countdown. |
+| Workshop date (text) | `workshop.dateLabel` | `[Date · Time IST]` | English and Hindi. |
+| Workshop payment link | `workshop.paymentUrl` | empty | Razorpay / Instamojo. Empty = "Reserve my seat" opens WhatsApp instead. |
+| Lead webhook | `leadWebhookUrl` | empty | **Until set, quiz and clarity-call leads are not saved anywhere.** Any JSON POST endpoint works; see [src/lib/leads.ts](src/lib/leads.ts). |
 | GA4 ID | `analytics.ga4Id` (79) | empty | Loads only after the visitor accepts cookies. The consent banner appears once an ID is set. |
-| Meta Pixel ID | `analytics.metaPixelId` (80) | empty | Same as GA4. |
-| Testimonials | `testimonials` (86) + `showTestimonials` (84) | 3 entries marked SAMPLE, flag `false` | Replace with real stories (written permission; initials are fine), then set the flag to `true`. This also shows the two client-video slots on /stories. |
+| Meta Pixel ID | `analytics.metaPixelId` | empty | Same as GA4. |
+| Testimonials | `testimonials` + `showTestimonials` | 3 entries marked SAMPLE, flag `false` | Replace with real stories (written permission; initials are fine), then set the flag to `true`. This also shows the two client-video slots on /stories. |
 
 ## 2. Photos: `<PhotoPlaceholder>`
 
@@ -53,7 +51,6 @@ Pass `youtubeUrl` (any YouTube link) or `videoSrc` (an mp4 file).
 |---|---|
 | [src/components/home/MeetShalineeSection.tsx:43](src/components/home/MeetShalineeSection.tsx#L43) | 60-sec intro |
 | [src/pages/About.tsx:165](src/pages/About.tsx#L165) | Her story, 2 min |
-| [src/pages/ThankYou.tsx:72](src/pages/ThankYou.tsx#L72) | 30-sec "see you on the call" |
 | [src/pages/Stories.tsx:35-36](src/pages/Stories.tsx#L35) | 2 client video testimonials (shown only when `showTestimonials` is true) |
 
 ## 4. Text marked TODO
@@ -82,4 +79,4 @@ All copy has English and Hindi versions side by side (`en:` / `hi:`); update bot
 
 - Trademark search for "Heart Rewiring Method™".
 - Decide whether to keep "Most chosen" on the program card ([src/components/home/OffersSection.tsx](src/components/home/OffersSection.tsx)). It is a social-proof claim, so keep it only if it is true.
-- Check that `/thank-you` messaging ("Shalinee will personally reach out on WhatsApp") matches how follow-up actually works.
+- The clarity-call form ends by opening WhatsApp with the visitor's name, number and email prefilled. Check it reaches the right number (`contact.whatsappNumber`).

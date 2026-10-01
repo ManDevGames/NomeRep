@@ -48,15 +48,22 @@ const weeks = [
 ]
 
 const includes = [
-  { icon: Video, label: { en: '8 private 60-min sessions (video or audio)', hi: '8 निजी, 60 मिनट के sessions (video या audio)' } },
+  { icon: Video, label: { en: 'A private 60-min session every week (video or audio)', hi: 'हर हफ़्ते एक निजी, 60 मिनट का session (video या audio)' } },
   { icon: Headphones, label: { en: 'Personalised reprogramming audios for daily practice', hi: 'रोज़ के अभ्यास के लिए आपके हिसाब से बने reprogramming audios' } },
   { icon: MessageCircle, label: { en: 'WhatsApp support between sessions (Mon–Sat)', hi: 'Sessions के बीच WhatsApp पर साथ (सोम–शनि)' } },
   { icon: BookOpen, label: { en: 'Heart Rewiring workbook', hi: 'Heart Rewiring workbook' } },
   { icon: ClipboardList, label: { en: 'A personalised action plan', hi: 'आपके लिए बना action plan' } },
-  { icon: Languages, label: { en: 'Sessions in English, Hindi or Bengali', hi: 'English, हिंदी या বাংলা में sessions' } },
+  { icon: Languages, label: { en: 'Sessions in English, Hindi or Marathi', hi: 'English, हिंदी या मराठी में sessions' } },
 ]
 
 const faqs: FAQ[] = [
+  {
+    q: { en: 'Which length is right for me: 1, 3 or 8 weeks?', hi: 'मेरे लिए कौन-सी अवधि सही है: 1, 3 या 8 हफ़्ते?' },
+    a: {
+      en: "It depends on what you're facing. One week suits a focused reset, three weeks gives time to change one core pattern, and eight weeks is the complete journey. We'll decide together on your free Clarity Call.",
+      hi: 'यह इस पर निर्भर करता है कि आप किस स्थिति से गुज़र रही हैं। 1 हफ़्ता focused reset के लिए, 3 हफ़्ते एक मुख्य pattern बदलने के लिए, और 8 हफ़्ते पूरे सफ़र के लिए हैं। फ़्री Clarity Call पर हम साथ मिलकर तय करेंगे।',
+    },
+  },
   {
     q: { en: 'How are sessions scheduled?', hi: 'Sessions का समय कैसे तय होता है?' },
     a: {
@@ -115,8 +122,8 @@ export function Coaching() {
             <h1 className="text-4xl font-semibold leading-[1.12] sm:text-5xl lg:text-[3.3rem]">{site.programName}</h1>
             <p className="max-w-xl text-base leading-relaxed text-charcoal-600 sm:text-lg">
               {t(
-                '8 weeks of private, personalised coaching to heal relationship stress at the root and feel calm, secure and loved again.',
-                '8 हफ़्तों की निजी, आपके हिसाब से बनी coaching, ताकि रिश्तों का तनाव जड़ से ठीक हो और आप फिर से सुकून, सुरक्षा और प्यार महसूस करें।',
+                'Private coaching in 1, 3 or 8-week formats, customised to you, to heal relationship stress at the root and feel calm, secure and loved again.',
+                '1, 3 या 8 हफ़्तों की निजी coaching, आपके हिसाब से customise की हुई, ताकि रिश्तों का तनाव जड़ से ठीक हो और आप फिर से सुकून, सुरक्षा और प्यार महसूस करें।',
               )}
             </p>
             <PrimaryCTA placement="hero" className="w-full sm:w-auto sm:px-8" />
@@ -191,7 +198,14 @@ export function Coaching() {
       {/* 4. The 8-week journey */}
       <section className="section-space bg-cream-100">
         <div className="container-app">
-          <SectionHeading eyebrow={t('The 8-week journey', '8 हफ़्तों का सफ़र')} title={t('One gentle step each week', 'हर हफ़्ते एक सौम्य क़दम')} />
+          <SectionHeading
+            eyebrow={t('The full 8-week journey', 'पूरा 8 हफ़्तों का सफ़र')}
+            title={t('One gentle step each week', 'हर हफ़्ते एक सौम्य क़दम')}
+            subtitle={t(
+              'The 1- and 3-week formats focus on the steps that matter most for you.',
+              '1 और 3 हफ़्तों के formats उन क़दमों पर ध्यान देते हैं जो आपके लिए सबसे ज़रूरी हैं।',
+            )}
+          />
           <ol className="relative mx-auto mt-12 max-w-2xl">
             <span aria-hidden="true" className="absolute bottom-6 left-7 top-6 w-px bg-rose-200" />
             {weeks.map((week, i) => (
@@ -238,8 +252,8 @@ export function Coaching() {
               {[
                 t('Former DNA scientist, research in Germany', 'पूर्व DNA साइंटिस्ट, जर्मनी में research'),
                 t('Trained in subconscious reprogramming and counselling-based coaching [certifications]', 'Subconscious reprogramming और counselling-based coaching में प्रशिक्षित [certifications]'),
-                t(`${site.stats.clientsHelped} women supported · ${site.stats.yearsExperience} years of experience`, `${site.stats.clientsHelped} महिलाओं का साथ · ${site.stats.yearsExperience} साल का अनुभव`),
-                t('Sessions in English, Hindi and Bengali', 'English, हिंदी और বাংলা में sessions'),
+                t(`${site.stats.clientsHelped} people supported · ${site.stats.yearsExperience} years of experience`, `${site.stats.clientsHelped} लोगों का साथ · ${site.stats.yearsExperience} साल का अनुभव`),
+                t('Sessions in English, Hindi and Marathi', 'English, हिंदी और मराठी में sessions'),
               ].map((line) => (
                 <li key={line} className="flex items-start gap-3">
                   <Check size={18} className="mt-1 shrink-0 text-sage-500" aria-hidden="true" />
@@ -254,33 +268,42 @@ export function Coaching() {
       {/* 7. Client stories */}
       <section className="section-space bg-cream-50">
         <div className="container-app">
-          <SectionHeading eyebrow={t('Client stories', 'Clients की कहानियाँ')} title={t('Real women. Real change.', 'असली महिलाएँ। असली बदलाव।')} />
+          <SectionHeading eyebrow={t('Client stories', 'Clients की कहानियाँ')} title={t('Real people. Real change.', 'असली लोग। असली बदलाव।')} />
           <div className="mt-12">
             <ClientStories limit={3} />
           </div>
         </div>
       </section>
 
-      {/* 8. Investment */}
+      {/* 8. Program length */}
       <section className="section-space bg-cream-100" id="investment">
         <div className="container-app">
-          <SectionHeading eyebrow={t('Investment', 'निवेश')} title={t('One program. Everything included.', 'एक program। सब कुछ शामिल।')} />
-          <div className="mx-auto mt-12 flex max-w-md flex-col items-center gap-5 rounded-3xl border-2 border-rose-300 bg-cream-50 p-8 text-center shadow-card">
-            <h3 className="text-2xl font-semibold">{site.programName}</h3>
-            <p className="text-sm text-charcoal-500">{t('8 weeks · Private 1:1 · Online', '8 हफ़्ते · निजी 1:1 · Online')}</p>
-            <p className="font-serif text-5xl font-semibold text-charcoal-900">{site.prices.program}</p>
-            {site.programEmiAvailable && (
-              <p className="rounded-full bg-sage-100 px-4 py-1.5 text-sm font-medium text-charcoal-700">
-                {t('EMI / 2 instalments available', 'EMI / 2 किस्तों में भी उपलब्ध')}
-              </p>
-            )}
+          <SectionHeading
+            eyebrow={t('Choose your length', 'अपनी अवधि चुनें')}
+            title={t('1, 3 or 8 weeks. Customised to you.', '1, 3 या 8 हफ़्ते। आपके हिसाब से।')}
+          />
+          <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-5 md:grid-cols-3">
+            {site.programOptions.map((option) => (
+              <div
+                key={option.weeks}
+                className={`flex flex-col gap-3 rounded-3xl p-7 text-center ${
+                  option.weeks === 8 ? 'border-2 border-rose-300 bg-cream-50 shadow-card' : 'border border-charcoal-100 bg-cream-50'
+                }`}
+              >
+                <p className="font-serif text-4xl font-semibold text-charcoal-900">{t(option.name)}</p>
+                <p className="text-sm text-charcoal-500">{t('Private 1:1 · Online', 'निजी 1:1 · Online')}</p>
+                <p className="text-base leading-relaxed text-charcoal-600">{t(option.focus)}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mx-auto mt-10 flex max-w-xl flex-col items-center gap-5 text-center">
             <p className="text-base leading-relaxed text-charcoal-600">
               {t(
-                "We'll only recommend this program if it's genuinely right for you. It starts with a free Clarity Call.",
-                'हम यह program तभी सुझाएँगे जब यह सच में आपके लिए सही हो। शुरुआत एक फ़्री Clarity Call से होती है।',
+                "Every format is customised to you. On your free Clarity Call we'll decide together which length fits, and we'll only recommend coaching if it's genuinely right for you.",
+                'हर format आपके हिसाब से customise होता है। फ़्री Clarity Call पर हम साथ मिलकर तय करेंगे कि कौन-सी अवधि सही है, और coaching तभी सुझाएँगे जब यह सच में आपके लिए सही हो।',
               )}
             </p>
-            <PrimaryCTA fullWidth placement="pricing" />
+            <PrimaryCTA placement="pricing" />
           </div>
         </div>
       </section>

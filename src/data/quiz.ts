@@ -26,7 +26,7 @@ export interface QuizOption {
 export interface QuizQuestion {
   id: string
   prompt: Bilingual
-  /** Wording for women who are single or recently separated. */
+  /** Wording for people who are single or recently separated. */
   promptWithoutPartner?: Bilingual
   options: QuizOption[]
 }

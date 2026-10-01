@@ -35,8 +35,8 @@ const faqs: FAQ[] = [
     q: { en: 'What language is it in?', hi: 'यह किस भाषा में है?' },
     a: {
       // TODO: confirm the workshop language
-      en: '[The workshop is in an easy mix of Hindi and English.] You can ask questions in English, Hindi or Bengali.',
-      hi: '[Workshop हिंदी और English के आसान मेल में है।] आप English, हिंदी या বাংলা में सवाल पूछ सकती हैं।',
+      en: '[The workshop is in an easy mix of Hindi and English.] You can ask questions in English, Hindi or Marathi.',
+      hi: '[Workshop हिंदी और English के आसान मेल में है।] आप English, हिंदी या मराठी में सवाल पूछ सकती हैं।',
     },
   },
   {
@@ -50,8 +50,8 @@ const faqs: FAQ[] = [
   {
     q: { en: 'Will my camera need to be on?', hi: 'क्या मुझे camera on रखना होगा?' },
     a: {
-      en: 'No. You can keep your camera and mic off and simply listen. Many women prefer that, and it is completely fine.',
-      hi: 'नहीं। आप camera और mic बंद रखकर सिर्फ़ सुन सकती हैं। कई महिलाएँ ऐसा ही पसंद करती हैं, और यह बिल्कुल ठीक है।',
+      en: 'No. You can keep your camera and mic off and simply listen. Many people prefer that, and it is completely fine.',
+      hi: 'नहीं। आप camera और mic बंद रखकर सिर्फ़ सुन सकती हैं। कई लोग ऐसा ही पसंद करते हैं, और यह बिल्कुल ठीक है।',
     },
   },
 ]
@@ -131,8 +131,8 @@ export function Workshop() {
               <h3 className="text-2xl font-semibold">{site.coachName}</h3>
               <p className="text-base leading-relaxed text-charcoal-600">
                 {t(
-                  'Former DNA scientist in Germany, now a relationship coach. Shalinee helps women heal relationship stress at the root through subconscious reprogramming and counselling-based coaching.',
-                  'जर्मनी में पूर्व DNA साइंटिस्ट, अब relationship coach। Shalinee subconscious reprogramming और counselling-based coaching के ज़रिए महिलाओं को रिश्तों का तनाव जड़ से ठीक करने में मदद करती हैं।',
+                  'Former DNA scientist in Germany, now a relationship coach. Shalinee helps people heal relationship stress at the root through subconscious reprogramming and counselling-based coaching.',
+                  'जर्मनी में पूर्व DNA साइंटिस्ट, अब relationship coach। Shalinee subconscious reprogramming और counselling-based coaching के ज़रिए लोगों को रिश्तों का तनाव जड़ से ठीक करने में मदद करती हैं।',
                 )}
               </p>
             </div>

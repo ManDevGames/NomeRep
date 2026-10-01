@@ -19,15 +19,15 @@ export const pageMeta: Record<string, PageMeta> = {
       hi: 'Shalinee Sen | रिलेशनशिप कोच – रिश्तों का तनाव जड़ से ठीक करें',
     },
     description: {
-      en: 'Scientist-turned relationship coach Shalinee Sen helps women heal relationship stress at the root. Coaching in English, Hindi and Bengali. Book a free call.',
-      hi: 'साइंटिस्ट से रिलेशनशिप कोच बनीं Shalinee Sen महिलाओं को रिश्तों का तनाव जड़ से ठीक करने में मदद करती हैं। English, हिंदी और বাংলা में coaching।',
+      en: 'Scientist-turned relationship coach Shalinee Sen helps people heal relationship stress at the root. Coaching in English, Hindi and Marathi. Book a free call.',
+      hi: 'साइंटिस्ट से रिलेशनशिप कोच बनीं Shalinee Sen लोगों को रिश्तों का तनाव जड़ से ठीक करने में मदद करती हैं। English, हिंदी और मराठी में coaching।',
     },
   },
   '/coaching': {
     title: { en: 'Heart Rewiring 1:1 Program | Shalinee Sen', hi: 'Heart Rewiring 1:1 Program | Shalinee Sen' },
     description: {
-      en: '8 weeks of private coaching to heal relationship stress at the root, with reprogramming audios and WhatsApp support. Starts with a free Clarity Call.',
-      hi: '8 हफ़्तों की निजी coaching, reprogramming audios और WhatsApp support के साथ। शुरुआत एक फ़्री Clarity Call से।',
+      en: 'Private coaching in 1, 3 or 8-week formats to heal relationship stress at the root, with reprogramming audios and WhatsApp support. Starts with a free Clarity Call.',
+      hi: '1, 3 या 8 हफ़्तों की निजी coaching, reprogramming audios और WhatsApp support के साथ। शुरुआत एक फ़्री Clarity Call से।',
     },
   },
   '/quiz': {
@@ -54,15 +54,15 @@ export const pageMeta: Record<string, PageMeta> = {
   '/about': {
     title: { en: 'About Shalinee Sen | From DNA Scientist to Relationship Coach', hi: 'Shalinee Sen के बारे में | DNA साइंटिस्ट से रिलेशनशिप कोच तक' },
     description: {
-      en: 'Former DNA scientist in Germany, now a relationship coach helping women heal at the root through subconscious reprogramming and counselling-based coaching.',
-      hi: 'जर्मनी में पूर्व DNA साइंटिस्ट, अब एक relationship coach, जो subconscious reprogramming और counselling-based coaching से महिलाओं की मदद करती हैं।',
+      en: 'Former DNA scientist in Germany, now a relationship coach helping people heal at the root through subconscious reprogramming and counselling-based coaching.',
+      hi: 'जर्मनी में पूर्व DNA साइंटिस्ट, अब एक relationship coach, जो subconscious reprogramming और counselling-based coaching से लोगों की मदद करती हैं।',
     },
   },
   '/stories': {
     title: { en: 'Client Stories | Shalinee Sen', hi: 'Clients की कहानियाँ | Shalinee Sen' },
     description: {
-      en: 'Stories of change from women who worked with relationship coach Shalinee Sen, shared with their permission.',
-      hi: 'रिलेशनशिप कोच Shalinee Sen के साथ काम करने वाली महिलाओं की बदलाव की कहानियाँ, उनकी अनुमति से।',
+      en: 'Stories of change from people who worked with relationship coach Shalinee Sen, shared with their permission.',
+      hi: 'रिलेशनशिप कोच Shalinee Sen के साथ काम करने वाले लोगों की बदलाव की कहानियाँ, उनकी अनुमति से।',
     },
   },
   '/privacy': {
@@ -76,11 +76,6 @@ export const pageMeta: Record<string, PageMeta> = {
   '/disclaimer': {
     title: { en: 'Disclaimer | Shalinee Sen', hi: 'डिस्क्लेमर | Shalinee Sen' },
     description: { en: 'Coaching is not therapy or medical care. Crisis and emergency information.', hi: 'Coaching, थेरेपी या मेडिकल देखभाल नहीं है। संकट और इमरजेंसी की जानकारी।' },
-  },
-  '/thank-you': {
-    title: { en: 'Thank You | Shalinee Sen', hi: 'शुक्रिया | Shalinee Sen' },
-    description: { en: 'Your Clarity Call request has been received.', hi: 'आपकी Clarity Call का अनुरोध मिल गया है।' },
-    noindex: true,
   },
 }
 

@@ -48,20 +48,33 @@ export const site = {
     youtube: 'https://youtube.com/@[channel]',
   },
 
-  /** Calendly / Cal.com link. Empty = the clarity-call form redirects to /thank-you instead. */
-  bookingUrl: '',
-
   stats: {
-    clientsHelped: '[X]+',
-    yearsExperience: '[X]+',
+    clientsHelped: '1000+',
+    yearsExperience: '7+',
   },
 
   prices: {
-    program: '₹[XX,XXX]',
     workshop: '₹[499]',
   },
-  /** Shows the "EMI / 2 instalments available" line on the program pricing card. */
-  programEmiAvailable: true,
+
+  /** Program lengths offered. Each is customised to the client on the Clarity Call. */
+  programOptions: [
+    {
+      weeks: 1,
+      name: { en: '1 Week', hi: '1 हफ़्ता' },
+      focus: { en: 'A focused reset for the one issue weighing on you most.', hi: 'जो बात आपको सबसे ज़्यादा परेशान कर रही है, उस पर एक focused reset।' },
+    },
+    {
+      weeks: 3,
+      name: { en: '3 Weeks', hi: '3 हफ़्ते' },
+      focus: { en: 'Decode and rewire one core pattern, and start responding differently.', hi: 'एक मुख्य pattern को decode और rewire करें, और अलग तरह से जवाब देना शुरू करें।' },
+    },
+    {
+      weeks: 8,
+      name: { en: '8 Weeks', hi: '8 हफ़्ते' },
+      focus: { en: 'The complete Heart Rewiring journey: Decode, Rewire and Rebuild.', hi: 'पूरा Heart Rewiring सफ़र: Decode, Rewire और Rebuild।' },
+    },
+  ] as { weeks: number; name: Bilingual; focus: Bilingual }[],
 
   workshop: {
     title: { en: 'Stop Overthinking in Love', hi: 'प्यार में Overthinking रोकें' } as Bilingual,

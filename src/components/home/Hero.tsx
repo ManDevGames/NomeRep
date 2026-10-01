@@ -9,8 +9,8 @@ export function Hero() {
 
   const trust = [
     { icon: FlaskConical, label: t('Ex-DNA Scientist, Germany', 'पूर्व DNA साइंटिस्ट, जर्मनी') },
-    { icon: Users, label: t(`${site.stats.clientsHelped} women helped`, `${site.stats.clientsHelped} महिलाओं की मदद`) },
-    { icon: Languages, label: 'English | हिंदी | বাংলা' },
+    { icon: Users, label: t(`${site.stats.clientsHelped} people helped`, `${site.stats.clientsHelped} लोगों की मदद`) },
+    { icon: Languages, label: 'English | हिंदी | मराठी' },
     { icon: Lock, label: t('100% confidential', '100% गोपनीय') },
   ]
 
@@ -29,8 +29,8 @@ export function Hero() {
           </h1>
           <p className="max-w-xl text-base leading-relaxed text-charcoal-600 sm:text-lg">
             {t(
-              'I help women heal relationship stress at the root, through subconscious reprogramming and compassionate counselling, so you can feel calm, secure and loved again.',
-              'मैं महिलाओं को subconscious reprogramming और प्यार भरी counselling के ज़रिए रिश्तों का तनाव जड़ से ठीक करने में मदद करती हूँ, ताकि आप फिर से सुकून, सुरक्षा और प्यार महसूस कर सकें।',
+              'I help people heal relationship stress at the root, through subconscious reprogramming and compassionate counselling, so you can feel calm, secure and loved again.',
+              'मैं लोगों को subconscious reprogramming और प्यार भरी counselling के ज़रिए रिश्तों का तनाव जड़ से ठीक करने में मदद करती हूँ, ताकि आप फिर से सुकून, सुरक्षा और प्यार महसूस कर सकें।',
             )}
           </p>
           <div className="flex w-full flex-col items-start gap-2 pt-1">

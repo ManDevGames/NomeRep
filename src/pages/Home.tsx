@@ -12,8 +12,8 @@ const faqs: FAQ[] = [
   {
     q: { en: 'Do I need my partner to join?', hi: 'क्या मेरे partner का साथ आना ज़रूरी है?' },
     a: {
-      en: "No. Most women I work with start on their own, and that is completely okay. When one person's patterns shift, the whole relationship often begins to feel different. If your partner wants to join a session later, we can talk about that.",
-      hi: 'नहीं। मेरे साथ काम करने वाली ज़्यादातर महिलाएँ अकेले ही शुरुआत करती हैं, और यह बिल्कुल ठीक है। जब एक इंसान के patterns बदलते हैं, तो अक्सर पूरा रिश्ता अलग महसूस होने लगता है। अगर बाद में आपका partner किसी session में जुड़ना चाहे, तो हम उस पर बात कर सकते हैं।',
+      en: "No. Most people I work with start on their own, and that is completely okay. When one person's patterns shift, the whole relationship often begins to feel different. If your partner wants to join a session later, we can talk about that.",
+      hi: 'नहीं। मेरे साथ काम करने वाले ज़्यादातर लोग अकेले ही शुरुआत करते हैं, और यह बिल्कुल ठीक है। जब एक इंसान के patterns बदलते हैं, तो अक्सर पूरा रिश्ता अलग महसूस होने लगता है। अगर बाद में आपका partner किसी session में जुड़ना चाहे, तो हम उस पर बात कर सकते हैं।',
     },
   },
   {
@@ -33,8 +33,8 @@ const faqs: FAQ[] = [
   {
     q: { en: 'How soon will I feel a difference?', hi: 'मुझे फ़र्क़ कितनी जल्दी महसूस होगा?' },
     a: {
-      en: "Everyone moves at their own pace. Many women say they feel a little calmer and clearer within the first few sessions, and deeper shifts build over the weeks that follow. I can't promise a timeline, but I will walk with you at yours.",
-      hi: 'हर किसी की अपनी रफ़्तार होती है। कई महिलाएँ बताती हैं कि पहले कुछ sessions में ही वे थोड़ा शांत और साफ़ महसूस करने लगती हैं, और गहरे बदलाव आने वाले हफ़्तों में आते हैं। मैं कोई समय-सीमा का वादा नहीं कर सकती, पर आपकी रफ़्तार से आपके साथ चलूँगी।',
+      en: "Everyone moves at their own pace. Many people say they feel a little calmer and clearer within the first few sessions, and deeper shifts build over the weeks that follow. I can't promise a timeline, but I will walk with you at yours.",
+      hi: 'हर किसी की अपनी रफ़्तार होती है। कई लोग बताते हैं कि पहले कुछ sessions में ही वे थोड़ा शांत और साफ़ महसूस करने लगते हैं, और गहरे बदलाव आने वाले हफ़्तों में आते हैं। मैं कोई समय-सीमा का वादा नहीं कर सकती, पर आपकी रफ़्तार से आपके साथ चलूँगी।',
     },
   },
   {
@@ -45,10 +45,10 @@ const faqs: FAQ[] = [
     },
   },
   {
-    q: { en: 'Can we talk in Hindi or Bengali?', hi: 'क्या हम हिंदी या बांग्ला में बात कर सकते हैं?' },
+    q: { en: 'Can we talk in Hindi or Marathi?', hi: 'क्या हम हिंदी या मराठी में बात कर सकते हैं?' },
     a: {
-      en: 'Of course. Sessions are available in English, Hindi and Bengali, and you can switch between them whenever you like. Speak in whichever language your heart speaks.',
-      hi: 'बिल्कुल। Sessions English, हिंदी और বাংলা में होते हैं, और आप जब चाहें भाषा बदल सकती हैं। जिस भाषा में आपका दिल बोलता है, उसी में बात कीजिए।',
+      en: 'Of course. Sessions are available in English, Hindi and Marathi, and you can switch between them whenever you like. Speak in whichever language your heart speaks.',
+      hi: 'बिल्कुल। Sessions English, हिंदी और मराठी में होते हैं, और आप जब चाहें भाषा बदल सकती हैं। जिस भाषा में आपका दिल बोलता है, उसी में बात कीजिए।',
     },
   },
   {

@@ -7,7 +7,6 @@ import { Home } from '@/pages/Home'
 const Coaching = lazy(() => import('@/pages/Coaching').then((m) => ({ default: m.Coaching })))
 const Quiz = lazy(() => import('@/pages/Quiz').then((m) => ({ default: m.Quiz })))
 const ClarityCall = lazy(() => import('@/pages/ClarityCall').then((m) => ({ default: m.ClarityCall })))
-const ThankYou = lazy(() => import('@/pages/ThankYou').then((m) => ({ default: m.ThankYou })))
 const Workshop = lazy(() => import('@/pages/Workshop').then((m) => ({ default: m.Workshop })))
 const Stories = lazy(() => import('@/pages/Stories').then((m) => ({ default: m.Stories })))
 const About = lazy(() => import('@/pages/About').then((m) => ({ default: m.About })))
@@ -44,7 +43,6 @@ export default function App() {
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/coaching" element={<Coaching />} />
           <Route path="/clarity-call" element={<ClarityCall />} />
-          <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/workshop" element={<Workshop />} />
           <Route path="/stories" element={<Stories />} />
           <Route path="/about" element={<About />} />

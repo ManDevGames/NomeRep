@@ -13,7 +13,7 @@ export function StoriesPreviewSection() {
   return (
     <section className="section-space bg-sage-50">
       <div className="container-app">
-        <SectionHeading eyebrow={t('Client stories', 'Clients की कहानियाँ')} title={t('Real women. Real change.', 'असली महिलाएँ। असली बदलाव।')} />
+        <SectionHeading eyebrow={t('Client stories', 'Clients की कहानियाँ')} title={t('Real people. Real change.', 'असली लोग। असली बदलाव।')} />
         <div className="mt-12">
           <ClientStories limit={3} />
         </div>
@@ -53,8 +53,9 @@ export function OffersSection() {
             highlighted
             badge={t('Most chosen', 'सबसे ज़्यादा चुना गया')}
             title={site.programName}
-            meta={t('8 weeks · Private 1:1', '8 हफ़्ते · निजी 1:1')}
+            meta={t('1, 3 or 8 weeks · Private 1:1', '1, 3 या 8 हफ़्ते · निजी 1:1')}
             points={[
+              t('Customisable: 1, 3 or 8 weeks', 'आपके हिसाब से: 1, 3 या 8 हफ़्ते'),
               t('Private coaching sessions', 'निजी coaching sessions'),
               t('Reprogramming audios for daily practice', 'रोज़ के अभ्यास के लिए reprogramming audios'),
               t('WhatsApp support between sessions', 'Sessions के बीच WhatsApp पर साथ'),

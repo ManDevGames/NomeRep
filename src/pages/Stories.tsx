@@ -20,8 +20,8 @@ export function Stories() {
           <h1 className="text-4xl font-semibold sm:text-5xl">{t('Stories of change', 'बदलाव की कहानियाँ')}</h1>
           <p className="max-w-xl text-base leading-relaxed text-charcoal-600 sm:text-lg">
             {t(
-              'Real women, in their own words, shared with their permission.',
-              'असली महिलाएँ, उनके अपने शब्दों में, उनकी अनुमति से साझा।',
+              'Real people, in their own words, shared with their permission.',
+              'असली लोग, उनके अपने शब्दों में, उनकी अनुमति से साझा।',
             )}
           </p>
         </div>

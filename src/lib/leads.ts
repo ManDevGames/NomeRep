@@ -31,14 +31,7 @@ export interface ClarityCallLeadData {
   type: 'clarity_call'
   name: string
   whatsapp: string
-  email?: string
-  ageRange: string
-  city: string
-  situation: string
-  biggestChange: string
-  preferredLanguage: string
-  preferredTime: string
-  source: string
+  email: string
   quizScore?: string
   quizStage?: string
 }

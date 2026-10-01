@@ -27,8 +27,8 @@ export function MeetShalineeSection() {
             </p>
             <p>
               {t(
-                'Today I bring that scientific way of thinking together with subconscious reprogramming and counselling-based coaching. I work with women across India and abroad, in English, Hindi and Bengali.',
-                'आज मैं उसी वैज्ञानिक सोच को subconscious reprogramming और counselling-based coaching के साथ जोड़ती हूँ। मैं भारत और विदेश की महिलाओं के साथ English, हिंदी और বাংলা में काम करती हूँ।',
+                'Today I bring that scientific way of thinking together with subconscious reprogramming and counselling-based coaching. I work with people across India and abroad, in English, Hindi and Marathi.',
+                'आज मैं उसी वैज्ञानिक सोच को subconscious reprogramming और counselling-based coaching के साथ जोड़ती हूँ। मैं भारत और विदेश के लोगों के साथ English, हिंदी और मराठी में काम करती हूँ।',
               )}
             </p>
           </div>

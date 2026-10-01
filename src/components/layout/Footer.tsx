@@ -48,8 +48,8 @@ export function Footer() {
             <Logo />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-charcoal-500">
               {t(
-                'Scientist-turned-Relationship Coach helping women heal relationship stress at the root.',
-                'साइंटिस्ट से बनीं रिलेशनशिप कोच, जो महिलाओं को रिश्तों का तनाव जड़ से ठीक करने में मदद करती हैं।',
+                'Scientist-turned-Relationship Coach helping people heal relationship stress at the root.',
+                'साइंटिस्ट से बनीं रिलेशनशिप कोच, जो लोगों को रिश्तों का तनाव जड़ से ठीक करने में मदद करती हैं।',
               )}
             </p>
             <div className="mt-5 flex items-center gap-3">
