@@ -53,8 +53,10 @@ export const site = {
     yearsExperience: '7+',
   },
 
+  /** Prices in Indian Rupees. Visitors can view them in any currency from the header. */
   prices: {
-    workshop: '₹[499]',
+    // TODO: confirm the workshop price (placeholder)
+    workshopINR: 499,
   },
 
   /** Program lengths offered. Each is customised to the client on the Clarity Call. */
@@ -115,11 +117,11 @@ export const site = {
       name: 'SAMPLE – replace with real testimonial',
       city: { en: 'Pune', hi: 'पुणे' },
       before: {
-        en: 'I checked his phone, his last-seen, everything. My mind never switched off.',
+        en: 'I checked their phone, their last-seen, everything. My mind never switched off.',
         hi: 'मैं उसका फ़ोन, last seen, सब चेक करती थी। दिमाग़ कभी शांत नहीं होता था।',
       },
       after: {
-        en: 'The overthinking has quietened. I trust myself, and that changed how I trust him.',
+        en: 'The overthinking has quietened. I trust myself, and that changed how I trust them.',
         hi: 'Overthinking अब काफ़ी शांत है। मुझे ख़ुद पर भरोसा है, और इसी से उस पर भरोसा भी बदला।',
       },
     },

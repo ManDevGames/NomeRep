@@ -39,7 +39,7 @@ const sections: LegalSection[] = [
     paragraphs: [
       {
         en: 'If you are in danger or thinking about harming yourself, please call 112 (India emergency) right away, or go to your nearest hospital.',
-        hi: 'अगर आप ख़तरे में हैं या ख़ुद को नुक़सान पहुँचाने का सोच रही हैं, तो कृपया तुरंत 112 (भारत इमरजेंसी) पर कॉल करें, या नज़दीकी अस्पताल जाएँ।',
+        hi: 'अगर आप ख़तरे में हैं या ख़ुद को नुक़सान पहुँचाने का सोच रहे हैं, तो कृपया तुरंत 112 (भारत इमरजेंसी) पर कॉल करें, या नज़दीकी अस्पताल जाएँ।',
       },
       {
         en: 'Tele-MANAS, the Government of India mental health helpline: 14416 (24×7, free). Women Helpline: 181. [Verify these numbers before publishing.]',

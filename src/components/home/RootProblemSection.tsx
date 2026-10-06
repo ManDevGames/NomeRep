@@ -24,13 +24,13 @@ export function RootProblemSection() {
             <p>
               {t(
                 "That's why you can know exactly what to do, and still react the same way. You tell yourself you won't overthink this time, and then the silence comes and your mind races again.",
-                'इसीलिए आपको पता होता है कि क्या करना चाहिए, फिर भी आप वैसे ही react कर देती हैं। आप ख़ुद से कहती हैं कि इस बार overthinking नहीं करूँगी, और फिर जैसे ही चुप्पी आती है, मन फिर दौड़ने लगता है।',
+                'इसीलिए आपको पता होता है कि क्या करना चाहिए, फिर भी आप वैसे ही react कर देते हैं। आप ख़ुद से कहते हैं कि इस बार overthinking नहीं होगी, और फिर जैसे ही चुप्पी आती है, मन फिर दौड़ने लगता है।',
               )}
             </p>
             <p>
               {t(
                 'Lasting change happens when you work at the level where the pattern lives. Not by trying harder, but by gently changing what drives the reaction.',
-                'असली और टिकाऊ बदलाव तब आता है जब आप उस गहराई पर काम करती हैं जहाँ यह pattern रहता है। ज़्यादा कोशिश करके नहीं, बल्कि उस चीज़ को धीरे से बदलकर जो इस reaction को चलाती है।',
+                'असली और टिकाऊ बदलाव तब आता है जब आप उस गहराई पर काम करते हैं जहाँ यह pattern रहता है। ज़्यादा कोशिश करके नहीं, बल्कि उस चीज़ को धीरे से बदलकर जो इस reaction को चलाती है।',
               )}
             </p>
           </div>

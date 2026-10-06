@@ -152,7 +152,7 @@ function BookingForm({ quiz, onDone }: BookingFormProps) {
         <p className="mt-1 text-sm text-charcoal-500">{t('Takes less than a minute.', 'एक मिनट से भी कम लगेगा।')}</p>
       </div>
 
-      <Field id="cc-name" label={t('Your full name', 'आपका पूरा नाम')} error={errors.name}>
+      <Field id="cc-name" label={t('Your full name', 'आपका पूरा नाम')} error={errors.name} required>
         <input
           id="cc-name"
           autoComplete="name"
@@ -164,7 +164,7 @@ function BookingForm({ quiz, onDone }: BookingFormProps) {
         />
       </Field>
 
-      <Field id="cc-phone" label={t('WhatsApp number', 'WhatsApp नंबर')} error={errors.phone}>
+      <Field id="cc-phone" label={t('WhatsApp number', 'WhatsApp नंबर')} error={errors.phone} required>
         <div className="flex gap-2">
           <input
             aria-label={t('Country code', 'Country code')}
@@ -189,7 +189,7 @@ function BookingForm({ quiz, onDone }: BookingFormProps) {
         </div>
       </Field>
 
-      <Field id="cc-email" label={t('Email', 'Email')} error={errors.email}>
+      <Field id="cc-email" label={t('Email', 'Email')} error={errors.email} required>
         <input
           id="cc-email"
           type="email"

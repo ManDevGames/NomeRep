@@ -15,7 +15,7 @@ Everything below is still placeholder content. Most business values live in one 
 | People helped | `stats.clientsHelped` | `1000+` | Hero trust strip, /coaching. |
 | Years of experience | `stats.yearsExperience` | `7+` | /coaching. |
 | Program lengths | `programOptions` | 1, 3 and 8 weeks | Name and one-line focus for each; no prices are shown. |
-| Workshop price | `prices.workshop` | `₹[499]` | Homepage offer card, /workshop. |
+| Workshop price | `prices.workshopINR` | `499` (INR) | Homepage offer card, /workshop. Visitors can view it in any currency from the header selector. |
 | Workshop date (countdown) | `workshop.dateISO` | empty | e.g. `2026-11-15T19:00:00+05:30`. Empty hides the countdown. |
 | Workshop date (text) | `workshop.dateLabel` | `[Date · Time IST]` | English and Hindi. |
 | Workshop payment link | `workshop.paymentUrl` | empty | Razorpay / Instamojo. Empty = "Reserve my seat" opens WhatsApp instead. |

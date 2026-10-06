@@ -5,6 +5,7 @@ import { ClientStories } from '@/components/brand/TestimonialCard'
 import { PrimaryCTA, SecondaryCTA } from '@/components/brand/CTA'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { site } from '@/config/site'
+import { useCurrency } from '@/context/currency'
 import { useLanguage } from '@/context/language'
 
 export function StoriesPreviewSection() {
@@ -32,6 +33,7 @@ const cardLink =
 
 export function OffersSection() {
   const { t } = useLanguage()
+  const { formatPrice } = useCurrency()
 
   return (
     <section className="section-space bg-cream-50">
@@ -69,7 +71,7 @@ export function OffersSection() {
           />
           <OfferCard
             title={`${t('Live Workshop', 'Live Workshop')}: ${t(site.workshop.title)}`}
-            meta={t(`90 minutes · Online · ${site.prices.workshop}`, `90 मिनट · Online · ${site.prices.workshop}`)}
+            meta={`${t('90 minutes', '90 मिनट')} · Online · ${formatPrice(site.prices.workshopINR)}`}
             points={[
               t('Why your mind overthinks in love', 'प्यार में मन overthinking क्यों करता है'),
               t('A 5-minute calming technique', '5 मिनट की एक शांत करने वाली technique'),

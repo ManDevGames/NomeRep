@@ -21,8 +21,8 @@ const sections: LegalSection[] = [
     title: { en: 'Payments', hi: 'पेमेंट' },
     paragraphs: [
       {
-        en: 'Prices are in Indian Rupees and shown on the relevant page or shared after your Clarity Call. Payments are processed securely by [payment provider, e.g. Razorpay / Instamojo]. Where instalments are offered, the schedule is agreed before you start.',
-        hi: 'क़ीमतें भारतीय रुपये में हैं और संबंधित पेज पर दी गई हैं या Clarity Call के बाद बताई जाती हैं। पेमेंट [payment provider, जैसे Razorpay / Instamojo] से सुरक्षित रूप से होते हैं। जहाँ किस्तों का विकल्प है, वहाँ शुरू करने से पहले उनका समय तय होता है।',
+        en: 'Prices are set in Indian Rupees and shown on the relevant page or shared after your Clarity Call. You can view them in other currencies on the site; converted amounts are approximate. Payment is accepted from India and from abroad, in Indian Rupees or your local currency, and is processed securely by [payment provider, e.g. Razorpay / Instamojo]. Where instalments are offered, the schedule is agreed before you start.',
+        hi: 'क़ीमतें भारतीय रुपये में तय हैं और संबंधित पेज पर दी गई हैं या Clarity Call के बाद बताई जाती हैं। साइट पर आप इन्हें दूसरी मुद्राओं में भी देख सकते हैं; बदली गई राशि अनुमानित होती है। भारत और विदेश, दोनों जगह से भारतीय रुपये या आपकी अपनी मुद्रा में पेमेंट किया जा सकता है। पेमेंट [payment provider, जैसे Razorpay / Instamojo] से सुरक्षित रूप से होते हैं। जहाँ किस्तों का विकल्प है, वहाँ शुरू करने से पहले उनका समय तय होता है।',
       },
     ],
   },

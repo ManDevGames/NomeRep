@@ -39,8 +39,8 @@ export function MethodSection() {
           eyebrow={t('My method', 'मेरा तरीका')}
           title={t(`The ${site.methodName}`, site.methodName)}
           subtitle={t(
-            'A gentle, science-informed 3-step process that works at the root, not just the surface.',
-            'यानी दिल की पुरानी wiring को प्यार से नए सिरे से जोड़ना। विज्ञान से प्रेरित, 3 क़दमों का एक सौम्य तरीका, जो सिर्फ़ ऊपर-ऊपर नहीं, जड़ पर काम करता है।',
+            'A gentle, science-based 3-step process that works at the root, not just the surface.',
+            'यानी दिल की पुरानी wiring को प्यार से नए सिरे से जोड़ना। विज्ञान पर आधारित, 3 क़दमों का एक सौम्य तरीका, जो सिर्फ़ ऊपर-ऊपर नहीं, जड़ पर काम करता है।',
           )}
         />
 

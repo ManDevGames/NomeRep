@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { Logo } from '@/components/brand/Logo'
 import { PrimaryCTA } from '@/components/brand/CTA'
+import { CurrencySelect } from '@/components/ui/CurrencySelect'
 import { LanguageToggle } from '@/components/ui/LanguageToggle'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { useLanguage } from '@/context/language'
@@ -50,6 +51,7 @@ export function Navbar() {
         <div className="flex shrink-0 items-center gap-2">
           <div className="hidden items-center gap-2 xl:flex">
             <LanguageToggle />
+            <CurrencySelect />
             <ThemeToggle />
           </div>
           <PrimaryCTA short placement="header" />
@@ -86,6 +88,10 @@ export function Navbar() {
             <li className="flex items-center justify-between rounded-xl px-4 py-2">
               <span className="text-base font-medium text-charcoal-700">{t('Language', 'भाषा')}</span>
               <LanguageToggle />
+            </li>
+            <li className="flex items-center justify-between rounded-xl px-4 py-2">
+              <span className="text-base font-medium text-charcoal-700">{t('Currency', 'मुद्रा')}</span>
+              <CurrencySelect />
             </li>
             <li className="flex items-center justify-between rounded-xl px-4 py-2">
               <span className="text-base font-medium text-charcoal-700">{t('Theme', 'थीम')}</span>

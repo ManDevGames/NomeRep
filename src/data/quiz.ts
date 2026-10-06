@@ -11,7 +11,7 @@ export type SituationId = 'relationship' | 'married' | 'separated' | 'single'
 export const situations: { id: SituationId; label: Bilingual }[] = [
   { id: 'relationship', label: { en: 'In a relationship', hi: 'रिश्ते में हूँ' } },
   { id: 'married', label: { en: 'Married', hi: 'शादीशुदा हूँ' } },
-  { id: 'separated', label: { en: 'Recently separated or broken up', hi: 'हाल ही में अलग हुई हूँ / breakup हुआ है' } },
+  { id: 'separated', label: { en: 'Recently separated or broken up', hi: 'हाल ही में अलगाव / breakup हुआ है' } },
   { id: 'single', label: { en: 'Single', hi: 'Single हूँ' } },
 ]
 
@@ -50,19 +50,19 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q2',
-    prompt: { en: "How often do you overthink your partner's messages, silence or mood?", hi: 'आप अपने partner के मैसेज, चुप्पी या mood पर कितनी बार overthinking करती हैं?' },
+    prompt: { en: "How often do you overthink your partner's messages, silence or mood?", hi: 'आप अपने partner के मैसेज, चुप्पी या mood पर कितनी बार overthinking करते हैं?' },
     promptWithoutPartner: {
       en: 'How often do you overthink messages, silences or moods, or replay past conversations?',
-      hi: 'आप मैसेज, चुप्पी या mood पर कितनी बार overthinking करती हैं, या पुरानी बातें दोहराती रहती हैं?',
+      hi: 'आप मैसेज, चुप्पी या mood पर कितनी बार overthinking करते हैं, या पुरानी बातें दोहराते रहते हैं?',
     },
     options: frequency,
   },
   {
     id: 'q3',
-    prompt: { en: 'How emotionally connected do you feel to your partner these days?', hi: 'आजकल आप अपने partner से भावनात्मक रूप से कितना जुड़ा हुआ महसूस करती हैं?' },
+    prompt: { en: 'How emotionally connected do you feel to your partner these days?', hi: 'आजकल आप अपने partner से भावनात्मक रूप से कितना जुड़ा हुआ महसूस करते हैं?' },
     promptWithoutPartner: {
       en: 'How emotionally connected do you feel to the people closest to you these days?',
-      hi: 'आजकल आप अपने सबसे क़रीबी लोगों से भावनात्मक रूप से कितना जुड़ा हुआ महसूस करती हैं?',
+      hi: 'आजकल आप अपने सबसे क़रीबी लोगों से भावनात्मक रूप से कितना जुड़ा हुआ महसूस करते हैं?',
     },
     options: [
       { label: { en: 'Very connected', hi: 'बहुत जुड़ा हुआ' }, score: 0 },
@@ -73,7 +73,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q4',
-    prompt: { en: 'How often do you feel you give more than you receive?', hi: 'आपको कितनी बार लगता है कि आप जितना देती हैं, उतना पाती नहीं?' },
+    prompt: { en: 'How often do you feel you give more than you receive?', hi: 'आपको कितनी बार लगता है कि आप जितना देते हैं, उतना पाते नहीं?' },
     options: frequency,
   },
   {
@@ -88,20 +88,20 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q6',
-    prompt: { en: 'How easily can you express your needs without fear of conflict?', hi: 'झगड़े के डर के बिना आप अपनी ज़रूरतें कितनी आसानी से कह पाती हैं?' },
+    prompt: { en: 'How easily can you express your needs without fear of conflict?', hi: 'झगड़े के डर के बिना आप अपनी ज़रूरतें कितनी आसानी से कह पाते हैं?' },
     options: [
       { label: { en: 'Very easily', hi: 'बहुत आसानी से' }, score: 0 },
       { label: { en: 'Mostly', hi: 'ज़्यादातर' }, score: 1 },
       { label: { en: 'With difficulty', hi: 'मुश्किल से' }, score: 2 },
-      { label: { en: 'I usually stay quiet', hi: 'मैं अक्सर चुप रह जाती हूँ' }, score: 3 },
+      { label: { en: 'I usually stay quiet', hi: 'अक्सर चुप ही रह जाना पड़ता है' }, score: 3 },
     ],
   },
   {
     id: 'q7',
-    prompt: { en: "How often do you feel lonely even when you're together?", hi: 'साथ होते हुए भी आप कितनी बार अकेलापन महसूस करती हैं?' },
+    prompt: { en: "How often do you feel lonely even when you're together?", hi: 'साथ होते हुए भी आप कितनी बार अकेलापन महसूस करते हैं?' },
     promptWithoutPartner: {
       en: "How often do you feel lonely, even when you're around people?",
-      hi: 'लोगों के बीच होते हुए भी आप कितनी बार अकेलापन महसूस करती हैं?',
+      hi: 'लोगों के बीच होते हुए भी आप कितनी बार अकेलापन महसूस करते हैं?',
     },
     options: frequency,
   },
@@ -132,7 +132,7 @@ export const stages: Stage[] = [
     range: '0–25',
     description: {
       en: "Your relationship life has a fairly steady foundation right now. There may be the odd rough day, but you mostly feel safe, heard and able to talk things through. That's something to be proud of, and something worth protecting.",
-      hi: 'अभी आपके रिश्तों की नींव काफ़ी मज़बूत है। कभी-कभार मुश्किल दिन आते होंगे, पर ज़्यादातर आप सुरक्षित महसूस करती हैं, आपकी बात सुनी जाती है, और आप बातें सुलझा पाती हैं। यह गर्व की बात है, और इसे सँभालकर रखना ज़रूरी है।',
+      hi: 'अभी आपके रिश्तों की नींव काफ़ी मज़बूत है। कभी-कभार मुश्किल दिन आते होंगे, पर ज़्यादातर आप सुरक्षित महसूस करते हैं, आपकी बात सुनी जाती है, और आप बातें सुलझा पाते हैं। यह गर्व की बात है, और इसे सँभालकर रखना ज़रूरी है।',
     },
     underneath: {
       en: "You likely have healthy ways of calming yourself and reconnecting after a disagreement. Small stresses can still pile up quietly if they're not spoken about.",
@@ -166,7 +166,7 @@ export const stages: Stage[] = [
     range: '51–75',
     description: {
       en: "You're carrying a lot. Conversations may feel tense or empty, you may feel unseen, and your mind probably doesn't switch off easily. It's exhausting to feel lonely in something that's meant to feel close.",
-      hi: 'आप बहुत कुछ उठाए चल रही हैं। बातचीत में तनाव या ख़ालीपन हो सकता है, आप ख़ुद को अनदेखा महसूस कर सकती हैं, और मन शायद आसानी से शांत नहीं होता। जिस रिश्ते में नज़दीकी होनी चाहिए, उसी में अकेलापन महसूस करना बहुत थका देता है।',
+      hi: 'आप बहुत कुछ उठाए चल रहे हैं। बातचीत में तनाव या ख़ालीपन हो सकता है, आप ख़ुद को अनदेखा महसूस कर सकते हैं, और मन शायद आसानी से शांत नहीं होता। जिस रिश्ते में नज़दीकी होनी चाहिए, उसी में अकेलापन महसूस करना बहुत थका देता है।',
     },
     underneath: {
       en: 'Your subconscious is likely running old protective patterns, such as overthinking, people-pleasing or shutting down, that once kept you safe but now keep you stuck in the same loop.',
@@ -183,7 +183,7 @@ export const stages: Stage[] = [
     range: '76–100',
     description: {
       en: "Your heart is under real strain right now. The fights, the worry or the loneliness may feel constant, and you might be wondering how much longer you can keep going like this. What you feel makes sense, and you don't have to carry it alone.",
-      hi: 'अभी आपके दिल पर सच में बहुत बोझ है। झगड़े, चिंता या अकेलापन शायद लगातार महसूस होता है, और आप सोचती होंगी कि ऐसे कब तक चलेगा। आप जो महसूस करती हैं, वो समझ में आता है, और आपको यह अकेले नहीं उठाना है।',
+      hi: 'अभी आपके दिल पर सच में बहुत बोझ है। झगड़े, चिंता या अकेलापन शायद लगातार महसूस होता है, और आप सोचते होंगे कि ऐसे कब तक चलेगा। आप जो महसूस करते हैं, वो समझ में आता है, और आपको यह अकेले नहीं उठाना है।',
     },
     underneath: {
       en: "Deep-rooted fears and past hurts are probably being triggered again and again, keeping your mind and body on high alert. That isn't a flaw in you. It's programming that can be calmed and rewired.",

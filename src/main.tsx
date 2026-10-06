@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import { LanguageProvider } from '@/context/LanguageProvider'
 import { ThemeProvider } from '@/context/ThemeProvider'
+import { CurrencyProvider } from '@/context/CurrencyProvider'
 import { captureUtm } from '@/lib/utm'
 import './index.css'
 
@@ -14,7 +15,9 @@ createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <ThemeProvider>
         <LanguageProvider>
-          <App />
+          <CurrencyProvider>
+            <App />
+          </CurrencyProvider>
         </LanguageProvider>
       </ThemeProvider>
     </BrowserRouter>

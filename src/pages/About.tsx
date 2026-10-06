@@ -1,4 +1,4 @@
-import { Compass, FlaskConical, GraduationCap, HeartHandshake, Languages, Leaf, Mail, MessageCircle, Microscope, Sprout } from 'lucide-react'
+import { Compass, FlaskConical, Leaf, Mail, MessageCircle, Sprout } from 'lucide-react'
 import { PhotoPlaceholder } from '@/components/brand/PhotoPlaceholder'
 import { VideoPlaceholder } from '@/components/brand/VideoPlaceholder'
 import { FinalCTA } from '@/components/brand/FinalCTA'
@@ -38,21 +38,13 @@ const story = [
   },
 ]
 
-// TODO: replace the bracketed placeholders with real credentials
-const credentials = [
-  { icon: GraduationCap, label: { en: 'Education', hi: 'शिक्षा' }, value: { en: '[Degree, University]', hi: '[डिग्री, यूनिवर्सिटी]' } },
-  { icon: Microscope, label: { en: 'Research', hi: 'Research' }, value: { en: '[DNA research role, Institute, Germany]', hi: '[DNA research भूमिका, संस्थान, जर्मनी]' } },
-  { icon: HeartHandshake, label: { en: 'Coaching', hi: 'Coaching' }, value: { en: '[Coaching / reprogramming certifications]', hi: '[Coaching / reprogramming certifications]' } },
-  { icon: Languages, label: { en: 'Languages', hi: 'भाषाएँ' }, value: { en: 'English · हिंदी · मराठी', hi: 'English · हिंदी · मराठी' } },
-]
-
 const values = [
   {
     icon: Leaf,
     title: { en: 'No judgment', hi: 'कोई परख नहीं' },
     body: {
       en: 'Whatever you’re feeling, it makes sense. You can say it here exactly as it is.',
-      hi: 'आप जो भी महसूस कर रही हैं, उसकी वजह है। यहाँ आप अपनी बात बिल्कुल वैसे ही कह सकती हैं जैसी वो है।',
+      hi: 'आप जो भी महसूस कर रहे हैं, उसकी वजह है। यहाँ आप अपनी बात बिल्कुल वैसे ही कह सकते हैं जैसी वो है।',
     },
   },
   {
@@ -65,7 +57,7 @@ const values = [
   },
   {
     icon: FlaskConical,
-    title: { en: 'Science-informed', hi: 'विज्ञान से प्रेरित' },
+    title: { en: 'Science-based', hi: 'विज्ञान पर आधारित' },
     body: {
       en: 'Curious, careful and practical. No big promises, just what genuinely helps.',
       hi: 'जिज्ञासु, सावधान और व्यावहारिक। कोई बड़े वादे नहीं, बस वही जो सच में मदद करे।',
@@ -123,24 +115,7 @@ export function About() {
         </div>
       </section>
 
-      {/* 3. Credentials */}
-      <section className="border-y border-charcoal-100 bg-cream-50 py-12">
-        <ul className="container-app grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {credentials.map(({ icon: Icon, label, value }) => (
-            <li key={label.en} className="flex items-start gap-3">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sage-100 text-sage-500">
-                <Icon size={19} aria-hidden="true" />
-              </span>
-              <span>
-                <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-charcoal-500">{t(label)}</span>
-                <span className="mt-1 block text-base text-charcoal-800">{t(value)}</span>
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* 4. What I believe */}
+      {/* 3. What I believe */}
       <section className="section-space bg-cream-50">
         <div className="container-app">
           <SectionHeading eyebrow={t('What I believe', 'मेरा विश्वास')} title={t('How I work with you', 'मैं आपके साथ कैसे काम करती हूँ')} />
@@ -158,7 +133,7 @@ export function About() {
         </div>
       </section>
 
-      {/* 5. Video */}
+      {/* 4. Video */}
       <section className="section-space bg-cream-100">
         <div className="container-app flex flex-col items-center gap-8">
           <h2 className="text-center text-3xl font-semibold sm:text-4xl">{t('In my own words', 'मेरे अपने शब्दों में')}</h2>
@@ -190,7 +165,7 @@ export function About() {
         </div>
       </section>
 
-      {/* 6. Final CTA */}
+      {/* 5. Final CTA */}
       <FinalCTA />
     </>
   )

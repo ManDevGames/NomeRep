@@ -9,15 +9,15 @@ const sections: LegalSection[] = [
     paragraphs: [
       {
         en: 'When you take the Relationship Stress Quiz: your first name, WhatsApp number, email (if you give it), your current situation, your answers, and your score and stage.',
-        hi: 'जब आप Relationship Stress Quiz लेती हैं: आपका पहला नाम, WhatsApp नंबर, email (अगर आप दें), आपकी अभी की स्थिति, आपके जवाब, और आपका score व stage।',
+        hi: 'जब आप Relationship Stress Quiz लेते हैं: आपका पहला नाम, WhatsApp नंबर, email, आपकी अभी की स्थिति, आपके जवाब, और आपका score व stage।',
       },
       {
         en: 'When you book a Clarity Call: your full name, WhatsApp number and email. Submitting also opens WhatsApp with these details, so you can send them to Shalinee.',
-        hi: 'जब आप Clarity Call बुक करती हैं: आपका पूरा नाम, WhatsApp नंबर और email। Submit करने पर WhatsApp इन्हीं details के साथ खुलता है, ताकि आप इन्हें Shalinee को भेज सकें।',
+        hi: 'जब आप Clarity Call बुक करते हैं: आपका पूरा नाम, WhatsApp नंबर और email। Submit करने पर WhatsApp इन्हीं details के साथ खुलता है, ताकि आप इन्हें Shalinee को भेज सकें।',
       },
       {
         en: 'We also note which link or campaign brought you here (UTM parameters). If you accept cookies, Google Analytics and the Meta Pixel record how the site is used.',
-        hi: 'हम यह भी देखते हैं कि आप किस link या campaign से यहाँ आईं (UTM parameters)। अगर आप cookies स्वीकार करती हैं, तो Google Analytics और Meta Pixel यह दर्ज करते हैं कि साइट का उपयोग कैसे होता है।',
+        hi: 'हम यह भी देखते हैं कि आप किस link या campaign से यहाँ आए (UTM parameters)। अगर आप cookies स्वीकार करते हैं, तो Google Analytics और Meta Pixel यह दर्ज करते हैं कि साइट का उपयोग कैसे होता है।',
       },
     ],
   },
@@ -35,7 +35,7 @@ const sections: LegalSection[] = [
     paragraphs: [
       {
         en: 'We only message you on WhatsApp if you tick the consent box. You can opt out at any time by replying STOP, or by writing to us at the email below.',
-        hi: 'हम आपको WhatsApp पर तभी मैसेज करते हैं जब आप सहमति वाले box पर tick करती हैं। आप कभी भी STOP लिखकर जवाब देकर, या नीचे दिए email पर लिखकर मना कर सकती हैं।',
+        hi: 'हम आपको WhatsApp पर तभी मैसेज करते हैं जब आप सहमति वाले box पर tick करते हैं। आप कभी भी STOP लिखकर जवाब देकर, या नीचे दिए email पर लिखकर मना कर सकते हैं।',
       },
     ],
   },
@@ -53,7 +53,7 @@ const sections: LegalSection[] = [
     paragraphs: [
       {
         en: 'You can ask to see, correct or delete your data, or withdraw your consent, at any time, in line with applicable Indian law including the Digital Personal Data Protection Act, 2023.',
-        hi: 'आप कभी भी अपना डेटा देखने, सुधारने या मिटाने, या अपनी सहमति वापस लेने के लिए कह सकती हैं, लागू भारतीय क़ानून (Digital Personal Data Protection Act, 2023 सहित) के अनुसार।',
+        hi: 'आप कभी भी अपना डेटा देखने, सुधारने या मिटाने, या अपनी सहमति वापस लेने के लिए कह सकते हैं, लागू भारतीय क़ानून (Digital Personal Data Protection Act, 2023 सहित) के अनुसार।',
       },
     ],
   },

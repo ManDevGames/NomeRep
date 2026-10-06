@@ -11,10 +11,10 @@ import { useLanguage } from '@/context/language'
 
 const forYou = [
   { en: 'The same arguments keep coming back, no matter how hard you try.', hi: 'चाहे आप कितनी भी कोशिश करें, वही बहस बार-बार लौट आती है।' },
-  { en: 'You overthink his messages, his silence, his mood.', hi: 'आप उसके मैसेज, उसकी चुप्पी, उसके mood पर overthinking करती हैं।' },
-  { en: "You feel distant from your husband or partner, even though you're together.", hi: 'साथ होते हुए भी आप अपने पति या partner से दूर महसूस करती हैं।' },
+  { en: 'You overthink their messages, their silence, their mood.', hi: 'आप उसके मैसेज, उसकी चुप्पी, उसके mood पर overthinking करते हैं।' },
+  { en: "You feel distant from your partner, even though you're together.", hi: 'साथ होते हुए भी आप अपने partner से दूर महसूस करते हैं।' },
   { en: 'Trust feels hard, and you hate how anxious it makes you.', hi: 'भरोसा करना मुश्किल लगता है, और उससे होने वाली बेचैनी आपको परेशान करती है।' },
-  { en: "You can't move on from a breakup or divorce.", hi: 'आप किसी breakup या divorce से आगे नहीं बढ़ पा रहीं।' },
+  { en: "You can't move on from a breakup or divorce.", hi: 'आप किसी breakup या divorce से आगे नहीं बढ़ पा रहे।' },
   { en: "You're ready to look inward and change the pattern, not just the partner.", hi: 'आप अपने अंदर झाँकने और pattern बदलने को तैयार हैं, सिर्फ़ partner नहीं।' },
 ]
 
@@ -31,7 +31,7 @@ const notForYou = [
 const changes = [
   { before: { en: 'Constant fights', hi: 'लगातार झगड़े' }, after: { en: 'Calm conversations', hi: 'शांत बातचीत' } },
   { before: { en: 'Overthinking every message', hi: 'हर मैसेज पर overthinking' }, after: { en: 'Feeling secure', hi: 'सुरक्षित महसूस करना' } },
-  { before: { en: 'Stuck on the past', hi: 'अतीत में अटकी रहना' }, after: { en: 'Free to move forward', hi: 'आगे बढ़ने की आज़ादी' } },
+  { before: { en: 'Stuck on the past', hi: 'अतीत में अटके रहना' }, after: { en: 'Free to move forward', hi: 'आगे बढ़ने की आज़ादी' } },
   { before: { en: 'Giving and feeling unseen', hi: 'देते रहना, फिर भी अनदेखा महसूस करना' }, after: { en: 'Asking for what you need', hi: 'अपनी ज़रूरत खुलकर कहना' } },
   { before: { en: 'Lonely together', hi: 'साथ होकर भी अकेलापन' }, after: { en: 'Feeling close again', hi: 'फिर से नज़दीकी महसूस करना' } },
 ]
@@ -61,14 +61,14 @@ const faqs: FAQ[] = [
     q: { en: 'Which length is right for me: 1, 3 or 8 weeks?', hi: 'मेरे लिए कौन-सी अवधि सही है: 1, 3 या 8 हफ़्ते?' },
     a: {
       en: "It depends on what you're facing. One week suits a focused reset, three weeks gives time to change one core pattern, and eight weeks is the complete journey. We'll decide together on your free Clarity Call.",
-      hi: 'यह इस पर निर्भर करता है कि आप किस स्थिति से गुज़र रही हैं। 1 हफ़्ता focused reset के लिए, 3 हफ़्ते एक मुख्य pattern बदलने के लिए, और 8 हफ़्ते पूरे सफ़र के लिए हैं। फ़्री Clarity Call पर हम साथ मिलकर तय करेंगे।',
+      hi: 'यह इस पर निर्भर करता है कि आप किस स्थिति से गुज़र रहे हैं। 1 हफ़्ता focused reset के लिए, 3 हफ़्ते एक मुख्य pattern बदलने के लिए, और 8 हफ़्ते पूरे सफ़र के लिए हैं। फ़्री Clarity Call पर हम साथ मिलकर तय करेंगे।',
     },
   },
   {
     q: { en: 'How are sessions scheduled?', hi: 'Sessions का समय कैसे तय होता है?' },
     a: {
       en: 'We meet once a week at a time that suits you, usually on the same day each week. Sessions are online, so you can join from home, office or wherever you feel private.',
-      hi: 'हम हफ़्ते में एक बार, आपकी सुविधा के समय पर मिलते हैं, आम तौर पर हर हफ़्ते एक ही दिन। Sessions online होते हैं, तो आप घर, office या जहाँ भी आपको निजता लगे, वहाँ से जुड़ सकती हैं।',
+      hi: 'हम हफ़्ते में एक बार, आपकी सुविधा के समय पर मिलते हैं, आम तौर पर हर हफ़्ते एक ही दिन। Sessions online होते हैं, तो आप घर, office या जहाँ भी आपको निजता लगे, वहाँ से जुड़ सकते हैं।',
     },
   },
   {
@@ -88,8 +88,8 @@ const faqs: FAQ[] = [
   {
     q: { en: 'Is what I share kept private?', hi: 'क्या मेरी बातें निजी रहेंगी?' },
     a: {
-      en: 'Yes. Everything you share stays between us. Sessions are never recorded without your permission, and your details are never shared with anyone.',
-      hi: 'हाँ। आप जो भी बताती हैं, वो हमारे बीच रहता है। आपकी अनुमति के बिना sessions कभी record नहीं होते, और आपकी जानकारी किसी से साझा नहीं की जाती।',
+      en: 'Yes. Everything you share stays between us, and your details are never shared with anyone.',
+      hi: 'हाँ। आप जो भी बताते हैं, वो हमारे बीच रहता है, और आपकी जानकारी किसी से साझा नहीं की जाती।',
     },
   },
   {
@@ -104,7 +104,7 @@ const faqs: FAQ[] = [
     q: { en: 'Is it online only?', hi: 'क्या यह सिर्फ़ online है?' },
     a: {
       en: 'Yes. All sessions happen online by video or audio call, so you can join from anywhere in India or abroad.',
-      hi: 'हाँ। सभी sessions video या audio call पर online होते हैं, तो आप भारत या विदेश में कहीं से भी जुड़ सकती हैं।',
+      hi: 'हाँ। सभी sessions video या audio call पर online होते हैं, तो आप भारत या विदेश में कहीं से भी जुड़ सकते हैं।',
     },
   },
 ]
@@ -177,7 +177,7 @@ export function Coaching() {
       {/* 3. What changes */}
       <section className="section-space bg-cream-50">
         <div className="container-app">
-          <SectionHeading eyebrow={t('What changes', 'क्या बदलता है')} title={t('From where you are, to where you want to be', 'आप जहाँ हैं, वहाँ से जहाँ पहुँचना चाहती हैं')} />
+          <SectionHeading eyebrow={t('What changes', 'क्या बदलता है')} title={t('From where you are, to where you want to be', 'आप जहाँ हैं, वहाँ से जहाँ पहुँचना चाहते हैं')} />
           <div className="mx-auto mt-12 max-w-3xl overflow-hidden rounded-3xl border border-charcoal-100">
             <div className="grid grid-cols-[1fr_auto_1fr] bg-cream-100 text-xs font-semibold uppercase tracking-[0.14em]">
               <span className="px-4 py-3 text-charcoal-500 sm:px-6">{t('Before', 'पहले')}</span>

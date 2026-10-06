@@ -10,10 +10,10 @@ const pains = [
   },
   {
     en: 'You give and give, but feel unseen in return.',
-    hi: 'आप बस देती रहती हैं, पर बदले में ख़ुद को अनदेखा महसूस करती हैं।',
+    hi: 'आप बस देते रहते हैं, पर बदले में ख़ुद को अनदेखा महसूस करते हैं।',
   },
   {
-    en: "You can't relax until you know what he's doing or who he's talking to.",
+    en: "You can't relax until you know what they're doing or who they're talking to.",
     hi: 'जब तक पता न चले कि वो क्या कर रहा है या किससे बात कर रहा है, आपको चैन नहीं आता।',
   },
   {
@@ -30,11 +30,11 @@ const pains = [
   },
   {
     en: 'You overthink every message, every silence, every change in tone.',
-    hi: 'हर मैसेज, हर चुप्पी, आवाज़ के हर बदलाव पर आप overthinking करती हैं।',
+    hi: 'हर मैसेज, हर चुप्पी, आवाज़ के हर बदलाव पर आप overthinking करते हैं।',
   },
   {
     en: 'You feel lonely even when you’re together.',
-    hi: 'साथ होते हुए भी आप अकेलापन महसूस करती हैं।',
+    hi: 'साथ होते हुए भी आप अकेलापन महसूस करते हैं।',
   },
 ]
 

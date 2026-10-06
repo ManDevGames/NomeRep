@@ -5,6 +5,7 @@ import { FAQSection } from '@/components/brand/FAQAccordion'
 import type { FAQ } from '@/components/brand/FAQAccordion'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { site, whatsappLink } from '@/config/site'
+import { useCurrency } from '@/context/currency'
 import { useLanguage } from '@/context/language'
 import { track } from '@/lib/analytics'
 
@@ -17,9 +18,9 @@ const learn = [
 ]
 
 const forWho = [
-  { en: "You replay conversations and read into every silence or 'seen' message.", hi: 'आप बातें दोहराती रहती हैं और हर चुप्पी या "seen" मैसेज का मतलब निकालती हैं।' },
-  { en: 'Small things turn into big fights, and you want to break the loop.', hi: 'छोटी बातें बड़े झगड़ों में बदल जाती हैं, और आप यह चक्र तोड़ना चाहती हैं।' },
-  { en: 'You want to try working with Shalinee before a bigger commitment.', hi: 'आप किसी बड़े फ़ैसले से पहले Shalinee के साथ काम करके देखना चाहती हैं।' },
+  { en: "You replay conversations and read into every silence or 'seen' message.", hi: 'आप बातें दोहराते रहते हैं और हर चुप्पी या "seen" मैसेज का मतलब निकालते हैं।' },
+  { en: 'Small things turn into big fights, and you want to break the loop.', hi: 'छोटी बातें बड़े झगड़ों में बदल जाती हैं, और आप यह चक्र तोड़ना चाहते हैं।' },
+  { en: 'You want to try working with Shalinee before a bigger commitment.', hi: 'आप किसी बड़े फ़ैसले से पहले Shalinee के साथ काम करके देखना चाहते हैं।' },
 ]
 
 const faqs: FAQ[] = [
@@ -36,7 +37,7 @@ const faqs: FAQ[] = [
     a: {
       // TODO: confirm the workshop language
       en: '[The workshop is in an easy mix of Hindi and English.] You can ask questions in English, Hindi or Marathi.',
-      hi: '[Workshop हिंदी और English के आसान मेल में है।] आप English, हिंदी या मराठी में सवाल पूछ सकती हैं।',
+      hi: '[Workshop हिंदी और English के आसान मेल में है।] आप English, हिंदी या मराठी में सवाल पूछ सकते हैं।',
     },
   },
   {
@@ -51,13 +52,14 @@ const faqs: FAQ[] = [
     q: { en: 'Will my camera need to be on?', hi: 'क्या मुझे camera on रखना होगा?' },
     a: {
       en: 'No. You can keep your camera and mic off and simply listen. Many people prefer that, and it is completely fine.',
-      hi: 'नहीं। आप camera और mic बंद रखकर सिर्फ़ सुन सकती हैं। कई लोग ऐसा ही पसंद करते हैं, और यह बिल्कुल ठीक है।',
+      hi: 'नहीं। आप camera और mic बंद रखकर सिर्फ़ सुन सकते हैं। कई लोग ऐसा ही पसंद करते हैं, और यह बिल्कुल ठीक है।',
     },
   },
 ]
 
 export function Workshop() {
   const { t } = useLanguage()
+  const { formatPrice } = useCurrency()
 
   return (
     <>
@@ -87,7 +89,7 @@ export function Workshop() {
             <Countdown />
             <div className="flex w-full flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
               <ReserveButton location="hero" />
-              <p className="font-serif text-3xl font-semibold text-charcoal-900">{site.prices.workshop}</p>
+              <p className="font-serif text-3xl font-semibold text-charcoal-900">{formatPrice(site.prices.workshopINR)}</p>
             </div>
           </div>
           <PhotoPlaceholder label="Shalinee hosting a live online workshop, 4:5" aspectRatio="4/5" className="mx-auto max-w-md lg:max-w-none" priority />
@@ -97,7 +99,7 @@ export function Workshop() {
       {/* 2. What you'll learn */}
       <section className="section-space bg-blush-50">
         <div className="container-app">
-          <SectionHeading eyebrow={t("What you'll learn", 'आप क्या सीखेंगी')} title={t("In 90 minutes you'll learn…", '90 मिनट में आप सीखेंगी…')} />
+          <SectionHeading eyebrow={t("What you'll learn", 'आप क्या सीखेंगे')} title={t("In 90 minutes you'll learn…", '90 मिनट में आप सीखेंगे…')} />
           <ol className="mx-auto mt-12 flex max-w-2xl flex-col gap-3">
             {learn.map((item, i) => (
               <li key={item.en} className="flex items-center gap-4 rounded-2xl bg-cream-50 p-5 shadow-soft">
@@ -148,7 +150,7 @@ export function Workshop() {
         <div className="container-app flex flex-col items-center gap-5 text-center">
           <h2 className="max-w-2xl text-3xl font-semibold sm:text-4xl">{t('Save your seat for a calmer mind', 'शांत मन के लिए अपनी seat पक्की करें')}</h2>
           <p className="text-base text-charcoal-600 sm:text-lg">
-            {t(site.workshop.dateLabel)} · {site.prices.workshop}
+            {t(site.workshop.dateLabel)} · {formatPrice(site.prices.workshopINR)}
           </p>
           <ReserveButton location="footer" />
         </div>
@@ -162,7 +164,7 @@ function ReserveButton({ location }: { location: string }) {
   const { t } = useLanguage()
   const href =
     site.workshop.paymentUrl ||
-    whatsappLink(t(`Hi Shalinee, I'd like to reserve a seat for the "${site.workshop.title.en}" workshop.`, `नमस्ते Shalinee जी, मैं "${site.workshop.title.hi}" workshop के लिए seat reserve करना चाहती हूँ।`))
+    whatsappLink(t(`Hi Shalinee, I'd like to reserve a seat for the "${site.workshop.title.en}" workshop.`, `नमस्ते Shalinee जी, मुझे "${site.workshop.title.hi}" workshop के लिए seat reserve करनी है।`))
 
   return (
     <a

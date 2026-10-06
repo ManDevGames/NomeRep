@@ -281,7 +281,7 @@ function LeadForm({ headingRef, onBack, onSubmit }: LeadFormProps) {
     if (!name.trim()) next.name = t('Please enter your first name.', 'कृपया अपना पहला नाम लिखें।')
     if (!isValidWhatsapp(countryCode, phone))
       next.phone = t('Please enter a valid WhatsApp number (10 digits for India).', 'कृपया सही WhatsApp नंबर लिखें (भारत के लिए 10 अंक)।')
-    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = t('Please check your email address.', 'कृपया अपना email जाँच लें।')
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) next.email = t('Please enter a valid email address.', 'कृपया सही email लिखें।')
     if (!consent) next.consent = t('Please tick the box so we can send your result.', 'Result भेजने के लिए कृपया box पर tick करें।')
     setErrors(next)
     if (Object.keys(next).length > 0) return
@@ -311,7 +311,7 @@ function LeadForm({ headingRef, onBack, onSubmit }: LeadFormProps) {
         <p className="mt-2 text-sm text-charcoal-500">{t('Your result shows on the next screen too.', 'Result अगली screen पर भी दिखेगा।')}</p>
 
         <form onSubmit={handleSubmit} noValidate className="mt-6 flex flex-col gap-5">
-          <Field id="quiz-name" label={t('First name', 'पहला नाम')} error={errors.name}>
+          <Field id="quiz-name" label={t('First name', 'पहला नाम')} error={errors.name} required>
             <input
               id="quiz-name"
               autoComplete="given-name"
@@ -326,7 +326,7 @@ function LeadForm({ headingRef, onBack, onSubmit }: LeadFormProps) {
             />
           </Field>
 
-          <Field id="quiz-phone" label={t('WhatsApp number', 'WhatsApp नंबर')} error={errors.phone}>
+          <Field id="quiz-phone" label={t('WhatsApp number', 'WhatsApp नंबर')} error={errors.phone} required>
             <div className="flex gap-2">
               <input
                 aria-label={t('Country code', 'Country code')}
@@ -354,7 +354,7 @@ function LeadForm({ headingRef, onBack, onSubmit }: LeadFormProps) {
             </div>
           </Field>
 
-          <Field id="quiz-email" label={t('Email (optional)', 'Email (ज़रूरी नहीं)')} error={errors.email}>
+          <Field id="quiz-email" label={t('Email', 'Email')} error={errors.email} required>
             <input
               id="quiz-email"
               type="email"
@@ -385,7 +385,7 @@ function LeadForm({ headingRef, onBack, onSubmit }: LeadFormProps) {
               />
               {t(
                 'I agree to receive my result and helpful tips on WhatsApp. I can opt out anytime.',
-                'मैं WhatsApp पर अपना result और काम की tips पाने के लिए सहमत हूँ। मैं कभी भी मना कर सकती हूँ।',
+                'मैं WhatsApp पर अपना result और काम की tips पाने के लिए सहमत हूँ। कभी भी मना किया जा सकता है।',
               )}
             </label>
             {errors.consent && <p id="quiz-consent-error" className="mt-1.5 text-sm text-rose-500">{errors.consent}</p>}
@@ -412,7 +412,7 @@ function Result({ headingRef, result, onRetake }: { headingRef: HeadingRef; resu
   const stage: Stage = stages.find((s) => s.id === result.stageId) ?? stageFor(result.score)
   const whatsappMessage = t(
     `Hi Shalinee, I'm ${result.name}. I just took the Relationship Stress Quiz. My score is ${result.score}/100 (${stage.name.en}). I'd like to talk about my result.`,
-    `नमस्ते Shalinee जी, मैं ${result.name} हूँ। मैंने अभी Relationship Stress Quiz लिया। मेरा score ${result.score}/100 (${stage.name.hi}) है। मैं अपने result के बारे में बात करना चाहती हूँ।`,
+    `नमस्ते Shalinee जी, मैं ${result.name} हूँ। मैंने अभी Relationship Stress Quiz लिया। मेरा score ${result.score}/100 (${stage.name.hi}) है। मुझे अपने result के बारे में बात करनी है।`,
   )
 
   return (
