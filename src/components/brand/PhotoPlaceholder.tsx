@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { Camera } from 'lucide-react'
+import { useSheetPhoto } from '@/lib/photos'
 
 interface PhotoPlaceholderProps {
   /** What photo belongs here, e.g. "Shalinee – hero portrait, warm smile, 4:5". Also the alt text until `alt` is set. */
@@ -6,7 +8,9 @@ interface PhotoPlaceholderProps {
   /** CSS aspect ratio, e.g. "4/5", "1/1", "3/2". */
   aspectRatio?: string
   className?: string
-  /** Once the real photo exists, pass it here and the placeholder is replaced. */
+  /** Row `key` in the photo Google Sheet (`site.photoSheetUrl`). The sheet's link is used when set. */
+  photoKey?: string
+  /** A fixed photo URL; takes priority over the sheet. */
   src?: string
   alt?: string
   /** Pass true for the above-the-fold hero photo so it isn't lazy-loaded. */
@@ -15,12 +19,18 @@ interface PhotoPlaceholderProps {
   compact?: boolean
 }
 
-export function PhotoPlaceholder({ label, aspectRatio = '4/5', className = '', src, alt, priority, compact }: PhotoPlaceholderProps) {
-  if (src) {
+export function PhotoPlaceholder({ label, aspectRatio = '4/5', className = '', photoKey, src, alt, priority, compact }: PhotoPlaceholderProps) {
+  const sheetPhoto = useSheetPhoto(src ? undefined : photoKey)
+  const imageSrc = src ?? sheetPhoto?.src
+  // A broken link (file deleted, not shared) shows the placeholder instead of a broken image.
+  const [failedSrc, setFailedSrc] = useState<string>()
+
+  if (imageSrc && imageSrc !== failedSrc) {
     return (
       <img
-        src={src}
-        alt={alt ?? label}
+        src={imageSrc}
+        alt={alt ?? sheetPhoto?.alt ?? label}
+        onError={() => setFailedSrc(imageSrc)}
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
         style={{ aspectRatio }}

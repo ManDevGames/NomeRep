@@ -45,7 +45,7 @@ export function ClarityCall() {
               )}
             </p>
           </div>
-          <PhotoPlaceholder label="Shalinee, friendly close-up, 1:1" aspectRatio="1/1" className="mx-auto max-w-xs md:max-w-sm" priority />
+          <PhotoPlaceholder photoKey="clarity-call" label="Shalinee, friendly close-up, 1:1" aspectRatio="1/1" className="mx-auto max-w-xs md:max-w-sm" priority />
         </div>
       </section>
 

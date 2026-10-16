@@ -55,6 +55,7 @@ export function Hero() {
 
         <div className="relative mx-auto w-full max-w-md animate-fade-in lg:max-w-none">
           <PhotoPlaceholder
+            photoKey="home-hero"
             label="Shalinee – hero portrait, warm genuine smile, soft natural light, 4:5"
             aspectRatio="4/5"
             priority

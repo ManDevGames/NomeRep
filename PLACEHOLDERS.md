@@ -24,22 +24,38 @@ Everything below is still placeholder content. Most business values live in one 
 | Meta Pixel ID | `analytics.metaPixelId` | empty | Same as GA4. |
 | Testimonials | `testimonials` + `showTestimonials` | 3 entries marked SAMPLE, flag `false` | Replace with real stories (written permission; initials are fine), then set the flag to `true`. This also shows the two client-video slots on /stories. |
 
-## 2. Photos: `<PhotoPlaceholder>`
+## 2. Photos: Google Drive + Google Sheet
 
-Pass `src` (and `alt`, e.g. "Shalinee Sen, Relationship Coach") on the same component. The placeholder box is replaced automatically, keeping the aspect ratio.
+Photos are managed from a Google Sheet, so you can change them at any time without touching code or redeploying.
 
-| File:line | Photo |
-|---|---|
-| [src/components/home/Hero.tsx:58](src/components/home/Hero.tsx#L58) | Hero portrait, warm smile, 4:5 (keep `priority`) |
-| [src/components/home/MeetShalineeSection.tsx:13](src/components/home/MeetShalineeSection.tsx#L13) | Candid working portrait, 1:1 |
-| [src/pages/Coaching.tsx:125](src/pages/Coaching.tsx#L125) | On a video session, laptop, 4:5 |
-| [src/pages/Coaching.tsx:230](src/pages/Coaching.tsx#L230) | Portrait, 1:1 |
-| [src/pages/About.tsx:102](src/pages/About.tsx#L102) | Main portrait, 4:5 |
-| [src/pages/About.tsx:119](src/pages/About.tsx#L119) | Germany / lab days, 3:2 |
-| [src/pages/ClarityCall.tsx:68](src/pages/ClarityCall.tsx#L68) | Friendly close-up, 1:1 |
-| [src/pages/Quiz.tsx:178](src/pages/Quiz.tsx#L178) | Small circular avatar |
-| [src/pages/Workshop.tsx:93](src/pages/Workshop.tsx#L93) | Hosting a live online workshop, 4:5 |
-| [src/pages/Workshop.tsx:128](src/pages/Workshop.tsx#L128) | Small circular portrait |
+**One-time setup**
+
+1. In Google Drive, create a folder (e.g. "Website photos"). Share it as **Anyone with the link → Viewer**. Every photo you put in it is then visible to the site.
+2. Create a Google Sheet: **File → Import → Upload** [photos-template.csv](photos-template.csv) (choose "Replace spreadsheet"). The first row must stay `key, link, alt`. The `where it shows` column is only a note for you.
+3. Share the sheet as **Anyone with the link → Viewer**, copy its browser URL and paste it into `photoSheetUrl` in [src/config/site.ts](src/config/site.ts). Deploy once.
+
+**Adding or changing a photo**
+
+1. Upload the photo to the Drive folder. Right-click it → **Share → Copy link**.
+2. Paste that link into the `link` cell of the right row in the sheet. Optionally edit `alt` (the description for screen readers and Google).
+3. Done. Visitors see the new photo on their next page load (it can take a minute or two for Google to update).
+
+Clear a `link` cell to bring back the placeholder box. If a link is broken or the file isn't shared, the site shows the placeholder instead of a broken image. Any direct image URL (not only Drive) also works in the `link` column.
+
+| `key` in the sheet | Where it shows | Shape |
+|---|---|---|
+| `home-hero` | [Home, top](src/components/home/Hero.tsx#L57) | Portrait 4:5 |
+| `home-meet` | [Home, Meet Shalinee](src/components/home/MeetShalineeSection.tsx#L13) | Square 1:1 |
+| `coaching-session` | [Coaching, top](src/pages/Coaching.tsx#L131) | Portrait 4:5 |
+| `coaching-portrait` | [Coaching, Why Shalinee](src/pages/Coaching.tsx#L245) | Square 1:1 |
+| `about-main` | [About, top](src/pages/About.tsx#L94) | Portrait 4:5 |
+| `about-lab` | [About, Germany / lab days](src/pages/About.tsx#L111) | Landscape 3:2 |
+| `clarity-call` | [Clarity Call](src/pages/ClarityCall.tsx#L48) | Square 1:1 |
+| `quiz-avatar` | [Quiz, small round photo](src/pages/Quiz.tsx#L178) | Square, shown as a circle |
+| `workshop-hosting` | [Workshop, top](src/pages/Workshop.tsx#L95) | Portrait 4:5 |
+| `workshop-portrait` | [Workshop, host section](src/pages/Workshop.tsx#L130) | Square, shown as a circle |
+
+Photos are cropped to the shape above, so upload roughly that shape with the face near the centre. Keep files under about 2 MB (the site requests a 1600 px wide version).
 
 The social-share image [public/og-image.png](public/og-image.png) (1200×630) is text-only. A version with Shalinee's photo in the pink panel would work better.
 

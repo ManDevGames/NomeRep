@@ -87,6 +87,13 @@ export const site = {
     paymentUrl: '',
   },
 
+  /**
+   * Google Sheet that lists the site photos (columns: key, link, alt). Paste the sheet's
+   * browser URL; it must be shared as "Anyone with the link can view". Empty = placeholders.
+   * Setup steps: PLACEHOLDERS.md → "Photos".
+   */
+  photoSheetUrl: 'https://docs.google.com/spreadsheets/d/1_t-_I9-Uw6kzML3VqkSkTvvr-0rLgw6lvsqVyRp_4S4/edit?usp=sharing',
+
   /** Where quiz and clarity-call leads are POSTed (Google Sheets script, Zapier, AiSensy, WATI…). */
   leadWebhookUrl: '',
 

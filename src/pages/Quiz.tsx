@@ -175,7 +175,7 @@ function Intro({ headingRef, onStart }: { headingRef: HeadingRef; onStart: () =>
         {t('7 honest questions · 2 minutes · private', '7 सच्चे सवाल · 2 मिनट · पूरी तरह निजी')}
       </p>
       <div className="flex items-center gap-3">
-        <PhotoPlaceholder label="Shalinee small avatar, circle" aspectRatio="1/1" compact className="w-14 shrink-0 rounded-full" />
+        <PhotoPlaceholder photoKey="quiz-avatar" label="Shalinee small avatar, circle" aspectRatio="1/1" compact className="w-14 shrink-0 rounded-full" />
         <p className="text-left text-sm text-charcoal-600">
           {t('Created by', 'बनाया है')} <strong className="font-semibold text-charcoal-900">{site.coachName}</strong>,
           <br />

@@ -91,7 +91,7 @@ export function About() {
               )}
             </p>
           </div>
-          <PhotoPlaceholder label="Shalinee main portrait, 4:5" aspectRatio="4/5" className="mx-auto max-w-md" priority />
+          <PhotoPlaceholder photoKey="about-main" label="Shalinee main portrait, 4:5" aspectRatio="4/5" className="mx-auto max-w-md" priority />
         </div>
       </section>
 
@@ -108,7 +108,7 @@ export function About() {
                     {t(p)}
                   </p>
                 ))}
-                {i === 0 && <PhotoPlaceholder label="Shalinee in Germany / lab days, 3:2" aspectRatio="3/2" className="mt-4" />}
+                {i === 0 && <PhotoPlaceholder photoKey="about-lab" label="Shalinee in Germany / lab days, 3:2" aspectRatio="3/2" className="mt-4" />}
               </div>
             ))}
           </div>

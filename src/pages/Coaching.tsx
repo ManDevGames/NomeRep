@@ -129,6 +129,7 @@ export function Coaching() {
             <PrimaryCTA placement="hero" className="w-full sm:w-auto sm:px-8" />
           </div>
           <PhotoPlaceholder
+            photoKey="coaching-session"
             label="Shalinee on a video session, laptop, warm setting, 4:5"
             aspectRatio="4/5"
             className="mx-auto max-w-md lg:max-w-none"
@@ -241,7 +242,7 @@ export function Coaching() {
       {/* 6. Why Shalinee */}
       <section className="section-space bg-sage-50">
         <div className="container-app grid grid-cols-1 items-center gap-10 md:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-          <PhotoPlaceholder label="Shalinee portrait, 1:1" aspectRatio="1/1" className="mx-auto max-w-sm" />
+          <PhotoPlaceholder photoKey="coaching-portrait" label="Shalinee portrait, 1:1" aspectRatio="1/1" className="mx-auto max-w-sm" />
           <div className="flex flex-col items-start gap-5">
             <span className="eyebrow">{t('Why Shalinee', 'Shalinee ही क्यों')}</span>
             <h2 className="text-3xl font-semibold leading-[1.2] sm:text-4xl">

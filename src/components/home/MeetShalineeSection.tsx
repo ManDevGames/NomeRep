@@ -10,7 +10,7 @@ export function MeetShalineeSection() {
   return (
     <section className="section-space bg-cream-50">
       <div className="container-app grid grid-cols-1 items-center gap-10 md:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-        <PhotoPlaceholder label="Shalinee – candid working portrait, 1:1" aspectRatio="1/1" className="mx-auto max-w-md" />
+        <PhotoPlaceholder photoKey="home-meet" label="Shalinee – candid working portrait, 1:1" aspectRatio="1/1" className="mx-auto max-w-md" />
 
         <div className="flex flex-col items-start gap-5">
           <span className="eyebrow">{t('Meet your coach', 'मिलिए अपनी कोच से')}</span>

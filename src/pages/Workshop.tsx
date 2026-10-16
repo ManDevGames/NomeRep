@@ -92,7 +92,7 @@ export function Workshop() {
               <p className="font-serif text-3xl font-semibold text-charcoal-900">{formatPrice(site.prices.workshopINR)}</p>
             </div>
           </div>
-          <PhotoPlaceholder label="Shalinee hosting a live online workshop, 4:5" aspectRatio="4/5" className="mx-auto max-w-md lg:max-w-none" priority />
+          <PhotoPlaceholder photoKey="workshop-hosting" label="Shalinee hosting a live online workshop, 4:5" aspectRatio="4/5" className="mx-auto max-w-md lg:max-w-none" priority />
         </div>
       </section>
 
@@ -127,7 +127,7 @@ export function Workshop() {
             </ul>
           </div>
           <div className="flex items-start gap-5 rounded-3xl bg-cream-100 p-7">
-            <PhotoPlaceholder label="Shalinee portrait, 1:1" aspectRatio="1/1" compact className="w-20 shrink-0 rounded-full" />
+            <PhotoPlaceholder photoKey="workshop-portrait" label="Shalinee portrait, 1:1" aspectRatio="1/1" compact className="w-20 shrink-0 rounded-full" />
             <div className="flex flex-col gap-2">
               <span className="eyebrow">{t('Your host', 'आपकी host')}</span>
               <h3 className="text-2xl font-semibold">{site.coachName}</h3>
